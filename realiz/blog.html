@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Blog - Realiz Creative Agency</title>
+<!-- Fonts -->
+<!-- Icons (Lucide) -->
+<meta content="Blog archive page for the Realiz editorial agency HTML template." name="description"><link href="assets/css/main.css" rel="stylesheet">
+</head>
+<body class="relative min-h-screen w-screen bg-brand-bg text-white overflow-x-hidden selection:bg-brand-lime selection:text-brand-sidebar tft-page-blog" id="page-top">
+<!-- MOBILE HEADER -->
+<header class="fixed top-0 left-0 w-full h-[70px] bg-white z-[60] flex md:hidden items-center justify-between border-b border-gray-200 text-brand-sidebar">
+<a class="flex items-center" href="index.html">
+<img alt="Realiz Logo" class="h-6 w-auto" src="assets/img/logo1.png">
+</a>
+<button aria-label="Toggle menu" class="menu-toggle w-[50px] h-[50px] mr-3 rounded-sm bg-brand-sidebar flex flex-col items-center justify-center cursor-pointer relative shadow-md z-[60]" type="button">
+<span class="relative w-[28px] h-[18px] block">
+<span class="line-1 hamburger-line absolute top-0 right-0 w-[28px] h-[2px] bg-brand-lime rounded-full"></span>
+<span class="line-2 hamburger-line absolute top-[8px] right-0 w-[28px] h-[2px] bg-brand-lime rounded-full"></span>
+<span class="line-3 hamburger-line absolute top-[16px] right-0 w-[20px] h-[2px] bg-brand-lime rounded-full"></span>
+</span>
+</button>
+</header>
+<!-- FIXED LEFT SIDEBAR -->
+<aside class="hidden md:flex w-[140px] h-screen fixed left-0 top-0 z-50 bg-white border-r border-gray-200 shadow-[10px_0_30px_rgba(13,38,32,0.01)] text-brand-sidebar">
+<div class="w-[40px] h-full bg-brand-lime border-r border-gray-200 flex items-center justify-center overflow-hidden shrink-0">
+<span class="text-vertical text-[9px] tracking-[0.2em] font-medium whitespace-nowrap uppercase">Design - Strategy - Motion - Code - Vision</span>
+</div>
+<div class="flex-1 h-full flex flex-col items-center justify-between pb-8">
+<div class="w-full h-[140px] flex items-center justify-center relative after:absolute after:bottom-0 after:left-4 after:right-4 after:h-px after:bg-gray-100 shrink-0">
+<button aria-label="Toggle menu" class="menu-toggle w-[70px] h-[70px] rounded-sm bg-brand-sidebar flex flex-col items-center justify-center cursor-pointer relative group shadow-md z-50" type="button">
+<span class="relative w-[28px] h-[18px] block">
+<span class="line-1 hamburger-line absolute top-0 right-0 w-[28px] h-[2px] bg-brand-lime rounded-full"></span>
+<span class="line-2 hamburger-line absolute top-[8px] right-0 w-[28px] h-[2px] bg-brand-lime rounded-full"></span>
+<span class="line-3 hamburger-line absolute top-[16px] right-0 w-[20px] group-hover:w-[28px] h-[2px] bg-brand-lime rounded-full"></span>
+</span>
+</button>
+</div>
+<div class="flex flex-col items-center gap-10 mt-8">
+<a class="tft-sidebar-logo-vertical" href="index.html">
+<img alt="Realiz Logo" src="assets/img/main-logo1.png">
+</a>
+</div>
+<div class="flex-1"></div>
+<div class="flex flex-col items-center">
+<div class="relative group flex flex-col items-center mb-6 w-[100px]">
+<div class="absolute bottom-[52px] pb-8 flex flex-col gap-1 items-center pointer-events-none group-hover:pointer-events-auto z-10 w-full">
+<div class="social-item social-1 font-bold text-xs opacity-50"><a href="https://www.instagram.com/" rel="noopener noreferrer" target="_blank">In.</a></div>
+<div class="social-item social-2 font-bold text-xs opacity-50"><a href="https://www.behance.net/" rel="noopener noreferrer" target="_blank">Be.</a></div>
+<div class="social-item social-3 font-bold text-xs opacity-50"><a href="https://www.linkedin.com/" rel="noopener noreferrer" target="_blank">Li.</a></div>
+<div class="social-item social-4 font-bold text-xs opacity-50"><a href="https://github.com/" rel="noopener noreferrer" target="_blank">Gh.</a></div>
+<div class="social-item social-5 font-bold text-xs opacity-50"><a href="https://dribbble.com/" rel="noopener noreferrer" target="_blank">Dr.</a></div>
+</div>
+<div class="w-[58px] h-[58px] rounded-full border border-brand-sidebar flex items-center justify-center bg-brand-sidebar text-brand-lime shadow-sm transition-all hover:bg-brand-lime hover:text-brand-sidebar mt-auto">
+<i class="w-6 h-6 animate-wave" data-lucide="arrow-up-right"></i>
+</div>
+</div>
+<span class="text-vertical text-[10px] tracking-[0.15em] opacity-80 uppercase">© 2026 Realiz.</span>
+</div>
+</div>
+</aside>
+<!-- MENU PANEL -->
+<nav class="fixed left-0 md:left-[140px] top-[70px] md:top-0 h-[calc(100dvh-70px)] md:h-screen w-full md:w-[360px] bg-brand-menu border-r border-white/5 transform -translate-x-full transition-transform duration-600 ease-[cubic-bezier(0.77,0,0.175,1)] z-[55] md:z-40 overflow-y-auto menu-no-scrollbar text-white tft-menu-glass" id="menu-panel">
+<div class="w-full h-full pt-12 md:pt-[120px] pb-20 flex flex-col px-10">
+<ul class="w-full mt-4 flex flex-col">
+<li class="w-full border-b border-white/10 relative">
+<div class="py-6 w-full flex items-center justify-between cursor-pointer group js-accordion-toggle" data-accordion-toggle="home" role="button" tabindex="0">
+<span class="font-body text-[11px] text-white/30 tracking-widest">-01</span>
+<div class="flex items-center gap-3 ml-auto relative z-20">
+<span class="font-display text-2xl text-white/70 group-hover:text-white transition-colors" id="home-text">Home</span>
+<div class="w-5 h-5 rounded-full bg-brand-lime flex items-center justify-center">
+<i class="w-3 h-3 text-brand-sidebar transition-transform duration-300" data-lucide="chevron-down" id="home-icon"></i>
+</div>
+</div>
+</div>
+<ul class="flex flex-col items-end pr-8 overflow-hidden transition-all duration-300 max-h-0 opacity-0" id="home-submenu">
+<li class="pt-2 pb-4"><a class="font-display text-lg text-white/50 hover:text-white" href="index.html">Home 1 (Book)</a></li>
+<li class="pb-4"><a class="font-display text-lg text-white/50 hover:text-white" href="home-2.html">Home 2 (Innovate)</a></li>
+<li class="pb-4"><a class="font-display text-lg text-white/50 hover:text-white" href="home-3.html">Home 3 (Cards)</a></li>
+<li class="pb-4"><a class="font-display text-lg text-white/50 hover:text-white" href="home-4.html">Home 4 (Columns)</a></li>
+<li class="pb-4"><a class="font-display text-lg text-white/50 hover:text-white" href="home-5.html">Home 5 (List)</a></li>
+<li class="pb-4"><a class="font-display text-lg text-white/50 hover:text-white" href="home-6.html">Home 6 (Clean)</a></li>
+<li class="pb-4"><a class="font-display text-lg text-white/50 hover:text-white" href="home-7.html">Home 7 (Arch)</a></li>
+</ul>
+</li>
+<li class="w-full border-b border-white/10 relative">
+<div class="py-6 w-full flex items-center justify-between cursor-pointer group js-accordion-toggle" data-accordion-toggle="work" role="button" tabindex="0">
+<span class="font-body text-[11px] text-white/30 tracking-widest">-02</span>
+<div class="flex items-center gap-3 ml-auto relative z-20">
+<span class="font-display text-2xl text-white/70 group-hover:text-white transition-colors" id="work-text">Portfolio</span>
+<div class="w-5 h-5 rounded-full bg-brand-lime flex items-center justify-center">
+<i class="w-3 h-3 text-brand-sidebar transition-transform duration-300" data-lucide="chevron-down" id="work-icon"></i>
+</div>
+</div>
+</div>
+<ul class="flex flex-col items-end pr-8 overflow-hidden transition-all duration-300 max-h-0 opacity-0" id="work-submenu">
+<li class="pt-2 pb-4"><a class="font-display text-lg text-white/50 hover:text-white" href="services.html">Services</a></li>
+<li class="pb-4"><a class="font-display text-lg text-white/50 hover:text-white" href="works.html">Works</a></li>
+<li class="pb-4"><a class="font-display text-lg text-white/50 hover:text-white" href="works-alt.html">Works Alt</a></li>
+<li class="pb-6"><a class="font-display text-lg text-white/50 hover:text-white" href="project-detail.html">Project Detail</a></li>
+</ul>
+</li>
+<li class="w-full border-b border-white/10 relative">
+<div class="py-6 w-full flex items-center justify-between cursor-pointer group js-accordion-toggle" data-accordion-toggle="about" role="button" tabindex="0">
+<span class="font-body text-[11px] text-white/30 tracking-widest">-03</span>
+<div class="flex items-center gap-3 ml-auto relative z-20">
+<span class="font-display text-2xl text-white/70 group-hover:text-white transition-colors" id="about-text">Studio</span>
+<div class="w-5 h-5 rounded-full bg-brand-lime flex items-center justify-center">
+<i class="w-3 h-3 text-brand-sidebar transition-transform duration-300" data-lucide="chevron-down" id="about-icon"></i>
+</div>
+</div>
+</div>
+<ul class="flex flex-col items-end pr-8 overflow-hidden transition-all duration-300 max-h-0 opacity-0" id="about-submenu">
+<li class="pt-2 pb-4"><a class="font-display text-lg text-white/50 hover:text-white" href="about-v2.html">About</a></li>
+<li class="pb-4"><a class="font-display text-lg text-white/50 hover:text-white" href="about-alt.html">About Alt</a></li>
+<li class="pb-6"><a class="font-display text-lg text-white/50 hover:text-white" href="contact.html">Contact</a></li>
+</ul>
+</li>
+<li class="w-full border-b border-white/10 relative">
+<div class="py-6 w-full flex items-center justify-between cursor-pointer group js-accordion-toggle" data-accordion-toggle="journal" role="button" tabindex="0">
+<span class="font-body text-[11px] text-white/30 tracking-widest">-04</span>
+<div class="flex items-center gap-3 ml-auto relative z-20">
+<span class="font-display text-2xl text-white/70 group-hover:text-white transition-colors" id="journal-text">Journal</span>
+<div class="w-5 h-5 rounded-full bg-brand-lime flex items-center justify-center">
+<i class="w-3 h-3 text-brand-sidebar transition-transform duration-300" data-lucide="chevron-down" id="journal-icon"></i>
+</div>
+</div>
+</div>
+<ul class="flex flex-col items-end pr-8 overflow-hidden transition-all duration-300 max-h-0 opacity-0" id="journal-submenu">
+<li class="pt-2 pb-4"><a class="font-display text-lg text-white/50 hover:text-white" href="blog.html">Blog</a></li>
+<li class="pb-6"><a class="font-display text-lg text-white/50 hover:text-white" href="single-post.html">Single Post</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+<!-- CONTENT WRAPPER -->
+<div class="absolute left-0 md:left-[140px] right-0 top-[70px] md:top-0 bottom-0 overflow-y-auto z-10 bg-brand-bg" id="main-scroll-container">
+<!-- HERO SECTION -->
+<section class="w-full h-[60vh] md:h-[70vh] bg-brand-sidebar relative flex items-center justify-center overflow-hidden">
+<img alt="Hero Background" class="absolute inset-0 w-full h-full object-cover opacity-40 grcale group-hover:grcale-0 transition-all duration-1000 transform scale-105 hover:scale-100" src="assets/img/project_vision.png">
+<div class="absolute inset-0 bg-gradient-to-t from-brand-bg via-transparent to-transparent"></div>
+<div class="container mx-auto px-6 md:px-12 relative z-10 text-center reveal-up">
+<span class="font-body text-xs font-bold tracking-[0.5em] text-brand-lime uppercase mb-6 block">The Realiz Journal</span>
+<h1 class="font-display text-5xl md:text-8xl lg:text-9xl leading-tight">Future <span class="italic text-brand-lime underline underline-offset-[10px] decoration-white/10">Thinking.</span></h1>
+</div>
+</section>
+<!-- MAIN CONTENT AREA -->
+<div class="w-full flex flex-col lg:flex-row">
+<!-- Blog Grid Container -->
+<div class="flex-1 p-6 md:p-12 lg:p-20 pb-32">
+<!-- Blog Header -->
+<div class="mb-16 md:mb-24 reveal-up">
+<span class="font-body text-xs font-bold tracking-[0.4em] text-brand-lime uppercase mb-4 block">Our Journal</span>
+<h2 class="font-display text-4xl md:text-6xl lg:text-7xl leading-none">Perspective<br/>&amp; <span class="text-brand-lime italic">Insight.</span></h2>
+</div>
+<!-- Blog Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
+<!-- Blog Item 1 -->
+<article class="blog-card group reveal-up">
+<a class="block overflow-hidden relative aspect-[4/5] mb-6 bg-brand-sidebar" href="single-post.html">
+<img alt="Sustainable Design" class="blog-card-img w-full h-full object-cover grcale group-hover:grcale-0 transition-all duration-700" src="assets/img/project_editorial.png">
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 bg-brand-lime text-brand-sidebar text-[9px] font-bold uppercase tracking-widest">Creative Insight</span>
+</div>
+</a>
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-3">
+<span class="font-body text-[9px] text-white/30 font-bold tracking-widest uppercase">March 21, 2026</span>
+<div class="h-px w-6 bg-white/10"></div>
+<span class="font-body text-[9px] text-white/30 font-bold tracking-widest uppercase">6 Min Read</span>
+</div>
+<h2 class="font-display text-2xl md:text-3xl leading-tight group-hover:text-brand-lime transition-colors">Bridging the Gap: Sustainable Materi</h2>
+<p class="font-body text-xs text-white/40 leading-relaxed line-clamp-2">Exploring the intersection of sustainable storytelling and high-end visual direction.</p>
+<a class="flex items-center gap-2 text-brand-lime font-bold text-[10px] uppercase tracking-[0.2em] mt-2 group/btn" href="single-post.html">
+                            Read Story <i class="w-3 h-3 transition-transform group-hover/btn:translate-x-1" data-lucide="arrow-right"></i>
+</a>
+</div>
+</article>
+<!-- Blog Item 2 -->
+<article class="blog-card group reveal-up tft-inline-3">
+<a class="block overflow-hidden relative aspect-[4/5] mb-6 bg-brand-sidebar" href="blog.html">
+<img alt="Digital Twin" class="blog-card-img w-full h-full object-cover grcale group-hover:grcale-0 transition-all duration-700" src="assets/img/s2.jpg">
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 bg-brand-lime text-brand-sidebar text-[9px] font-bold uppercase tracking-widest">Technology</span>
+</div>
+</a>
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-3">
+<span class="font-body text-[9px] text-white/30 font-bold tracking-widest uppercase">March 18, 2026</span>
+<div class="h-px w-6 bg-white/10"></div>
+<span class="font-body text-[9px] text-white/30 font-bold tracking-widest uppercase">4 Min Read</span>
+</div>
+<h2 class="font-display text-2xl md:text-3xl leading-tight group-hover:text-brand-lime transition-colors">The Digital Twin: UX Modeling</h2>
+<p class="font-body text-xs text-white/40 leading-relaxed line-clamp-2">How AI-driven predictive models are reshaping how we envision user journeys.</p>
+<a class="flex items-center gap-2 text-brand-lime font-bold text-[10px] uppercase tracking-[0.2em] mt-2 group/btn" href="single-post.html">
+                            Read Story <i class="w-3 h-3 transition-transform group-hover/btn:translate-x-1" data-lucide="arrow-right"></i>
+</a>
+</div>
+</article>
+<!-- Blog Item 3 -->
+<article class="blog-card group reveal-up">
+<a class="block overflow-hidden relative aspect-[4/5] mb-6 bg-brand-sidebar" href="single-post.html">
+<img alt="Subtraction Art" class="blog-card-img w-full h-full object-cover grcale group-hover:grcale-0 transition-all duration-700" src="assets/img/s8.png">
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 bg-brand-lime text-brand-sidebar text-[9px] font-bold uppercase tracking-widest">Philosophy</span>
+</div>
+</a>
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-3">
+<span class="font-body text-[9px] text-white/30 font-bold tracking-widest uppercase">March 15, 2026</span>
+<div class="h-px w-6 bg-white/10"></div>
+<span class="font-body text-[9px] text-white/30 font-bold tracking-widest uppercase">8 Min Read</span>
+</div>
+<h2 class="font-display text-2xl md:text-3xl leading-tight group-hover:text-brand-lime transition-colors">The Art of Subtraction: Minimalism</h2>
+<p class="font-body text-xs text-white/40 leading-relaxed line-clamp-2">In an era of digital noise, we explore why strategic minimalism remains the ultimate luxury.</p>
+<a class="flex items-center gap-2 text-brand-lime font-bold text-[10px] uppercase tracking-[0.2em] mt-2 group/btn" href="single-post.html">
+                            Read Story <i class="w-3 h-3 transition-transform group-hover/btn:translate-x-1" data-lucide="arrow-right"></i>
+</a>
+</div>
+</article>
+<!-- Blog Item 4 -->
+<article class="blog-card group reveal-up tft-inline-3">
+<a class="block overflow-hidden relative aspect-[4/5] mb-6 bg-brand-sidebar" href="blog.html">
+<img alt="Future Tech" class="blog-card-img w-full h-full object-cover grcale group-hover:grcale-0 transition-all duration-700" src="assets/img/project_kinetic.png">
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 bg-brand-lime text-brand-sidebar text-[9px] font-bold uppercase tracking-widest">Innovation</span>
+</div>
+</a>
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-3">
+<span class="font-body text-[9px] text-white/30 font-bold tracking-widest uppercase">March 12, 2026</span>
+<div class="h-px w-6 bg-white/10"></div>
+<span class="font-body text-[9px] text-white/30 font-bold tracking-widest uppercase">5 Min Read</span>
+</div>
+<h2 class="font-display text-2xl md:text-3xl leading-tight group-hover:text-brand-lime transition-colors">The Material Future: Carbon Design</h2>
+<p class="font-body text-xs text-white/40 leading-relaxed line-clamp-2">Detailing the rise of trlucent materi and carbon textures in immersive brand environments.</p>
+<a class="flex items-center gap-2 text-brand-lime font-bold text-[10px] uppercase tracking-[0.2em] mt-2 group/btn" href="single-post.html">
+                            Read Story <i class="w-3 h-3 transition-transform group-hover/btn:translate-x-1" data-lucide="arrow-right"></i>
+</a>
+</div>
+</article>
+<!-- Blog Item 5 -->
+<article class="blog-card group reveal-up">
+<a class="block overflow-hidden relative aspect-[4/5] mb-6 bg-brand-sidebar" href="single-post.html">
+<img alt="Urban Path" class="blog-card-img w-full h-full object-cover grcale group-hover:grcale-0 transition-all duration-700" src="assets/img/project_strategy.png">
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 bg-brand-lime text-brand-sidebar text-[9px] font-bold uppercase tracking-widest">Urbanism</span>
+</div>
+</a>
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-3">
+<span class="font-body text-[9px] text-white/30 font-bold tracking-widest uppercase">March 08, 2026</span>
+<div class="h-px w-6 bg-white/10"></div>
+<span class="font-body text-[9px] text-white/30 font-bold tracking-widest uppercase">7 Min Read</span>
+</div>
+<h2 class="font-display text-2xl md:text-3xl leading-tight group-hover:text-brand-lime transition-colors">Geometric Paths: Modern Landscaping</h2>
+<p class="font-body text-xs text-white/40 leading-relaxed line-clamp-2">How urban parks are integrating sharp architectural lines with organic flow.</p>
+<a class="flex items-center gap-2 text-brand-lime font-bold text-[10px] uppercase tracking-[0.2em] mt-2 group/btn" href="single-post.html">
+                            Read Story <i class="w-3 h-3 transition-transform group-hover/btn:translate-x-1" data-lucide="arrow-right"></i>
+</a>
+</div>
+</article>
+<!-- Blog Item 6 -->
+<article class="blog-card group reveal-up tft-inline-3">
+<a class="block overflow-hidden relative aspect-[4/5] mb-6 bg-brand-sidebar" href="blog.html">
+<img alt="Portfolio Book" class="blog-card-img w-full h-full object-cover grcale group-hover:grcale-0 transition-all duration-700" src="assets/img/project_workspace.png">
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 bg-brand-lime text-brand-sidebar text-[9px] font-bold uppercase tracking-widest">Design</span>
+</div>
+</a>
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-3">
+<span class="font-body text-[9px] text-white/30 font-bold tracking-widest uppercase">March 05, 2026</span>
+<div class="h-px w-6 bg-white/10"></div>
+<span class="font-body text-[9px] text-white/30 font-bold tracking-widest uppercase">10 Min Read</span>
+</div>
+<h2 class="font-display text-2xl md:text-3xl leading-tight group-hover:text-brand-lime transition-colors">The Tactile Web: Physical Layouts</h2>
+<p class="font-body text-xs text-white/40 leading-relaxed line-clamp-2">Trlating the weight and texture of physical portfolios into high-end digital experiences.</p>
+<a class="flex items-center gap-2 text-brand-lime font-bold text-[10px] uppercase tracking-[0.2em] mt-2 group/btn" href="single-post.html">
+                            Read Story <i class="w-3 h-3 transition-transform group-hover/btn:translate-x-1" data-lucide="arrow-right"></i>
+</a>
+</div>
+</article>
+</div>
+<!-- Pagination -->
+<div class="mt-20 flex items-center gap-4 reveal-up">
+<a class="w-12 h-12 flex items-center justify-center border border-white/10 font-bold text-xs bg-brand-lime text-brand-sidebar" href="blog.html">1</a>
+<a class="w-12 h-12 flex items-center justify-center border border-white/10 font-bold text-xs hover:border-brand-lime transition-colors" href="blog.html">2</a>
+<a class="w-12 h-12 flex items-center justify-center border border-white/10 font-bold text-xs hover:border-brand-lime transition-colors" href="blog.html">3</a>
+<div class="w-8 h-[1px] bg-white/10"></div>
+<a class="flex items-center gap-2 font-bold text-[10px] uppercase tracking-widest hover:text-brand-lime transition-colors" href="blog.html">Next <i class="w-4 h-4" data-lucide="chevron-right"></i></a>
+</div>
+</div>
+<!-- RIGHT CUSTOM SIDEBAR -->
+<aside class="w-full lg:w-[400px] xl:w-[450px] p-6 md:p-12 lg:p-10 lg:pt-20 lg:border-l border-white/5 flex flex-col gap-14 bg-black/5">
+<!-- Search Widget (Elite Fix) -->
+<div class="sidebar-widget p-8 reveal-up">
+<h3 class="font-body text-[10px] font-bold tracking-[0.3em] text-white/30 uppercase mb-6">Search Journal</h3>
+<div class="tft-sidebar-search-wrap">
+<input class="tft-sidebar-search-input" placeholder="Type keywords..." type="text">
+<button aria-label="Search" class="tft-sidebar-search-btn">
+<i class="w-4 h-4" data-lucide="search"></i>
+</button>
+</div>
+</div>
+<!-- Featured Story (Elite V1) -->
+<div class="sidebar-widget p-4 reveal-up">
+<a class="tft-widget-featured group" href="single-post.html">
+<img alt="Featured Story" class="tft-widget-featured__img" height="533" loading="lazy" src="assets/img/s7.png" width="400">
+<div class="tft-widget-featured__content">
+<span class="font-body text-[9px] font-bold tracking-[0.4em] text-brand-lime uppercase mb-3 block">Editorial Pick</span>
+<h3 class="font-display text-3xl leading-none text-white group-hover:text-brand-lime transition-colors italic">The Desert <br>Synthesis.</h3>
+</div>
+</a>
+</div>
+<!-- Categories Widget (Refined) -->
+<div class="sidebar-widget p-8 reveal-up">
+<h3 class="font-body text-[10px] font-bold tracking-[0.3em] text-white/30 uppercase mb-8">Categories</h3>
+<ul class="flex flex-col gap-5">
+<li class="category-item flex items-center justify-between cursor-pointer group">
+<div class="flex items-center gap-4">
+<span class="w-1.5 h-1.5 bg-brand-lime rounded-full shadow-[0_0_10px_rgba(163,255,0,0.5)]"></span>
+<span class="font-display text-xl text-white/60 group-hover:text-white transition-colors">Future Urbanism</span>
+</div>
+<span class="font-body text-[10px] text-white/20 font-bold border-l border-white/10 pl-4 tracking-widest">14</span>
+</li>
+<li class="category-item flex items-center justify-between cursor-pointer group">
+<div class="flex items-center gap-4">
+<span class="w-1.5 h-1.5 bg-white/20 rounded-full group-hover:bg-brand-lime transition-colors"></span>
+<span class="font-display text-xl text-white/60 group-hover:text-white transition-colors">Material Science</span>
+</div>
+<span class="font-body text-[10px] text-white/20 font-bold border-l border-white/10 pl-4 tracking-widest">09</span>
+</li>
+<li class="category-item flex items-center justify-between cursor-pointer group">
+<div class="flex items-center gap-4">
+<span class="w-1.5 h-1.5 bg-white/20 rounded-full group-hover:bg-brand-lime transition-colors"></span>
+<span class="font-display text-xl text-white/60 group-hover:text-white transition-colors">Digital Soul</span>
+</div>
+<span class="font-body text-[10px] text-white/20 font-bold border-l border-white/10 pl-4 tracking-widest">22</span>
+</li>
+</ul>
+</div>
+<!-- Studio Stats HUD (New) -->
+<div class="sidebar-widget p-4 reveal-up">
+<div class="tft-widget-stats">
+<div class="tft-stat-row">
+<span class="tft-stat-label">Global Projects</span>
+<span class="tft-stat-value">50+</span>
+</div>
+<div class="tft-stat-row">
+<span class="tft-stat-label">Active Awards</span>
+<span class="tft-stat-value">12</span>
+</div>
+<div class="tft-stat-row">
+<span class="tft-stat-label">Team Members</span>
+<span class="tft-stat-value">18</span>
+</div>
+</div>
+</div>
+<!-- Visual Tag Grid (New) -->
+<div class="sidebar-widget p-8 reveal-up">
+<h3 class="font-body text-[10px] font-bold tracking-[0.3em] text-white/30 uppercase mb-8">Journal Tags</h3>
+<div class="tft-tag-grid">
+<a class="tft-tag-item" href="blog.html">Vision</a>
+<a class="tft-tag-item" href="blog.html">Code</a>
+<a class="tft-tag-item" href="blog.html">Ethics</a>
+<a class="tft-tag-item" href="blog.html">Motion</a>
+<a class="tft-tag-item" href="blog.html">Luxury</a>
+<a class="tft-tag-item" href="blog.html">Space</a>
+</div>
+</div>
+<!-- Social Pulse Hub (New) -->
+<div class="sidebar-widget p-8 reveal-up">
+<h3 class="font-body text-[10px] font-bold tracking-[0.3em] text-white/30 uppercase mb-8">Connectivity</h3>
+<div class="tft-social-pulse-grid">
+<a class="tft-social-pulse-item group" href="https://www.instagram.com/" rel="noopener noreferrer" target="_blank">
+<div class="tft-pulse-dot"></div>
+<span class="font-body text-[11px] font-bold tracking-widest opacity-60 group-hover:opacity-100 transition-opacity">IN.</span>
+</a>
+<a class="tft-social-pulse-item group" href="https://www.behance.net/" rel="noopener noreferrer" target="_blank">
+<div class="tft-pulse-dot"></div>
+<span class="font-body text-[11px] font-bold tracking-widest opacity-60 group-hover:opacity-100 transition-opacity">BE.</span>
+</a>
+<a class="tft-social-pulse-item group" href="https://www.linkedin.com/" rel="noopener noreferrer" target="_blank">
+<div class="tft-pulse-dot"></div>
+<span class="font-body text-[11px] font-bold tracking-widest opacity-60 group-hover:opacity-100 transition-opacity">LI.</span>
+</a>
+<a class="tft-social-pulse-item group" href="https://dribbble.com/" rel="noopener noreferrer" target="_blank">
+<div class="tft-pulse-dot"></div>
+<span class="font-body text-[11px] font-bold tracking-widest opacity-60 group-hover:opacity-100 transition-opacity">DR.</span>
+</a>
+</div>
+</div>
+<!-- Newsletter Widget (Sync V3) -->
+<div class="sidebar-widget p-8 reveal-up relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-brand-lime/10 rounded-full blur-3xl -mr-16 -mt-16 transition-all duration-1000 group-hover:bg-brand-lime/25"></div>
+<h3 class="font-display text-3xl mb-4 relative z-10 italic">Stay <br>Inspired.</h3>
+<p class="font-body text-[11px] text-white/40 mb-8 relative z-10 leading-relaxed font-light">Curated design insights delivered to your inbox weekly.</p>
+<div class="relative z-10">
+<form class="tft-footer-newsletter">
+<input class="tft-footer-newsletter-input" placeholder="Email address" type="email">
+<button aria-label="Subscribe" class="tft-footer-submit-btn" type="submit">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><line x1="5" x2="19" y1="12" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+</button>
+</form>
+</div>
+</div>
+</aside></div>
+<!-- Footer -->
+<footer class="tft-vanguard-footer">
+<div class="tft-footer-main-grid">
+<div class="tft-footer-column reveal-up">
+<div class="mb-10">
+<img alt="Realiz Logo" class="h-12 w-auto opacity-80 hover:opacity-100 transition-opacity" src="assets/img/logo2.png">
+</div>
+<p class="text-sm text-white/40 max-w-xs leading-relaxed font-body">
+                A boutique digital laboratory specialized in high-fidelity architectural web experiences.
+            </p>
+</div>
+<div class="tft-footer-column reveal-up tft-inline-3">
+<h3>Discover</h3>
+<nav>
+<a class="tft-footer-link" href="about-v2.html">The Studio</a>
+<a class="tft-footer-link" href="works.html">Showcase</a>
+<a class="tft-footer-link" href="blog.html">Journal</a>
+<a class="tft-footer-link" href="contact.html">Get in Touch</a>
+</nav>
+</div>
+<div class="tft-footer-column reveal-up tft-inline-4">
+<h3>Connect</h3>
+<div class="tft-footer-socials">
+<a class="tft-footer-link" href="https://www.instagram.com/" rel="noopener noreferrer" target="_blank">Instagram</a>
+<a class="tft-footer-link" href="https://www.behance.net/" rel="noopener noreferrer" target="_blank">Behance</a>
+<a class="tft-footer-link" href="https://www.linkedin.com/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+<a class="tft-footer-link" href="https://dribbble.com/" rel="noopener noreferrer" target="_blank">Dribbble</a>
+</div>
+</div>
+<div class="tft-footer-column reveal-up tft-inline-5">
+<h3>Newsletter</h3>
+<p class="text-xs text-white/30 mb-8 italic font-body">Join our elite circle for architectural design insights.</p>
+<form class="tft-footer-newsletter">
+<input class="tft-footer-newsletter-input" placeholder="Email address" type="email">
+<button class="tft-footer-submit-btn" type="submit">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><line x1="5" x2="19" y1="12" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+</button>
+</form>
+</div>
+</div>
+<div class="tft-footer-bottom reveal-up">
+<span class="tft-copyright">© 2026 Realiz. All rights reserved.</span>
+<div class="flex gap-8">
+<a class="tft-copyright hover:text-white transition-colors" href="privacy.html">Privacy</a>
+<a class="tft-copyright hover:text-white transition-colors" href="terms.html">Terms</a>
+</div>
+<a aria-label="Back to top" class="tft-back-to-top group" href="#page-top">
+<svg class="transition-transform group-hover:-translate-y-1" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"><line x1="12" x2="12" y1="19" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+</a>
+</div>
+</footer>
+<script src="assets/js/lucide-local.js"></script>
+<script src="assets/js/main.js"></script>
+</div></body>
+</html>

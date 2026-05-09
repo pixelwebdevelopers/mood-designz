@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Realiz - Creative Agency</title>
+<!-- Fonts -->
+<!-- Icons (Lucide) -->
+<meta content="Clean homepage variation for the Realiz agency HTML template focused on readability and presentation." name="description"/>
+<link href="assets/css/main.css" rel="stylesheet"/>
+</head>
+<body class="relative h-[100dvh] w-full bg-brand-bg text-white tft-page-home-6" id="page-top">
+<!-- MOBILE HEADER -->
+<header class="fixed top-0 left-0 w-full h-[70px] bg-white z-[60] flex md:hidden items-center justify-between border-b border-gray-200 text-brand-sidebar">
+<a class="flex items-center" href="index.html">
+<img alt="Realiz Logo" class="h-6 w-auto" src="assets/img/logo1.png"/>
+</a>
+<button aria-label="Toggle menu" class="menu-toggle w-[50px] h-[50px] mr-3 rounded-sm bg-brand-sidebar flex flex-col items-center justify-center cursor-pointer relative shadow-md z-[60]" type="button">
+<span class="relative w-[28px] h-[18px] block">
+<span class="line-1 hamburger-line absolute top-0 right-0 w-[28px] h-[2px] bg-brand-lime rounded-full"></span>
+<span class="line-2 hamburger-line absolute top-[8px] right-0 w-[28px] h-[2px] bg-brand-lime rounded-full"></span>
+<span class="line-3 hamburger-line absolute top-[16px] right-0 w-[20px] h-[2px] bg-brand-lime rounded-full"></span>
+</span>
+</button>
+</header>
+<!-- FIXED LEFT SIDEBAR -->
+<aside class="hidden md:flex w-[140px] h-screen fixed left-0 top-0 z-50 bg-white border-r border-gray-200 shadow-[10px_0_30px_rgba(13,38,32,0.01)] text-brand-sidebar">
+<div class="rlz-brand-logo-box w-[40px] h-full bg-brand-lime border-r border-gray-200 flex items-center justify-center overflow-hidden shrink-0">
+<span class="text-vertical text-[9px] tracking-[0.2em] font-medium whitespace-nowrap uppercase">Design - Strategy - Motion - Code - Vision</span>
+</div>
+<div class="flex-1 h-full flex flex-col items-center justify-between pb-8">
+<div class="w-full h-[140px] flex items-center justify-center relative after:absolute after:bottom-0 after:left-4 after:right-4 after:h-px after:bg-gray-100 shrink-0">
+<button aria-label="Toggle menu" class="menu-toggle w-[70px] h-[70px] rounded-sm bg-brand-sidebar flex flex-col items-center justify-center cursor-pointer relative group shadow-md z-50" type="button">
+<span class="relative w-[28px] h-[18px] block">
+<span class="line-1 hamburger-line absolute top-0 right-0 w-[28px] h-[2px] bg-brand-lime rounded-full"></span>
+<span class="line-2 hamburger-line absolute top-[8px] right-0 w-[28px] h-[2px] bg-brand-lime rounded-full"></span>
+<span class="line-3 hamburger-line absolute top-[16px] right-0 w-[20px] group-hover:w-[28px] h-[2px] bg-brand-lime rounded-full"></span>
+</span>
+</button>
+</div>
+<div class="flex flex-col items-center gap-10 mt-8">
+<a class="tft-sidebar-logo-vertical" href="index.html">
+<img alt="Realiz Logo" src="assets/img/main-logo1.png"/>
+</a>
+</div>
+<div class="flex-1"></div>
+<div class="flex flex-col items-center">
+<div class="relative group flex flex-col items-center mb-6 w-[100px]">
+<div class="absolute bottom-[52px] pb-8 flex flex-col gap-1 items-center pointer-events-none group-hover:pointer-events-auto z-10 w-full">
+<div class="social-item social-1 font-bold text-xs opacity-50"><a href="https://www.instagram.com/" rel="noopener noreferrer" target="_blank">In.</a></div>
+<div class="social-item social-2 font-bold text-xs opacity-50"><a href="https://www.behance.net/" rel="noopener noreferrer" target="_blank">Be.</a></div>
+<div class="social-item social-3 font-bold text-xs opacity-50"><a href="https://www.linkedin.com/" rel="noopener noreferrer" target="_blank">Li.</a></div>
+<div class="social-item social-4 font-bold text-xs opacity-50"><a href="https://github.com/" rel="noopener noreferrer" target="_blank">Gh.</a></div>
+<div class="social-item social-5 font-bold text-xs opacity-50"><a href="https://dribbble.com/" rel="noopener noreferrer" target="_blank">Dr.</a></div>
+</div>
+<div class="w-[58px] h-[58px] rounded-full border border-brand-sidebar flex items-center justify-center bg-brand-sidebar text-brand-lime shadow-sm transition-all hover:bg-brand-lime hover:text-brand-sidebar mt-auto">
+<i class="w-6 h-6 animate-wave" data-lucide="arrow-up-right"></i>
+</div>
+</div>
+<span class="text-vertical text-[10px] tracking-[0.15em] opacity-80 uppercase">© 2026 Realiz.</span>
+</div>
+</div>
+</aside>
+<!-- MENU PANEL -->
+<nav class="fixed left-0 md:left-[140px] top-[70px] md:top-0 h-[calc(100dvh-70px)] md:h-screen w-full md:w-[360px] bg-brand-menu border-r border-white/5 transform -translate-x-full transition-transform duration-600 ease-[cubic-bezier(0.77,0,0.175,1)] z-[55] md:z-40 overflow-y-auto menu-no-scrollbar text-white" id="menu-panel">
+<div class="w-full h-full pt-12 md:pt-[120px] pb-20 flex flex-col px-10">
+<ul class="w-full mt-4 flex flex-col">
+<li class="w-full border-b border-white/10 relative">
+<div class="py-6 w-full flex items-center justify-between cursor-pointer group js-accordion-toggle" data-accordion-toggle="home" role="button" tabindex="0">
+<span class="font-body text-[11px] text-white/30 tracking-widest">-01</span>
+<div class="flex items-center gap-3 ml-auto relative z-20">
+<span class="font-display text-2xl text-white/70 group-hover:text-white transition-colors" id="home-text">Home</span>
+<div class="w-5 h-5 rounded-full bg-brand-lime flex items-center justify-center">
+<i class="w-3 h-3 text-brand-sidebar transition-transform duration-300" data-lucide="chevron-down" id="home-icon"></i>
+</div>
+</div>
+</div>
+<ul class="flex flex-col items-end pr-8 overflow-hidden transition-all duration-300 max-h-0 opacity-0" id="home-submenu">
+<li class="pt-2 pb-4"><a class="font-display text-lg text-white/50 hover:text-white" href="index.html">Home 1 (Book)</a></li>
+<li class="pb-4"><a class="font-display text-lg text-white/50 hover:text-white" href="home-2.html">Home 2 (Innovate)</a></li>
+<li class="pb-4"><a class="font-display text-lg text-white/50 hover:text-white" href="home-3.html">Home 3 (Cards)</a></li>
+<li class="pb-4"><a class="font-display text-lg text-white/50 hover:text-white" href="home-4.html">Home 4 (Columns)</a></li>
+<li class="pb-4"><a class="font-display text-lg text-white/50 hover:text-white" href="home-5.html">Home 5 (List)</a></li>
+<li class="pb-4"><a class="font-display text-lg text-white/50 hover:text-white" href="home-6.html">Home 6 (Clean)</a></li>
+<li class="pb-4"><a class="font-display text-lg text-white/50 hover:text-white" href="home-7.html">Home 7 (Arch)</a></li>
+<li class="pb-4"><a class="font-display text-lg text-white/50 hover:text-white" href="home-8.html">Home 8 (Aurora)</a></li>
+</ul>
+</li>
+<li class="w-full border-b border-white/10 relative">
+<div class="py-6 w-full flex items-center justify-between cursor-pointer group js-accordion-toggle" data-accordion-toggle="work" role="button" tabindex="0">
+<span class="font-body text-[11px] text-white/30 tracking-widest">-02</span>
+<div class="flex items-center gap-3 ml-auto relative z-20">
+<span class="font-display text-2xl text-white/70 group-hover:text-white transition-colors" id="work-text">Portfolio</span>
+<div class="w-5 h-5 rounded-full bg-brand-lime flex items-center justify-center">
+<i class="w-3 h-3 text-brand-sidebar transition-transform duration-300" data-lucide="chevron-down" id="work-icon"></i>
+</div>
+</div>
+</div>
+<ul class="flex flex-col items-end pr-8 overflow-hidden transition-all duration-300 max-h-0 opacity-0" id="work-submenu">
+<li class="pt-2 pb-4"><a class="font-display text-lg text-white/50 hover:text-white" href="services.html">Services</a></li>
+<li class="pb-4"><a class="font-display text-lg text-white/50 hover:text-white" href="works.html">Works</a></li>
+<li class="pb-4"><a class="font-display text-lg text-white/50 hover:text-white" href="works-alt.html">Works Alt</a></li>
+<li class="pb-6"><a class="font-display text-lg text-white/50 hover:text-white" href="project-detail.html">Project Detail</a></li>
+</ul>
+</li>
+<li class="w-full border-b border-white/10 relative">
+<div class="py-6 w-full flex items-center justify-between cursor-pointer group js-accordion-toggle" data-accordion-toggle="about" role="button" tabindex="0">
+<span class="font-body text-[11px] text-white/30 tracking-widest">-03</span>
+<div class="flex items-center gap-3 ml-auto relative z-20">
+<span class="font-display text-2xl text-white/70 group-hover:text-white transition-colors" id="about-text">Studio</span>
+<div class="w-5 h-5 rounded-full bg-brand-lime flex items-center justify-center">
+<i class="w-3 h-3 text-brand-sidebar transition-transform duration-300" data-lucide="chevron-down" id="about-icon"></i>
+</div>
+</div>
+</div>
+<ul class="flex flex-col items-end pr-8 overflow-hidden transition-all duration-300 max-h-0 opacity-0" id="about-submenu">
+<li class="pt-2 pb-4"><a class="font-display text-lg text-white/50 hover:text-white" href="about-v2.html">About</a></li>
+<li class="pb-4"><a class="font-display text-lg text-white/50 hover:text-white" href="about-alt.html">About Alt</a></li>
+<li class="pb-6"><a class="font-display text-lg text-white/50 hover:text-white" href="contact.html">Contact</a></li>
+</ul>
+</li>
+<li class="w-full border-b border-white/10 relative">
+<div class="py-6 w-full flex items-center justify-between cursor-pointer group js-accordion-toggle" data-accordion-toggle="journal" role="button" tabindex="0">
+<span class="font-body text-[11px] text-white/30 tracking-widest">-04</span>
+<div class="flex items-center gap-3 ml-auto relative z-20">
+<span class="font-display text-2xl text-white/70 group-hover:text-white transition-colors" id="journal-text">Journal</span>
+<div class="w-5 h-5 rounded-full bg-brand-lime flex items-center justify-center">
+<i class="w-3 h-3 text-brand-sidebar transition-transform duration-300" data-lucide="chevron-down" id="journal-icon"></i>
+</div>
+</div>
+</div>
+<ul class="flex flex-col items-end pr-8 overflow-hidden transition-all duration-300 max-h-0 opacity-0" id="journal-submenu">
+<li class="pt-2 pb-4"><a class="font-display text-lg text-white/50 hover:text-white" href="blog.html">Blog</a></li>
+<li class="pb-6"><a class="font-display text-lg text-white/50 hover:text-white" href="single-post.html">Single Post</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+<!-- ============================================== -->
+<!-- CONTENT WRAPPER                                -->
+<!-- ============================================== -->
+<div class="absolute left-0 md:left-[140px] right-0 top-[70px] md:top-0 bottom-0 overflow-hidden z-10 bg-brand-bg">
+<main class="view-section absolute inset-0 flex flex-col min-h-0 z-10 opacity-100 scale-100 pointer-events-auto bg-[#f8f9fa] text-brand-sidebar overflow-y-auto no-scrollbar" id="view-home-6"><h1 class="tft-visually-hidden">realiz. Home Variant Six</h1>
+<!-- Premium Editorial Header HUD -->
+<header class="h6-header-hud">
+<div class="h6-header-hud__meta">Selection // Archive // 2026</div>
+<div class="h6-header-hud__top">
+<h2 class="h6-header-hud__title">Selected<br/>Works</h2>
+</div>
+</header>
+<ul class="w-full flex flex-col border-t border-black/5">
+<li class="h6-row group relative border-b border-black/5 overflow-hidden bg-white hover:bg-[#f0f2f1] transition-colors duration-500">
+<div class="absolute inset-x-0 inset-y-0 pointer-events-none flex items-center opacity-0 group-hover:opacity-[0.05] transition-opacity duration-700 overflow-hidden select-none">
+<div class="flex animate-marquee whitespace-nowrap">
+<span class="font-display text-[100px] md:text-[150px] leading-none px-4 uppercase">SUMMER
+                                RIDE // </span>
+<span class="font-display text-[100px] md:text-[150px] leading-none px-4 uppercase">SUMMER
+                                RIDE // </span>
+</div>
+</div>
+<div class="py-8 md:py-12 px-6 md:px-16 lg:px-24 flex flex-row items-center w-full relative z-10">
+<div class="h6-index w-12 md:w-24 text-gray-400 font-body text-sm md:text-base transition-colors group-hover:text-brand-lime font-medium">
+                            01</div>
+<h3 class="font-display font-light text-xl md:text-4xl lg:text-5xl text-gray-400 group-hover:text-brand-sidebar transition-colors duration-500 tracking-wide flex-1">
+                            Summer Ride</h3>
+<div class="ml-auto flex items-center justify-end w-auto">
+<div class="text-[10px] md:text-xs tracking-widest uppercase text-gray-400 group-hover:text-brand-sidebar transition-colors hidden lg:block w-[150px] text-right pr-12">
+                                Art Direction</div>
+<div class="relative w-[150px] h-[60px]">
+<img alt="Home 6 Image 1" class="h6-fan-img absolute top-0 left-1/2 -ml-8 w-16 h-16 object-cover shadow-xl border-2 border-white rounded-[2px] tft-inline-20" src="assets/img/s1.jpg"/>
+<img alt="Home 6 Image 1b" class="h6-fan-img absolute top-0 left-1/2 -ml-8 w-16 h-16 object-cover shadow-xl border-2 border-white rounded-[2px] tft-inline-21" src="assets/img/s2.jpg"/>
+<img alt="Home 6 Image 2" class="h6-fan-img absolute top-0 left-1/2 -ml-8 w-16 h-16 object-cover shadow-xl border-2 border-white rounded-[2px] tft-inline-22" src="assets/img/s3.jpg"/>
+<img alt="Home 6 Image 2b" class="h6-fan-img absolute top-0 left-1/2 -ml-8 w-16 h-16 object-cover shadow-xl border-2 border-white rounded-[2px] tft-inline-23" src="assets/img/s4.png"/>
+<img alt="Home 6 Image 3" class="h6-fan-img absolute top-0 left-1/2 -ml-8 w-16 h-16 object-cover shadow-xl border-2 border-white rounded-[2px] tft-inline-24" src="assets/img/s5.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li class="h6-row group relative border-b border-black/5 overflow-hidden bg-white hover:bg-[#f0f2f1] transition-colors duration-500">
+<div class="absolute inset-x-0 inset-y-0 pointer-events-none flex items-center opacity-0 group-hover:opacity-[0.05] transition-opacity duration-700 overflow-hidden select-none">
+<div class="flex animate-marquee whitespace-nowrap">
+<span class="font-display text-[100px] md:text-[150px] leading-none px-4 uppercase">URBAN
+                                OASIS // </span>
+<span class="font-display text-[100px] md:text-[150px] leading-none px-4 uppercase">URBAN
+                                OASIS // </span>
+</div>
+</div>
+<div class="py-8 md:py-12 px-6 md:px-16 lg:px-24 flex flex-row items-center w-full relative z-10">
+<div class="h6-index w-12 md:w-24 text-gray-400 font-body text-sm md:text-base transition-colors group-hover:text-brand-lime font-medium">
+                            02</div>
+<h3 class="font-display font-light text-xl md:text-4xl lg:text-5xl text-gray-400 group-hover:text-brand-sidebar transition-colors duration-500 tracking-wide flex-1">
+                            Urban Oasis</h3>
+<div class="ml-auto flex items-center justify-end w-auto">
+<div class="text-[10px] md:text-xs tracking-widest uppercase text-gray-400 group-hover:text-brand-sidebar transition-colors hidden lg:block w-[150px] text-right pr-12">
+                                Photography</div>
+<div class="relative w-[150px] h-[60px]">
+<img alt="Home 6 Image 4" class="h6-fan-img absolute top-0 left-1/2 -ml-8 w-16 h-16 object-cover shadow-xl border-2 border-white rounded-[2px] tft-inline-20" src="assets/img/project_strategy.png"/>
+<img alt="Home 6 Image 5" class="h6-fan-img absolute top-0 left-1/2 -ml-8 w-16 h-16 object-cover shadow-xl border-2 border-white rounded-[2px] tft-inline-21" src="assets/img/project_vision.png"/>
+<img alt="Home 6 Image 6" class="h6-fan-img absolute top-0 left-1/2 -ml-8 w-16 h-16 object-cover shadow-xl border-2 border-white rounded-[2px] tft-inline-22" src="assets/img/project_workspace.png"/>
+<img alt="Home 6 Image 7" class="h6-fan-img absolute top-0 left-1/2 -ml-8 w-16 h-16 object-cover shadow-xl border-2 border-white rounded-[2px] tft-inline-23" src="assets/img/s7.png"/>
+<img alt="Home 6 Image 8" class="h6-fan-img absolute top-0 left-1/2 -ml-8 w-16 h-16 object-cover shadow-xl border-2 border-white rounded-[2px] tft-inline-24" src="assets/img/s8.png"/>
+</div>
+</div>
+</div>
+</li>
+<li class="h6-row group relative border-b border-black/5 overflow-hidden bg-white hover:bg-[#f0f2f1] transition-colors duration-500">
+<div class="absolute inset-x-0 inset-y-0 pointer-events-none flex items-center opacity-0 group-hover:opacity-[0.05] transition-opacity duration-700 overflow-hidden select-none">
+<div class="flex animate-marquee whitespace-nowrap">
+<span class="font-display text-[100px] md:text-[150px] leading-none px-4 uppercase">VELVET
+                                UNDERGROUND // </span>
+<span class="font-display text-[100px] md:text-[150px] leading-none px-4 uppercase">VELVET
+                                UNDERGROUND // </span>
+</div>
+</div>
+<div class="py-8 md:py-12 px-6 md:px-16 lg:px-24 flex flex-row items-center w-full relative z-10">
+<div class="h6-index w-12 md:w-24 text-gray-400 font-body text-sm md:text-base transition-colors group-hover:text-brand-lime font-medium">
+                            03</div>
+<h3 class="font-display font-light text-xl md:text-4xl lg:text-5xl text-gray-400 group-hover:text-brand-sidebar transition-colors duration-500 tracking-wide flex-1">
+                            Velvet Underground</h3>
+<div class="ml-auto flex items-center justify-end w-auto">
+<div class="text-[10px] md:text-xs tracking-widest uppercase text-gray-400 group-hover:text-brand-sidebar transition-colors hidden lg:block w-[150px] text-right pr-12">
+                                Interior Design</div>
+<div class="relative w-[150px] h-[60px]">
+<img alt="Home 6 Image 9" class="h6-fan-img absolute top-0 left-1/2 -ml-8 w-16 h-16 object-cover shadow-xl border-2 border-white rounded-[2px] tft-inline-25" src="assets/img/s7.png"/>
+<img alt="Home 6 Image 10" class="h6-fan-img absolute top-0 left-1/2 -ml-8 w-16 h-16 object-cover shadow-xl border-2 border-white rounded-[2px] tft-inline-26" src="assets/img/s8.png"/>
+<img alt="Home 6 Image 11" class="h6-fan-img absolute top-0 left-1/2 -ml-8 w-16 h-16 object-cover shadow-xl border-2 border-white rounded-[2px] tft-inline-27" src="assets/img/s1.jpg"/>
+<img alt="Home 6 Image 12" class="h6-fan-img absolute top-0 left-1/2 -ml-8 w-16 h-16 object-cover shadow-xl border-2 border-white rounded-[2px] tft-inline-28" src="assets/img/s2.jpg"/>
+<img alt="Home 6 Image 13" class="h6-fan-img absolute top-0 left-1/2 -ml-8 w-16 h-16 object-cover shadow-xl border-2 border-white rounded-[2px] tft-inline-29" src="assets/img/s3.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li class="h6-row group relative border-b border-black/5 overflow-hidden bg-white hover:bg-[#f0f2f1] transition-colors duration-500">
+<div class="absolute inset-x-0 inset-y-0 pointer-events-none flex items-center opacity-0 group-hover:opacity-[0.05] transition-opacity duration-700 overflow-hidden select-none">
+<div class="flex animate-marquee whitespace-nowrap">
+<span class="font-display text-[100px] md:text-[150px] leading-none px-4 uppercase">KINETIC
+                                FLOW // </span>
+<span class="font-display text-[100px] md:text-[150px] leading-none px-4 uppercase">KINETIC
+                                FLOW // </span>
+</div>
+</div>
+<div class="py-8 md:py-12 px-6 md:px-16 lg:px-24 flex flex-row items-center w-full relative z-10">
+<div class="h6-index w-12 md:w-24 text-gray-400 font-body text-sm md:text-base transition-colors group-hover:text-brand-lime font-medium">
+                            04</div>
+<h3 class="font-display font-light text-xl md:text-4xl lg:text-5xl text-gray-400 group-hover:text-brand-sidebar transition-colors duration-500 tracking-wide flex-1">
+                            Kinetic Flow</h3>
+<div class="ml-auto flex items-center justify-end w-auto">
+<div class="text-[10px] md:text-xs tracking-widest uppercase text-gray-400 group-hover:text-brand-sidebar transition-colors hidden lg:block w-[150px] text-right pr-12">
+                                Motion Design</div>
+<div class="relative w-[150px] h-[60px]">
+<img alt="Home 6 Image 15" class="h6-fan-img absolute top-0 left-1/2 -ml-8 w-16 h-16 object-cover shadow-xl border-2 border-white rounded-[2px] tft-inline-20" src="assets/img/s4.png"/>
+<img alt="Home 6 Image 16" class="h6-fan-img absolute top-0 left-1/2 -ml-8 w-16 h-16 object-cover shadow-xl border-2 border-white rounded-[2px] tft-inline-21" src="assets/img/s5.jpg"/>
+<img alt="Home 6 Image 17" class="h6-fan-img absolute top-0 left-1/2 -ml-8 w-16 h-16 object-cover shadow-xl border-2 border-white rounded-[2px] tft-inline-22" src="assets/img/s6.jpg"/>
+<img alt="Home 6 Image 18" class="h6-fan-img absolute top-0 left-1/2 -ml-8 w-16 h-16 object-cover shadow-xl border-2 border-white rounded-[2px] tft-inline-23" src="assets/img/s7.png"/>
+<img alt="Home 6 Image 18b" class="h6-fan-img absolute top-0 left-1/2 -ml-8 w-16 h-16 object-cover shadow-xl border-2 border-white rounded-[2px] tft-inline-24" src="assets/img/s8.png"/>
+</div>
+</div>
+</div>
+</li>
+<li class="h6-row group relative border-b border-black/5 overflow-hidden bg-white hover:bg-[#f0f2f1] transition-colors duration-500">
+<div class="absolute inset-x-0 inset-y-0 pointer-events-none flex items-center opacity-0 group-hover:opacity-[0.05] transition-opacity duration-700 overflow-hidden select-none">
+<div class="flex animate-marquee whitespace-nowrap">
+<span class="font-display text-[100px] md:text-[150px] leading-none px-4 uppercase">PRIMAL
+                                INSTINCT // </span>
+<span class="font-display text-[100px] md:text-[150px] leading-none px-4 uppercase">PRIMAL
+                                INSTINCT // </span>
+</div>
+</div>
+<div class="py-8 md:py-12 px-6 md:px-16 lg:px-24 flex flex-row items-center w-full relative z-10">
+<div class="h6-index w-12 md:w-24 text-gray-400 font-body text-sm md:text-base transition-colors group-hover:text-brand-lime font-medium">
+                            05</div>
+<h3 class="font-display font-light text-xl md:text-4xl lg:text-5xl text-gray-400 group-hover:text-brand-sidebar transition-colors duration-500 tracking-wide flex-1">
+                            Primal Instinct</h3>
+<div class="ml-auto flex items-center justify-end w-auto">
+<div class="text-[10px] md:text-xs tracking-widest uppercase text-gray-400 group-hover:text-brand-sidebar transition-colors hidden lg:block w-[150px] text-right pr-12">
+                                Branding</div>
+<div class="relative w-[150px] h-[60px]">
+<img alt="Home 6 Image 19" class="h6-fan-img absolute top-0 left-1/2 -ml-8 w-16 h-16 object-cover shadow-xl border-2 border-white rounded-[2px] tft-inline-20" src="assets/img/project_vision.png"/>
+<img alt="Home 6 Image 20" class="h6-fan-img absolute top-0 left-1/2 -ml-8 w-16 h-16 object-cover shadow-xl border-2 border-white rounded-[2px] tft-inline-21" src="assets/img/project_strategy.png"/>
+<img alt="Home 6 Image 21" class="h6-fan-img absolute top-0 left-1/2 -ml-8 w-16 h-16 object-cover shadow-xl border-2 border-white rounded-[2px] tft-inline-22" src="assets/img/project_workspace.png"/>
+<img alt="Home 6 Image 22" class="h6-fan-img absolute top-0 left-1/2 -ml-8 w-16 h-16 object-cover shadow-xl border-2 border-white rounded-[2px] tft-inline-23" src="assets/img/s6.jpg"/>
+<img alt="Home 6 Image 23" class="h6-fan-img absolute top-0 left-1/2 -ml-8 w-16 h-16 object-cover shadow-xl border-2 border-white rounded-[2px] tft-inline-24" src="assets/img/s8.png"/>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</main>
+</div>
+<!-- Custom Magnetic Cursor for Home 6 - MOVED TO BODY ROOT FOR 1:1 PRECISION -->
+<div class="fixed top-0 left-0 w-24 h-24 bg-brand-lime rounded-full pointer-events-none z-[9999] flex items-center justify-center font-display italic text-lg text-brand-sidebar shadow-xl opacity-0 scale-50 transition-opacity duration-300 ease-out hidden md:flex" id="h6-cursor">
+        expand
+    </div>
+<script src="assets/js/lucide-local.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
