@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Case Study - Mood Designz</title>
+    <meta name="description" content="Detailed case study of our work at Mood Designz. Explore the process, the challenge, and the award-winning result."/>
+    
+    <!-- Realiz Assets -->
+    <link href="realiz/assets/css/main.css" rel="stylesheet"/>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --brand-lime: #c3ff06;
+            --brand-bg: #0d2620;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            background-color: var(--brand-bg);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Conflict Fixes */
+        aside, header.fixed { display: none !important; }
+        .tf-header { display: none !important; }
+    </style>
+    <link rel="stylesheet" href="header.css">
+</head>
+<body class="relative h-[100dvh] w-screen bg-brand-bg text-white overflow-hidden selection:bg-brand-lime selection:text-brand-sidebar tft-page-project-detail" id="page-top">
+
+    <div id="header-container"></div>
+
+    <div id="main-scroll-container" class="absolute inset-0 overflow-y-auto z-10 bg-brand-bg">
+        <article id="project-app">
+            <!-- HERO SECTION -->
+            <header class="relative w-full h-screen flex items-center justify-center overflow-hidden">
+                <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('realiz/assets/img/project-1.jpg'); opacity: 0.4;"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-bg via-transparent to-transparent"></div>
+                
+                <div class="relative z-10 text-center px-8">
+                    <div class="flex items-center justify-center gap-4 mb-8 reveal-up">
+                        <span class="font-body text-xs text-brand-lime uppercase tracking-[0.4em]">Creative Direction // 2026</span>
+                    </div>
+                    <h1 class="font-display text-6xl md:text-[10vw] lg:text-[12vw] leading-none tracking-tighter text-white reveal-up">Project <br><span class="italic text-brand-lime">Mastery.</span></h1>
+                    
+                    <div class="mt-20 reveal-up">
+                        <a href="portfolio.html" class="px-10 py-5 bg-brand-lime text-black font-bold uppercase tracking-widest text-xs hover:bg-white transition-all">View Full Gallery</a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- THE BRIEF -->
+            <section class="py-32 px-8 max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
+                    <div class="reveal-up">
+                        <span class="font-body text-xs text-brand-lime uppercase tracking-widest mb-8 block">The Brief</span>
+                        <h2 class="font-display text-4xl md:text-5xl leading-tight text-white mb-10">A synthesis of bold storytelling and digital precision.</h2>
+                    </div>
+                    <div class="reveal-up">
+                        <p class="font-body text-xl text-white/70 leading-relaxed font-light">
+                            We were challenged to create a digital experience that resonates with a high-end audience. The goal was to merge brutalist architecture with fluid interactive design, ensuring every pixel serves a purpose.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GALLERY -->
+            <section class="pb-32 px-8 max-w-screen-2xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div class="reveal-up aspect-video overflow-hidden">
+                        <img src="realiz/assets/img/project-2.jpg" alt="Detail" class="w-full h-full object-cover">
+                    </div>
+                    <div class="reveal-up aspect-square overflow-hidden md:translate-y-20">
+                        <img src="realiz/assets/img/project-3.jpg" alt="Detail" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </section>
+
+            <!-- TECH SPECS -->
+            <section class="py-32 border-y border-white/5 bg-white/5 reveal-up">
+                <div class="max-w-7xl mx-auto px-8">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-20">
+                        <div>
+                            <h3 class="font-display text-3xl text-white mb-8">Framework</h3>
+                            <p class="text-white/40 text-xs uppercase tracking-widest leading-loose">GSAP / Tailwind / Vanilla JS</p>
+                        </div>
+                        <div>
+                            <h3 class="font-display text-3xl text-white mb-8">Role</h3>
+                            <p class="text-white/40 text-xs uppercase tracking-widest leading-loose">Design / Development / Strategy</p>
+                        </div>
+                        <div>
+                            <h3 class="font-display text-3xl text-white mb-8">Year</h3>
+                            <p class="text-white/40 text-xs uppercase tracking-widest leading-loose">2026</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+        <!-- FOOTER -->
+        <footer class="py-20 border-t border-white/5 bg-brand-bg">
+            <div class="container mx-auto px-6 text-center">
+                <img src="logo.png" alt="Logo" class="h-10 mx-auto mb-10 opacity-50">
+                <p class="text-white/30 text-sm">© 2026 Mood Designz. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JS Scripts -->
+    <script src="realiz/assets/js/lucide-local.js"></script>
+    <script src="realiz/assets/js/main.js"></script>
+    <script src="header.js"></script>
+</body>
+</html>

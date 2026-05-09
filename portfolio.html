@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Portfolio - Mood Designz</title>
+    <meta name="description" content="Explore the curated archive of Mood Designz. A showcase of our master gallery across identity, concept, and spatial design."/>
+    
+    <!-- Realiz Assets -->
+    <link href="realiz/assets/css/main.css" rel="stylesheet"/>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --brand-lime: #c3ff06;
+            --brand-bg: #0d2620;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            background-color: var(--brand-bg);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* CUSTOM PILL HEADER */
+        /* Conflict Fixes */
+        .tf-header { display: none !important; }
+    </style>
+    <link rel="stylesheet" href="header.css">
+</head>
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--brand-lime);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Conflict Fixes */
+        aside, header.fixed { display: none !important; }
+    </style>
+</head>
+<body class="relative h-[100dvh] w-screen bg-brand-bg text-white overflow-hidden selection:bg-brand-lime selection:text-brand-sidebar tft-page-works" id="page-top">
+
+    <div id="header-container"></div>
+
+    <div id="main-scroll-container" class="absolute inset-0 overflow-y-auto z-10 bg-brand-bg">
+        <!-- SECTION 1: HERO -->
+        <section class="pt-32 md:pt-46 pb-24 px-8 md:px-20 relative overflow-hidden">
+            <div class="container mx-auto relative z-20">
+                <div class="flex flex-col md:flex-row items-end justify-between gap-16 reveal-up active">
+                    <div class="max-w-6xl">
+                        <div class="flex items-center gap-4 mb-8">
+                            <span class="w-12 h-[1px] bg-brand-lime"></span>
+                            <span class="font-body text-[10px] font-bold tracking-[0.6em] text-brand-lime uppercase">Curated Portfolio // 2026 Archive</span>
+                        </div>
+                        <h1 class="font-display text-6xl md:text-9xl leading-[0.9] tracking-tighter text-white">The Master <br> <span class="italic text-brand-lime">Gallery.</span></h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: ELITE GRID -->
+        <section class="px-8 md:px-20 pb-64 relative z-20">
+            <div class="tft-elite-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
+                <!-- Project 1 -->
+                <article class="tft-card aspect-[4/5] relative group overflow-hidden reveal-up active" data-category="identity">
+                    <div class="tft-card__media-wrap h-full w-full">
+                        <img alt="Sovereign Identity" class="tft-card__media h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" src="realiz/assets/img/s1.jpg"/>
+                    </div>
+                    <div class="tft-card__overlay absolute inset-0 bg-brand-bg/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="tft-card__content absolute bottom-10 left-10 z-20">
+                        <div class="tft-card__meta text-xs uppercase tracking-widest text-brand-lime mb-2">Studio // Identity</div>
+                        <h3 class="tft-card__title font-display text-3xl">The Atelier</h3>
+                    </div>
+                    <a class="absolute inset-0 z-30" href="casestudy.html"></a>
+                </article>
+                <!-- Project 2 -->
+                <article class="tft-card aspect-[4/5] relative group overflow-hidden reveal-up active" data-category="concept">
+                    <div class="tft-card__media-wrap h-full w-full">
+                        <img alt="Digital Core" class="tft-card__media h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" src="realiz/assets/img/s2.jpg"/>
+                    </div>
+                    <div class="tft-card__overlay absolute inset-0 bg-brand-bg/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="tft-card__content absolute bottom-10 left-10 z-20">
+                        <div class="tft-card__meta text-xs uppercase tracking-widest text-brand-lime mb-2">Paper // Texture</div>
+                        <h3 class="tft-card__title font-display text-3xl">Studio Mono</h3>
+                    </div>
+                    <a class="absolute inset-0 z-30" href="casestudy.html"></a>
+                </article>
+                <!-- Project 3 -->
+                <article class="tft-card aspect-[4/5] relative group overflow-hidden reveal-up active" data-category="spatial">
+                    <div class="tft-card__media-wrap h-full w-full">
+                        <img alt="Spatial Flow" class="tft-card__media h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" src="realiz/assets/img/s3.jpg"/>
+                    </div>
+                    <div class="tft-card__overlay absolute inset-0 bg-brand-bg/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="tft-card__content absolute bottom-10 left-10 z-20">
+                        <div class="tft-card__meta text-xs uppercase tracking-widest text-brand-lime mb-2">Timber // Frame</div>
+                        <h3 class="tft-card__title font-display text-3xl">Oak & Iron</h3>
+                    </div>
+                    <a class="absolute inset-0 z-30" href="casestudy.html"></a>
+                </article>
+            </div>
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer class="py-20 border-t border-white/5 bg-brand-bg">
+            <div class="container mx-auto px-6 text-center">
+                <img src="logo.png" alt="Logo" class="h-10 mx-auto mb-10 opacity-50">
+                <p class="text-white/30 text-sm">© 2026 Mood Designz. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JS Scripts -->
+    <script src="realiz/assets/js/lucide-local.js"></script>
+    <script src="realiz/assets/js/main.js"></script>
+    <script src="header.js"></script>
+</body>
+</html>

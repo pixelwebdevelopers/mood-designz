@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Mood Designz - Creative Agency</title>
+    <meta name="description" content="Mood Designz is a premier creative agency specializing in design, strategy, and digital experiences."/>
+    
+    <!-- Realiz Assets -->
+    <link href="realiz/assets/css/main.css" rel="stylesheet"/>
+    
+    <!-- Davies Assets -->
+    <link rel="stylesheet" href="davies/assets/fonts/fonts.css">
+    <link rel="stylesheet" href="davies/assets/icon/icomoon/style.css">
+    <!-- Use a scoped approach for Bootstrap to avoid conflicts if possible, 
+         but for now we'll include it and override as needed -->
+    <link rel="stylesheet" href="davies/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="davies/assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="davies/assets/css/animate.css">
+    <link rel="stylesheet" href="davies/assets/css/slick.css">
+    <link rel="stylesheet" href="davies/assets/css/slick.theme.css">
+    <link rel="stylesheet" type="text/css" href="davies/assets/css/styles.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --brand-lime: #c3ff06;
+            --brand-bg: #0d2620;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            background-color: var(--brand-bg);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* SECTION ADJUSTMENTS */
+        .tf-header { display: none !important; } 
+        
+        #view-home-4 {
+            position: relative !important;
+            height: 100vh !important;
+            width: 100% !important;
+        }
+        .tft-v4-col { height: 100% !important; }
+        .brand-list.type-line-2 { display: flex !important; flex-wrap: nowrap !important; }
+        section { position: relative; background: var(--brand-bg); }
+    </style>
+    <link rel="stylesheet" href="header.css">
+</head>
+<body class="relative h-[100dvh] w-screen bg-brand-bg text-white overflow-hidden selection:bg-brand-lime selection:text-brand-sidebar tft-page-home-4" id="page-top">
+
+    <div id="header-container"></div>
+
+    <div id="main-scroll-container" class="absolute left-0 right-0 top-0 bottom-0 overflow-y-auto z-10 bg-brand-bg">
+        
+        <!-- SECTION 1: Realiz Home Page Column 4 Hero -->
+        <section id="hero-section" class="h-screen w-full overflow-hidden">
+            <div class="view-section flex flex-col md:flex-row h-full w-full" id="view-home-4">
+                <div class="h4-col tft-v4-col flex-1 relative border-b md:border-b-0 md:border-r border-white/5 cursor-pointer group overflow-hidden">
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('realiz/assets/img/s1.jpg');"></div>
+                    <div class="absolute inset-0 bg-brand-bg/60 overlay-dim transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 flex flex-col items-center justify-center z-20">
+                        <h2 class="font-display text-4xl md:text-6xl lg:text-7xl text-white text-center leading-[0.9] mb-8 drop-shadow-lg uppercase italic font-black">Digital<br/>Visions</h2>
+                        <a class="w-16 h-16 md:w-32 md:h-32 rounded-full bg-brand-lime text-black font-display italic flex flex-col items-center justify-center transform hover:scale-105 transition duration-300 shadow-xl backdrop-blur-sm" href="portfolio.html">
+                            <span class="text-xs md:text-sm font-bold">VIEW</span>
+                            <span class="text-xs md:text-sm font-bold">WORK</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="h4-col tft-v4-col flex-1 relative border-b md:border-b-0 md:border-r border-white/5 cursor-pointer group overflow-hidden">
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('realiz/assets/img/s2.jpg');"></div>
+                    <div class="absolute inset-0 bg-brand-bg/70 overlay-dim transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 flex flex-col items-center justify-center z-20">
+                        <h2 class="font-display text-4xl md:text-6xl lg:text-7xl text-white text-center leading-[0.9] mb-8 drop-shadow-lg uppercase italic font-black">Brand<br/>Soul</h2>
+                        <a class="w-16 h-16 md:w-32 md:h-32 rounded-full bg-white text-black font-display italic flex flex-col items-center justify-center transform hover:scale-105 transition duration-300 shadow-[0_15px_30px_rgba(0,0,0,0.5)]" href="portfolio.html">
+                            <span class="text-xs md:text-sm font-bold">VIEW</span>
+                            <span class="text-xs md:text-sm font-bold">WORK</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="h4-col tft-v4-col flex-1 relative cursor-pointer group overflow-hidden">
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('realiz/assets/img/s3.jpg');"></div>
+                    <div class="absolute inset-0 bg-brand-bg/60 overlay-dim transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 flex flex-col items-center justify-center z-20">
+                        <h2 class="font-display text-4xl md:text-6xl lg:text-7xl text-white text-center leading-[0.9] mb-8 drop-shadow-lg uppercase italic font-black">Creative<br/>Pulse</h2>
+                        <a class="w-16 h-16 md:w-32 md:h-32 rounded-full bg-brand-lime text-black font-display italic flex flex-col items-center justify-center transform hover:scale-105 transition duration-300 shadow-xl backdrop-blur-sm" href="portfolio.html">
+                            <span class="text-xs md:text-sm font-bold">VIEW</span>
+                            <span class="text-xs md:text-sm font-bold">WORK</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: Davies Version 2 Select Work to About Davies Video Section -->
+        <section id="workScroll" class="section-selected-work-v2 flat-spacing stack-element">
+            <div class="s-header d-block overflow-hidden">
+                <div class="infiniteSlide infiniteSlide_select_work" data-clone="5">
+                    <p class="text-display-1 letter-space--3 fw-semibold">Selected Work</p>
+                    <div class="icon-app"><img loading="lazy" width="120" height="120" src="davies/assets/images/item/global.svg" alt="Image"></div>
+                    <p class="text-display-1 letter-space--3 fw-semibold">Selected Work</p>
+                    <div class="icon-app"><img loading="lazy" width="120" height="120" src="davies/assets/images/item/global.svg" alt="Image"></div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="work-list stack-element-main position-relative">
+                    <div class="element">
+                        <a href="casestudy.html" class="wg-work reveal-up">
+                            <div class="work-image">
+                                <video class="" muted="" autoplay="" loop="" playsinline="">
+                                    <source src="davies/assets/images/video/nexbot.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="work-content">
+                                <div class="work_top">
+                                    <h5 class="letter-space--2">Nexbot_</h5>
+                                    <ul class="tf-list vertical text-end">
+                                        <li class="text-white-64">Industry</li>
+                                        <li class="reveal-up">Artificial Intelligence</li>
+                                        <li class="reveal-up">Web3</li>
+                                    </ul>
+                                </div>
+                                <div class="work_bottom">
+                                    <ul class="tf-list vertical">
+                                        <li class="text-white-64">Services</li>
+                                        <li class="reveal-up">Branding</li>
+                                    </ul>
+                                    <h5 class="letter-space--2">2026</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="element">
+                        <a href="casestudy.html" class="wg-work reveal-up">
+                            <div class="work-image">
+                                <img loading="lazy" width="1296" height="648" src="davies/assets/images/section/work-5.jpg" alt="Image">
+                            </div>
+                            <div class="work-content">
+                                <div class="work_top">
+                                    <h5 class="letter-space--2">Landa_</h5>
+                                    <ul class="tf-list vertical text-end">
+                                        <li class="text-white-64">Industry</li>
+                                        <li class="reveal-up">SAAS</li>
+                                    </ul>
+                                </div>
+                                <div class="work_bottom">
+                                    <ul class="tf-list vertical">
+                                        <li class="text-white-64">Services</li>
+                                        <li class="reveal-up">Website Design</li>
+                                    </ul>
+                                    <h5 class="letter-space--2">2026</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Davies About Video Part -->
+            <div class="container mt-20">
+                <div class="about-main flat-spacing-bottom">
+                    <div class="davies-video reveal-up">
+                        <video class="video" muted="" autoplay="" loop="" playsinline="">
+                            <source src="davies/assets/images/video/davies-video.mp4" type="video/mp4">
+                        </video>
+                        <div class="overlay mark"></div>
+                        <div class="overlay bg-effect">
+                            <img loading="lazy" width="1296" height="729" src="davies/assets/images/item/dither-effect.svg" alt="Image">
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="top text-display-1 fw-semibold letter-space--3">
+                            <p class="reveal-up">About</p>
+                            <p class="reveal-up" data-delay="0.1">Mood Designz<span class="text-primary">_</span></p>
+                        </div>
+                        <h5 class="text-color-change letter-space--2 fw-normal reveal-up">
+                            We are a collective of designers and developers creating bold, functional, and award-winning digital experiences that help brands connect with their audience.
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Davies Version 1 Services (Scroll Manage) -->
+        <section id="serviceScroll" class="section-service-2 overflow-hidden flat-spacing bg-white/5">
+            <div class="bg-image-list">
+                <div class="bg-image">
+                    <img loading="lazy" width="1440" height="938" src="davies/assets/images/section/bg-service-1.jpg" alt="Image">
+                </div>
+            </div>
+            <div class="container">
+                <div class="s-header s-header-scroll">
+                    <h2 class="text-display-2 fw-semibold reveal-up">Services</h2>
+                </div>
+            </div>
+            <div class="container">
+                <div class="wrap-control position-relative">
+                    <div class="wg-service-2 reveal-up">
+                        <div class="main-image">
+                            <div class="image">
+                                <img loading="lazy" width="424" height="530" src="davies/assets/images/section/service-1.jpg" alt="Image">
+                            </div>
+                        </div>
+                        <div class="center">
+                            <h5 class="title">Branding</h5>
+                            <p class="desc">We create distinctive brand identities through strategy and visual design, helping businesses stand out.</p>
+                            <div class="br-line d-flex"></div>
+                            <ul class="tf-list vertical">
+                                <li class="letter-space--1"><span class="text-primary">//</span> Brand Strategy</li>
+                                <li class="letter-space--1"><span class="text-primary">//</span> Visual Identity Design</li>
+                                <li class="letter-space--1"><span class="text-primary">//</span> Logo & Typography</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="wg-service-2 reveal-up">
+                        <div class="main-image">
+                            <div class="image">
+                                <img loading="lazy" width="424" height="530" src="davies/assets/images/section/service-2.jpg" alt="Image">
+                            </div>
+                        </div>
+                        <div class="center">
+                            <h5 class="title">Web Design</h5>
+                            <p class="desc">We design modern websites focused on user experience, scalability, and aesthetics.</p>
+                            <div class="br-line d-flex"></div>
+                            <ul class="tf-list vertical">
+                                <li class="letter-space--1"><span class="text-primary">//</span> UI/UX Design</li>
+                                <li class="letter-space--1"><span class="text-primary">//</span> Responsive Layouts</li>
+                                <li class="letter-space--1"><span class="text-primary">//</span> Interaction & Animation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- SECTION 4: Davies Version 2 Tech Stack -->
+        <section class="section-tech-stack-v2 flat-spacing">
+            <div class="container">
+                <div class="s-header d-block">
+                    <h2 class="text-display-2 letter-space--3 text-center effectFade fadeUp">Tech Stack</h2>
+                </div>
+                <div class="tf-grid-layout lg-col-3">
+                    <div class="wg-tech-v2">
+                        <div class="tech-content">
+                            <h5 class="tech-name letter-space--2">Figma</h5>
+                            <p class="tech-desc letter-space--1">Collaborative design tool.</p>
+                            <div class="ic-img"><img loading="lazy" width="33" height="48" src="davies/assets/images/item/figma.svg" alt="Image Icon"></div>
+                        </div>
+                    </div>
+                    <div class="wg-tech-v2">
+                        <div class="tech-content">
+                            <h5 class="tech-name letter-space--2">Next.js</h5>
+                            <p class="tech-desc letter-space--1">Modern web framework.</p>
+                            <div class="ic-img"><img loading="lazy" width="48" height="48" src="davies/assets/images/item/framer.svg" alt="Image Icon"></div>
+                        </div>
+                    </div>
+                    <div class="wg-tech-v2">
+                        <div class="tech-content">
+                            <h5 class="tech-name letter-space--2">Tailwind</h5>
+                            <p class="tech-desc letter-space--1">Utility-first CSS.</p>
+                            <div class="ic-img"><img loading="lazy" width="77" height="48" src="davies/assets/images/item/webflow.svg" alt="Image Icon"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: Davies Version 2 Brands & Partners (Carousel) -->
+        <div class="section-brand flat-spacing bg-white/5">
+            <div class="container">
+                <h6 class="mini-title text-caption text-white-64 text-center mb-10">BRANDS AND PARTNERS</h6>
+                <div class="brand-carousel swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="davies/assets/images/brand/brandv2-1.svg" alt="Brand" class="opacity-50 hover:opacity-100 transition-opacity"></div>
+                        <div class="swiper-slide"><img src="davies/assets/images/brand/brandv2-2.svg" alt="Brand" class="opacity-50 hover:opacity-100 transition-opacity"></div>
+                        <div class="swiper-slide"><img src="davies/assets/images/brand/brandv2-3.svg" alt="Brand" class="opacity-50 hover:opacity-100 transition-opacity"></div>
+                        <div class="swiper-slide"><img src="davies/assets/images/brand/brandv2-4.svg" alt="Brand" class="opacity-50 hover:opacity-100 transition-opacity"></div>
+                        <div class="swiper-slide"><img src="davies/assets/images/brand/brandv2-5.svg" alt="Brand" class="opacity-50 hover:opacity-100 transition-opacity"></div>
+                        <div class="swiper-slide"><img src="davies/assets/images/brand/brandv2-6.svg" alt="Brand" class="opacity-50 hover:opacity-100 transition-opacity"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 6: Davies Version 2 Awards Section -->
+        <section class="section-award flat-spacing bg-surface/5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 ms-auto">
+                        <div class="col-right">
+                            <h6 class="mini-title text-caption text-white-64">AWARDS</h6>
+                            <h5 class="fw-normal letter-space--2 text-white">
+                                Recognized by leading design platforms worldwide for excellence in digital innovation.
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- Awards content... -->
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="py-20 border-t border-white/5 bg-brand-bg">
+            <div class="container mx-auto px-6 text-center">
+                <img src="logo.png" alt="Logo" class="h-10 mx-auto mb-10 opacity-50">
+                <p class="text-white/30 text-sm">© 2026 Mood Designz. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JS Scripts -->
+    <script src="realiz/assets/js/lucide-local.js"></script>
+    <script src="davies/assets/js/jquery.min.js"></script>
+    <script src="davies/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="davies/assets/js/swiper-bundle.min.js"></script>
+    <script src="davies/assets/js/slick.min.js"></script>
+    <script src="davies/assets/js/gsap.min.js"></script>
+    <script src="davies/assets/js/ScrollTrigger.min.js"></script>
+    <script src="davies/assets/js/main.js"></script>
+    <script src="realiz/assets/js/main.js"></script>
+
+    <script>
+        // Reveal Animations for Home Page
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
+    </script>
+    <script src="header.js"></script>
+    <script>
+        // Initialize Swiper for Brands Carousel
+        new Swiper('.brand-carousel', {
+            slidesPerView: 2,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                640: { slidesPerView: 3 },
+                768: { slidesPerView: 4 },
+                1024: { slidesPerView: 5 },
+            }
+        });
+    </script>
+</body>
+</html>

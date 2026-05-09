@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>About Us - Mood Designz</title>
+    <meta name="description" content="Learn more about Mood Designz, our mission, our philosophy, and the collective of experts behind our award-winning work."/>
+    
+    <!-- Realiz Assets -->
+    <link href="realiz/assets/css/main.css" rel="stylesheet"/>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --brand-lime: #c3ff06;
+            --brand-bg: #0d2620;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            background-color: var(--brand-bg);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* CUSTOM PILL HEADER */
+        header#main-header {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: auto;
+            min-width: 600px;
+            height: 60px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 30px;
+            border-radius: 100px;
+            background: rgba(13, 38, 32, 0.7);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        @media (max-width: 768px) {
+            header#main-header {
+                min-width: 90%;
+            }
+        }
+
+        /* Conflict Fixes */
+        aside, header.fixed { display: none !important; }
+    </style>
+    <link rel="stylesheet" href="header.css">
+</head>
+<body class="relative h-[100dvh] w-screen bg-brand-bg text-white overflow-hidden selection:bg-brand-lime selection:text-brand-sidebar tft-page-about-v2" id="page-top">
+
+    <div id="header-container"></div>
+
+    <div id="main-scroll-container" class="absolute inset-0 overflow-y-auto z-10 bg-brand-bg">
+        <!-- SECTION 1: HERO -->
+        <section class="w-full min-h-screen relative flex items-center overflow-hidden py-32 md:py-48">
+            <img alt="Studio" class="absolute inset-0 w-full h-full object-cover parallax-bg opacity-40" src="realiz/assets/img/project_workspace.png">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-bg via-brand-bg/80 to-transparent"></div>
+            <div class="container mx-auto px-6 md:px-12 relative z-10">
+                <div class="reveal-up max-w-4xl">
+                    <span class="font-body text-xs font-bold tracking-[0.6em] text-brand-lime uppercase mb-8 block">We are Mood Designz.</span>
+                    <h1 class="font-display text-6xl md:text-9xl leading-[0.9] tracking-tighter mb-12 text-white">The <span class="italic highlight-text">Creative</span> Pulse.</h1>
+                    <p class="max-w-xl font-body text-lg text-white/50 leading-relaxed mb-12">A collective of designers, technologists, and visionaries dedicated to the pursuit of uncompromising digital excellence.</p>
+                    <div class="flex gap-12">
+                        <div class="flex flex-col">
+                            <span class="font-display text-5xl text-brand-lime mb-1 tracking-tight">15+</span>
+                            <span class="font-body text-[10px] uppercase tracking-[0.3em] text-white/30 font-bold">Industry Awards</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-display text-5xl text-brand-lime mb-1 tracking-tight">200+</span>
+                            <span class="font-body text-[10px] uppercase tracking-[0.3em] text-white/30 font-bold">Successful Projects</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: MANIFESTO -->
+        <section class="py-32 md:py-56 bg-white text-brand-sidebar relative overflow-hidden">
+            <div class="container mx-auto px-6 md:px-24 flex flex-col lg:flex-row gap-20 items-center">
+                <div class="lg:w-1/2 reveal-up">
+                    <span class="font-body text-xs font-bold tracking-[0.3em] text-brand-sidebar/40 uppercase mb-8 block">The Philosophy</span>
+                    <h2 class="font-display text-4xl md:text-6xl leading-tight mb-10 italic">"Design is not just what it looks like. Design is the <span class="highlight-text-dark">soul</span> of how it works."</h2>
+                    <p class="font-body text-lg opacity-80 leading-relaxed">We believe in creating experiences that resonate on a deeper level. Our work is a synthesis of art and logic, where every detail is considered and every interaction is intentional.</p>
+                </div>
+                <div class="lg:w-1/2 relative reveal-up">
+                    <div class="aspect-square bg-gray-100 overflow-hidden rounded-sm shadow-2xl">
+                        <img alt="Manifesto" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" src="realiz/assets/img/project_editorial.png">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: CORE SPECIALTIES -->
+        <section class="py-32 md:py-56 bg-brand-bg">
+            <div class="container mx-auto px-6 md:px-12">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-24 reveal-up">
+                    <div class="max-w-xl">
+                        <span class="font-body text-xs font-bold tracking-[0.4em] text-brand-lime uppercase mb-4 block">Our DNA</span>
+                        <h2 class="font-display text-5xl md:text-7xl">Core <span class="text-brand-lime italic">Specialties.</span></h2>
+                    </div>
+                    <p class="md:w-1/3 font-body text-sm text-white/40 leading-relaxed mt-6 md:mt-0">We operate at the intersection of high-end aesthetics and modern technical rigor.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-1 bg-white/5 border border-white/5 reveal-up">
+                    <div class="p-12 group hover:bg-white/10 transition-all duration-500">
+                        <h3 class="font-display text-2xl mb-6 text-brand-lime">Brand Identity</h3>
+                        <p class="font-body text-sm text-white/40 leading-relaxed group-hover:text-white transition-colors">Crafting visual souls for brands that want to stand out and connect deeply with their audience.</p>
+                    </div>
+                    <div class="p-12 group hover:bg-white/10 transition-all duration-500 border-x border-white/5">
+                        <h3 class="font-display text-2xl mb-6 text-brand-lime">Web Experience</h3>
+                        <p class="font-body text-sm text-white/40 leading-relaxed group-hover:text-white transition-colors">Building high-performance digital environments that are as beautiful as they are functional.</p>
+                    </div>
+                    <div class="p-12 group hover:bg-white/10 transition-all duration-500">
+                        <h3 class="font-display text-2xl mb-6 text-brand-lime">Strategy & Motion</h3>
+                        <p class="font-body text-sm text-white/40 leading-relaxed group-hover:text-white transition-colors">Directing the narrative through movement and strategic insight to guide users effortlessly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="py-20 border-t border-white/5 bg-brand-bg">
+            <div class="container mx-auto px-6 text-center">
+                <img src="logo.png" alt="Logo" class="h-10 mx-auto mb-10 opacity-50">
+                <p class="text-white/30 text-sm">© 2026 Mood Designz. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JS Scripts -->
+    <script src="realiz/assets/js/lucide-local.js"></script>
+    <script src="realiz/assets/js/main.js"></script>
+    <script src="header.js"></script>
+</body>
+</html>

@@ -1,0 +1,311 @@
+/* header.css - Mood Designz Navigation */
+
+:root {
+    --brand-lime: #c3ff06;
+    --brand-bg: #0d2620;
+}
+
+#main-header {
+    position: fixed !important;
+    top: 25px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important; 
+    width: 700px !important;
+    max-width: 90vw !important;
+    height: 70px !important;
+    z-index: 2147483647 !important; /* Max possible z-index */
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0 40px !important;
+    border-radius: 100px !important;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05)) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.1) !important;
+    pointer-events: auto !important;
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1) !important;
+}
+
+/* Ensure no parent overrides stickiness */
+#main-header {
+    pointer-events: auto !important;
+}
+
+body.menu-open {
+    overflow: hidden !important;
+}
+
+body.menu-open #main-header {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transform: translateX(-50%) translateY(-20px) !important;
+}
+
+#main-header .logo img {
+    height: 30px !important;
+    display: block !important;
+    width: auto !important;
+}
+
+#main-header .nav-links {
+    display: flex !important;
+    gap: 30px !important;
+}
+
+#main-header .nav-links a {
+    color: #fff !important;
+    font-family: 'Space Grotesk', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    text-decoration: none !important;
+    opacity: 0.8 !important;
+    transition: 0.3s !important;
+}
+
+#main-header .nav-links a:hover {
+    color: var(--brand-lime) !important;
+    opacity: 1 !important;
+}
+
+#main-header .nav-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 15px !important;
+}
+
+#main-header .primary-btn {
+    background: var(--brand-lime) !important;
+    color: #000 !important;
+    font-weight: 800 !important;
+    padding: 12px 25px !important;
+    border-radius: 100px !important;
+    font-size: 11px !important;
+    text-decoration: none !important;
+    text-transform: uppercase !important;
+    font-family: 'Space Grotesk', sans-serif !important;
+}
+
+#main-header .menu-toggle {
+    display: none !important;
+    width: 44px !important;
+    height: 44px !important;
+    background: var(--brand-lime) !important;
+    border-radius: 50% !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    cursor: pointer !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 4px !important;
+}
+
+#main-header .menu-toggle:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+#main-header .menu-toggle span {
+    width: 20px !important;
+    height: 2px !important;
+    background: #000 !important;
+}
+
+@media (max-width: 1024px) {
+    #main-header {
+        width: 90% !important;
+        padding: 0 20px !important;
+        height: 60px !important;
+        top: 15px !important;
+    }
+    #main-header .nav-links { display: none !important; }
+    #main-header .menu-toggle { display: flex !important; }
+    #main-header .primary-btn { display: none !important; }
+}
+
+/* MOBILE MENU OVERLAY & PANEL */
+#menu-overlay {
+    position: fixed !important;
+    inset: 0 !important;
+    background: rgba(0, 0, 0, 0.6) !important;
+    backdrop-filter: blur(5px) !important;
+    -webkit-backdrop-filter: blur(5px) !important;
+    z-index: 999999 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: all 0.4s ease !important;
+}
+
+#menu-overlay.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+#menu-panel {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    max-width: 450px !important;
+    background: linear-gradient(135deg, rgba(13, 38, 32, 0.95), rgba(13, 38, 32, 0.8)) !important;
+    backdrop-filter: blur(30px) saturate(200%) !important;
+    -webkit-backdrop-filter: blur(30px) saturate(200%) !important;
+    border-left: 1px solid rgba(255, 255, 255, 0.1) !important;
+    z-index: 1000000 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 100px 40px 40px !important;
+    transform: translateX(100%) !important;
+    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1) !important;
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.6) !important;
+}
+
+#menu-panel.active {
+    transform: translateX(0) !important;
+}
+
+#menu-panel .menu-links {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 30px !important;
+    text-align: left !important;
+    margin-top: 20px !important;
+}
+
+#menu-panel .menu-links a {
+    font-family: 'Space Grotesk', sans-serif !important;
+    font-size: 32px !important;
+    font-weight: 700 !important;
+    color: #fff !important;
+    text-decoration: none !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    display: inline-block !important;
+    transform-origin: left center !important;
+    opacity: 0 !important;
+    transform: translateX(30px) !important;
+    transition: all 0.3s ease !important;
+}
+
+#menu-panel.active .menu-links a {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+    transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.19, 1, 0.22, 1), color 0.3s ease !important;
+}
+
+#menu-panel.active .menu-links a:nth-child(1) { transition-delay: 0.2s, 0.2s, 0s !important; }
+#menu-panel.active .menu-links a:nth-child(2) { transition-delay: 0.3s, 0.3s, 0s !important; }
+#menu-panel.active .menu-links a:nth-child(3) { transition-delay: 0.4s, 0.4s, 0s !important; }
+#menu-panel.active .menu-links a:nth-child(4) { transition-delay: 0.5s, 0.5s, 0s !important; }
+#menu-panel.active .menu-links a:nth-child(5) { transition-delay: 0.6s, 0.6s, 0s !important; }
+
+#menu-panel.active .menu-links a:hover {
+    color: var(--brand-lime) !important;
+    transform: translateX(15px) !important;
+    transition-delay: 0s, 0s, 0s !important;
+}
+
+#menu-panel .close-btn {
+    position: absolute !important;
+    top: 30px !important;
+    right: 30px !important;
+    width: 46px !important;
+    height: 46px !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: #fff !important;
+    cursor: pointer !important;
+    opacity: 0 !important;
+    transform: scale(0.5) rotate(-90deg) !important;
+    transition: all 0.3s ease !important;
+}
+
+#menu-panel.active .close-btn {
+    opacity: 1 !important;
+    transform: scale(1) rotate(0deg) !important;
+    transition: opacity 0.5s ease 0.2s, transform 0.6s cubic-bezier(0.19, 1, 0.22, 1) 0.2s, background 0.3s ease, border-color 0.3s ease !important;
+}
+
+#menu-panel.active .close-btn:hover {
+    background: var(--brand-lime) !important;
+    color: #000 !important;
+    transform: rotate(90deg) scale(1.1) !important;
+    border-color: var(--brand-lime) !important;
+    transition-delay: 0s, 0s, 0s, 0s !important;
+}
+
+#menu-panel .close-btn svg {
+    transition: stroke 0.4s ease !important;
+}
+
+#menu-panel .close-btn:hover svg {
+    stroke: #000 !important;
+}
+
+#menu-panel .menu-footer {
+    margin-top: auto !important;
+    text-align: left !important;
+    width: 100% !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding-top: 30px !important;
+    opacity: 0 !important;
+    transform: translateY(20px) !important;
+    transition: all 0.3s ease !important;
+}
+
+#menu-panel.active .menu-footer {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    transition: opacity 0.5s ease 0.5s, transform 0.6s cubic-bezier(0.19, 1, 0.22, 1) 0.5s !important;
+}
+
+#menu-panel .menu-footer p {
+    font-size: 12px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    opacity: 0.5 !important;
+    margin-bottom: 20px !important;
+}
+
+#menu-panel .sidebar-socials {
+    display: flex !important;
+    gap: 25px !important;
+    flex-wrap: wrap !important;
+}
+
+#menu-panel .sidebar-socials a {
+    color: #fff !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    opacity: 0.8 !important;
+    transition: all 0.3s ease !important;
+    background: transparent !important;
+    width: auto !important;
+    height: auto !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: inline-block !important;
+}
+
+#menu-panel .sidebar-socials a:hover {
+    color: var(--brand-lime) !important;
+    opacity: 1 !important;
+    transform: translateY(-2px) !important;
+}
