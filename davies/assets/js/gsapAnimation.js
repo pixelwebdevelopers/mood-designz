@@ -194,7 +194,7 @@
 
                         const targetScroll = st.start + (st.end - st.start) * targetProgress;
 
-                        gsap.to(window, {
+                        gsap.to("#main-scroll-container", {
                             duration: 0.6,
                             scrollTo: targetScroll,
                             ease: "power2.out",
@@ -575,9 +575,11 @@
 
             stInstance = ScrollTrigger.create({
                 trigger: $section[0],
-                start: startValue,
+                scroller: "#main-scroll-container",
+                start: "top top",
                 end: "+=" + totalSteps * 1000,
                 pin: true,
+                pinType: "transform",
                 scrub: false,
                 markers: false,
                 anticipatePin: 1,
@@ -698,7 +700,7 @@
         const hash = window.location.hash;
         if (hash && $(hash).length) {
             setTimeout(() => {
-                gsap.to(window, {
+                gsap.to("#main-scroll-container", {
                     duration: 1,
                     scrollTo: hash,
                     ease: "power2.out",
