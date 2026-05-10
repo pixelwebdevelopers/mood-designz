@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Portfolio - Mood Designz</title>
-    <meta name="description" content="Explore the curated archive of Mood Designz. A showcase of our master gallery across identity, concept, and spatial design."/>
+    <meta name="description" content="Explore the curated archive of Mood Designz. A showcase of our master gallery across identity, concept, and spatial design.">
     
     <!-- Realiz Assets -->
-    <link href="realiz/assets/css/main.css" rel="stylesheet"/>
+    <link href="realiz/assets/css/main.css" rel="stylesheet">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -16,8 +16,6 @@
         :root {
             --brand-lime: #c3ff06;
             --brand-bg: #0d2620;
-            --glass-bg: rgba(255, 255, 255, 0.05);
-            --glass-border: rgba(255, 255, 255, 0.1);
         }
 
         body {
@@ -26,37 +24,24 @@
             overflow-x: hidden;
         }
 
-        /* CUSTOM PILL HEADER */
-        /* Conflict Fixes */
-        .tf-header { display: none !important; }
+        /* Conflict Fixes: Hide Realiz Sidebars and Headers */
+        aside, header.fixed, nav#menu-panel:not(.mood-panel) { 
+            display: none !important; 
+        }
+
+        /* Ensure content is not padded for a sidebar that isn't there */
+        body { padding-left: 0 !important; }
     </style>
     <link rel="stylesheet" href="header.css">
 </head>
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--brand-lime);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        /* Conflict Fixes */
-        aside, header.fixed { display: none !important; }
-    </style>
-</head>
-<body class="relative h-[100dvh] w-screen bg-brand-bg text-white overflow-hidden selection:bg-brand-lime selection:text-brand-sidebar tft-page-works" id="page-top">
-
+<body class="relative h-[100dvh] w-full bg-brand-bg text-white overflow-hidden selection:bg-brand-lime selection:text-brand-sidebar noise-bg tft-page-works" id="page-top">
+    <div id="tft-cursor">EXPLORE</div>
+    <div class="tft-ambiance"></div>
+    
     <div id="header-container"></div>
 
-    <div id="main-scroll-container" class="absolute inset-0 overflow-y-auto z-10 bg-brand-bg">
+    <!-- CONTENT WRAPPER -->
+    <div class="absolute inset-0 overflow-y-auto z-10 bg-brand-bg" id="main-scroll-container">
         <!-- SECTION 1: HERO -->
         <section class="pt-32 md:pt-46 pb-24 px-8 md:px-20 relative overflow-hidden">
             <div class="container mx-auto relative z-20">
@@ -66,7 +51,42 @@
                             <span class="w-12 h-[1px] bg-brand-lime"></span>
                             <span class="font-body text-[10px] font-bold tracking-[0.6em] text-brand-lime uppercase">Curated Portfolio // 2026 Archive</span>
                         </div>
-                        <h1 class="font-display text-6xl md:text-9xl leading-[0.9] tracking-tighter text-white">The Master <br> <span class="italic text-brand-lime">Gallery.</span></h1>
+                        <h1 class="tft-title">The Master <br> <span class="tft-italic">Gallery.</span></h1>
+                    </div>
+                    <div class="rlz-filter">
+                        <nav aria-label="Project Filtering" class="rlz-filter__nav">
+                            <ul class="rlz-filter__list">
+                                <li class="rlz-filter__item">
+                                    <button class="filter-tab active rlz-filter__btn" data-filter="all">
+                                        <span class="rlz-filter__index">01</span>
+                                        <span class="rlz-filter__label">All</span>
+                                    </button>
+                                </li>
+                                <li class="rlz-filter__item">
+                                    <button class="filter-tab rlz-filter__btn" data-filter="identity">
+                                        <span class="rlz-filter__index">02</span>
+                                        <span class="rlz-filter__label">Identity</span>
+                                    </button>
+                                </li>
+                                <li class="rlz-filter__item">
+                                    <button class="filter-tab rlz-filter__btn" data-filter="concept">
+                                        <span class="rlz-filter__index">03</span>
+                                        <span class="rlz-filter__label">Concept</span>
+                                    </button>
+                                </li>
+                                <li class="rlz-filter__item">
+                                    <button class="filter-tab rlz-filter__btn" data-filter="spatial">
+                                        <span class="rlz-filter__index">04</span>
+                                        <span class="rlz-filter__label">Spatial</span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </nav>
+                        <!-- MOBILE FILTER -->
+                        <button aria-label="Open filter options" class="rlz-filter__mobile-trigger" id="rlz-mobile-filter-trigger">
+                            <i data-lucide="filter"></i>
+                            <span>Category</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -74,57 +94,201 @@
 
         <!-- SECTION 2: ELITE GRID -->
         <section class="px-8 md:px-20 pb-64 relative z-20">
-            <div class="tft-elite-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
+            <h2 class="sr-only">Portfolio Grid</h2>
+            <div class="tft-elite-grid" id="portfolio-grid">
                 <!-- Project 1 -->
-                <article class="tft-card aspect-[4/5] relative group overflow-hidden reveal-up active" data-category="identity">
-                    <div class="tft-card__media-wrap h-full w-full">
-                        <img alt="Sovereign Identity" class="tft-card__media h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" src="realiz/assets/img/s1.jpg"/>
+                <article class="tft-card aspect-[4/5] reveal-up active" data-category="identity">
+                    <div class="tft-card__media-wrap">
+                        <img alt="Sovereign Identity" class="tft-card__media" src="realiz/assets/img/s1.jpg"/>
                     </div>
-                    <div class="tft-card__overlay absolute inset-0 bg-brand-bg/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div class="tft-card__content absolute bottom-10 left-10 z-20">
-                        <div class="tft-card__meta text-xs uppercase tracking-widest text-brand-lime mb-2">Studio // Identity</div>
-                        <h3 class="tft-card__title font-display text-3xl">The Atelier</h3>
+                    <div class="tft-card__overlay"></div>
+                    <div class="tft-card__content">
+                        <div class="tft-card__meta">Studio // Identity</div>
+                        <div class="tft-card__title-mask">
+                            <h3 class="tft-card__title font-display">The Atelier</h3>
+                        </div>
                     </div>
-                    <a class="absolute inset-0 z-30" href="casestudy.html"></a>
+                    <a class="tft-card__link" href="casestudy.html"></a>
                 </article>
                 <!-- Project 2 -->
-                <article class="tft-card aspect-[4/5] relative group overflow-hidden reveal-up active" data-category="concept">
-                    <div class="tft-card__media-wrap h-full w-full">
-                        <img alt="Digital Core" class="tft-card__media h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" src="realiz/assets/img/s2.jpg"/>
+                <article class="tft-card aspect-[4/5] reveal-up active" data-category="concept">
+                    <div class="tft-card__media-wrap">
+                        <img alt="Digital Core" class="tft-card__media" src="realiz/assets/img/s2.jpg"/>
                     </div>
-                    <div class="tft-card__overlay absolute inset-0 bg-brand-bg/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div class="tft-card__content absolute bottom-10 left-10 z-20">
-                        <div class="tft-card__meta text-xs uppercase tracking-widest text-brand-lime mb-2">Paper // Texture</div>
-                        <h3 class="tft-card__title font-display text-3xl">Studio Mono</h3>
+                    <div class="tft-card__overlay"></div>
+                    <div class="tft-card__content">
+                        <div class="tft-card__meta">Paper // Texture</div>
+                        <div class="tft-card__title-mask">
+                            <h3 class="tft-card__title font-display">Studio Mono</h3>
+                        </div>
                     </div>
-                    <a class="absolute inset-0 z-30" href="casestudy.html"></a>
+                    <a class="tft-card__link" href="casestudy.html"></a>
                 </article>
                 <!-- Project 3 -->
-                <article class="tft-card aspect-[4/5] relative group overflow-hidden reveal-up active" data-category="spatial">
-                    <div class="tft-card__media-wrap h-full w-full">
-                        <img alt="Spatial Flow" class="tft-card__media h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" src="realiz/assets/img/s3.jpg"/>
+                <article class="tft-card aspect-[4/5] reveal-up active" data-category="spatial">
+                    <div class="tft-card__media-wrap">
+                        <img alt="Spatial Flow" class="tft-card__media" src="realiz/assets/img/s3.jpg"/>
                     </div>
-                    <div class="tft-card__overlay absolute inset-0 bg-brand-bg/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div class="tft-card__content absolute bottom-10 left-10 z-20">
-                        <div class="tft-card__meta text-xs uppercase tracking-widest text-brand-lime mb-2">Timber // Frame</div>
-                        <h3 class="tft-card__title font-display text-3xl">Oak & Iron</h3>
+                    <div class="tft-card__overlay"></div>
+                    <div class="tft-card__content">
+                        <div class="tft-card__meta">Timber // Frame</div>
+                        <div class="tft-card__title-mask">
+                            <h3 class="tft-card__title font-display">Oak &amp; Iron</h3>
+                        </div>
                     </div>
-                    <a class="absolute inset-0 z-30" href="casestudy.html"></a>
+                    <a class="tft-card__link" href="casestudy.html"></a>
+                </article>
+                <!-- Project 4 -->
+                <article class="tft-card aspect-[4/5] reveal-up active" data-category="spatial">
+                    <div class="tft-card__media-wrap">
+                        <img alt="Brutalist Master" class="tft-card__media" src="realiz/assets/img/s4.png"/>
+                    </div>
+                    <div class="tft-card__overlay"></div>
+                    <div class="tft-card__content">
+                        <div class="tft-card__meta">Gallery // Pavilion</div>
+                        <div class="tft-card__title-mask">
+                            <h3 class="tft-card__title font-display italic lowercase">The Library</h3>
+                        </div>
+                    </div>
+                    <a class="tft-card__link" href="casestudy.html"></a>
+                </article>
+                <!-- Project 5 -->
+                <article class="tft-card aspect-[4/5] reveal-up active" data-category="identity">
+                    <div class="tft-card__media-wrap">
+                        <img alt="Elite Echo" class="tft-card__media" src="realiz/assets/img/project_digital.png"/>
+                    </div>
+                    <div class="tft-card__overlay"></div>
+                    <div class="tft-card__content">
+                        <div class="tft-card__meta">Silk // Identity</div>
+                        <div class="tft-card__title-mask">
+                            <h3 class="tft-card__title font-display">Velvet Room</h3>
+                        </div>
+                    </div>
+                    <a class="tft-card__link" href="casestudy.html"></a>
+                </article>
+                <!-- Project 6 -->
+                <article class="tft-card aspect-[4/5] reveal-up active" data-category="concept">
+                    <div class="tft-card__media-wrap">
+                        <img alt="System Logic" class="tft-card__media" src="realiz/assets/img/s6.jpg"/>
+                    </div>
+                    <div class="tft-card__overlay"></div>
+                    <div class="tft-card__content">
+                        <div class="tft-card__meta">Clay // Ceramics</div>
+                        <div class="tft-card__title-mask">
+                            <h3 class="tft-card__title font-display">Raw Materials</h3>
+                        </div>
+                    </div>
+                    <a class="tft-card__link" href="casestudy.html"></a>
+                </article>
+                <!-- Project 7 -->
+                <article class="tft-card aspect-[4/5] reveal-up active" data-category="identity">
+                    <div class="tft-card__media-wrap">
+                        <img alt="Nexus Brand" class="tft-card__media" src="realiz/assets/img/s7.png"/>
+                    </div>
+                    <div class="tft-card__overlay"></div>
+                    <div class="tft-card__content">
+                        <div class="tft-card__meta">Lodge // Branding</div>
+                        <div class="tft-card__title-mask">
+                            <h3 class="tft-card__title font-display">Amber Lodge</h3>
+                        </div>
+                    </div>
+                    <a class="tft-card__link" href="casestudy.html"></a>
+                </article>
+                <!-- Project 8 -->
+                <article class="tft-card aspect-[4/5] reveal-up active" data-category="concept">
+                    <div class="tft-card__media-wrap">
+                        <img alt="Alpine Peaks" class="tft-card__media" src="realiz/assets/img/s8.png"/>
+                    </div>
+                    <div class="tft-card__overlay"></div>
+                    <div class="tft-card__content">
+                        <div class="tft-card__meta">Alpine // Horizon</div>
+                        <div class="tft-card__title-mask">
+                            <h3 class="tft-card__title font-display">Distant Peaks</h3>
+                        </div>
+                    </div>
+                    <a class="tft-card__link" href="casestudy.html"></a>
+                </article>
+                <!-- Project 9 -->
+                <article class="tft-card aspect-[4/5] reveal-up active" data-category="spatial">
+                    <div class="tft-card__media-wrap">
+                        <img alt="Urban Path" class="tft-card__media" src="realiz/assets/img/s9.jpg"/>
+                    </div>
+                    <div class="tft-card__overlay"></div>
+                    <div class="tft-card__content">
+                        <div class="tft-card__meta">Urban // Garden</div>
+                        <div class="tft-card__title-mask">
+                            <h3 class="tft-card__title font-display">Concrete Path</h3>
+                        </div>
+                    </div>
+                    <a class="tft-card__link" href="casestudy.html"></a>
                 </article>
             </div>
         </section>
 
-
-        <!-- FOOTER -->
-        <footer class="py-20 border-t border-white/5 bg-brand-bg">
-            <div class="container mx-auto px-6 text-center">
-                <img src="logo.png" alt="Logo" class="h-10 mx-auto mb-10 opacity-50">
-                <p class="text-white/30 text-sm">© 2026 Mood Designz. All rights reserved.</p>
+        <!-- Footer -->
+        <footer class="tft-vanguard-footer">
+            <div class="tft-footer-main-grid">
+                <div class="tft-footer-column reveal-up">
+                    <div class="mb-10">
+                        <img alt="Mood Designz Logo" class="h-12 w-auto opacity-80 hover:opacity-100 transition-opacity" src="logo.png">
+                    </div>
+                    <p class="text-sm text-white/40 max-w-xs leading-relaxed font-body">
+                        A boutique digital laboratory specialized in high-fidelity architectural web experiences.
+                    </p>
+                </div>
+                <div class="tft-footer-column reveal-up">
+                    <h3 class="font-body text-[10px] font-bold tracking-[0.4em] text-white/40 uppercase mb-8">Discover</h3>
+                    <nav>
+                        <a class="tft-footer-link" href="about.html">The Studio</a>
+                        <a class="tft-footer-link" href="portfolio.html">Showcase</a>
+                        <a class="tft-footer-link" href="contact.html">Get in Touch</a>
+                    </nav>
+                </div>
+                <div class="tft-footer-column reveal-up">
+                    <h3 class="font-body text-[10px] font-bold tracking-[0.4em] text-white/40 uppercase mb-8">Connect</h3>
+                    <div class="tft-footer-socials">
+                        <a class="tft-footer-link" href="#">Instagram</a>
+                        <a class="tft-footer-link" href="#">Behance</a>
+                        <a class="tft-footer-link" href="#">LinkedIn</a>
+                    </div>
+                </div>
+                <div class="tft-footer-column reveal-up">
+                    <h3 class="font-body text-[10px] font-bold tracking-[0.4em] text-white/40 uppercase mb-8">Newsletter</h3>
+                    <p class="text-xs text-white/30 mb-8 italic font-body">Join our elite circle for architectural design insights.</p>
+                    <form class="tft-footer-newsletter">
+                        <input class="tft-footer-newsletter-input" placeholder="Email address" type="email">
+                        <button class="tft-footer-submit-btn" type="submit">
+                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><line x1="5" x2="19" y1="12" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="tft-footer-bottom reveal-up">
+                <span class="tft-copyright">© 2026 Mood Designz. All rights reserved.</span>
+                <div class="flex gap-8">
+                    <a class="tft-copyright hover:text-white transition-colors" href="#">Privacy</a>
+                    <a class="tft-copyright hover:text-white transition-colors" href="#">Terms</a>
+                </div>
+                <a aria-label="Back to top" class="tft-back-to-top group" href="#page-top">
+                    <svg class="transition-transform group-hover:-translate-y-1" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"><line x1="12" x2="12" y1="19" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+                </a>
             </div>
         </footer>
     </div>
 
-    <!-- JS Scripts -->
+    <!-- MOBILE FILTER DRAWER -->
+    <div aria-hidden="true" class="rlz-filter-drawer" id="rlz-filter-drawer">
+        <button aria-label="Close filters" class="rlz-filter-drawer__close" id="rlz-filter-drawer-close">
+            <i class="w-8 h-8" data-lucide="x"></i>
+        </button>
+        <div class="rlz-filter-drawer__list">
+            <button class="filter-tab rlz-filter-drawer__btn active" data-filter="all">All Archive</button>
+            <button class="filter-tab rlz-filter-drawer__btn" data-filter="identity">Identity</button>
+            <button class="filter-tab rlz-filter-drawer__btn" data-filter="concept">Concept</button>
+            <button class="filter-tab rlz-filter-drawer__btn" data-filter="spatial">Spatial</button>
+        </div>
+    </div>
+
     <script src="realiz/assets/js/lucide-local.js"></script>
     <script src="realiz/assets/js/main.js"></script>
     <script src="header.js"></script>

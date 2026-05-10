@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>About Us - Mood Designz</title>
-    <meta name="description" content="Learn more about Mood Designz, our mission, our philosophy, and the collective of experts behind our award-winning work."/>
+    <meta name="description" content="Learn more about Mood Designz, our mission, our philosophy, and the collective of visionaries behind our high-fidelity digital experiences.">
     
     <!-- Realiz Assets -->
-    <link href="realiz/assets/css/main.css" rel="stylesheet"/>
+    <link href="realiz/assets/css/main.css" rel="stylesheet">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -16,8 +16,6 @@
         :root {
             --brand-lime: #c3ff06;
             --brand-bg: #0d2620;
-            --glass-bg: rgba(255, 255, 255, 0.05);
-            --glass-border: rgba(255, 255, 255, 0.1);
         }
 
         body {
@@ -26,45 +24,22 @@
             overflow-x: hidden;
         }
 
-        /* CUSTOM PILL HEADER */
-        header#main-header {
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: auto;
-            min-width: 600px;
-            height: 60px;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 30px;
-            border-radius: 100px;
-            background: rgba(13, 38, 32, 0.7);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid var(--glass-border);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+        /* Conflict Fixes: Hide Realiz Sidebars and Headers */
+        aside, header.fixed, nav#menu-panel:not(.mood-panel) { 
+            display: none !important; 
         }
 
-        @media (max-width: 768px) {
-            header#main-header {
-                min-width: 90%;
-            }
-        }
-
-        /* Conflict Fixes */
-        aside, header.fixed { display: none !important; }
+        /* Ensure content is not padded for a sidebar that isn't there */
+        body { padding-left: 0 !important; }
     </style>
     <link rel="stylesheet" href="header.css">
 </head>
 <body class="relative h-[100dvh] w-screen bg-brand-bg text-white overflow-hidden selection:bg-brand-lime selection:text-brand-sidebar tft-page-about-v2" id="page-top">
-
+    
     <div id="header-container"></div>
 
-    <div id="main-scroll-container" class="absolute inset-0 overflow-y-auto z-10 bg-brand-bg">
+    <!-- CONTENT WRAPPER -->
+    <div class="absolute inset-0 overflow-y-auto z-10 bg-brand-bg md:bg-transparent" id="main-scroll-container">
         <!-- SECTION 1: HERO -->
         <section class="w-full min-h-screen relative flex items-center overflow-hidden py-32 md:py-48">
             <img alt="Studio" class="absolute inset-0 w-full h-full object-cover parallax-bg opacity-40" src="realiz/assets/img/project_workspace.png">
@@ -72,16 +47,16 @@
             <div class="container mx-auto px-6 md:px-12 relative z-10">
                 <div class="reveal-up max-w-4xl">
                     <span class="font-body text-xs font-bold tracking-[0.6em] text-brand-lime uppercase mb-8 block">We are Mood Designz.</span>
-                    <h1 class="font-display text-6xl md:text-9xl leading-[0.9] tracking-tighter mb-12 text-white">The <span class="italic highlight-text">Creative</span> Pulse.</h1>
-                    <p class="max-w-xl font-body text-lg text-white/50 leading-relaxed mb-12">A collective of designers, technologists, and visionaries dedicated to the pursuit of uncompromising digital excellence.</p>
+                    <h1 class="font-display text-6xl md:text-9xl leading-[0.9] tracking-tighter mb-12 text-white">The <span class="tft-elite-highlight not-italic">Logical</span> Evolution.</h1>
+                    <p class="max-w-xl font-body text-lg text-white/50 leading-relaxed mb-12">A collective of architects, technologists, and visionaries dedicated to the pursuit of uncompromising digital excellence.</p>
                     <div class="flex gap-12">
                         <div class="flex flex-col">
-                            <span class="font-display text-5xl text-brand-lime mb-1 tracking-tight">15+</span>
-                            <span class="font-body text-[10px] uppercase tracking-[0.3em] text-white/30 font-bold">Industry Awards</span>
+                            <span class="font-display text-5xl text-brand-lime mb-1 tracking-tight">12+</span>
+                            <span class="font-body text-[10px] uppercase tracking-[0.3em] text-white/30 font-bold">Global Awards</span>
                         </div>
                         <div class="flex flex-col">
-                            <span class="font-display text-5xl text-brand-lime mb-1 tracking-tight">200+</span>
-                            <span class="font-body text-[10px] uppercase tracking-[0.3em] text-white/30 font-bold">Successful Projects</span>
+                            <span class="font-display text-5xl text-brand-lime mb-1 tracking-tight">450+</span>
+                            <span class="font-body text-[10px] uppercase tracking-[0.3em] text-white/30 font-bold">Projects Delivered</span>
                         </div>
                     </div>
                 </div>
@@ -93,12 +68,15 @@
             <div class="container mx-auto px-6 md:px-24 flex flex-col lg:flex-row gap-20 items-center">
                 <div class="lg:w-1/2 reveal-up">
                     <span class="font-body text-xs font-bold tracking-[0.3em] text-brand-sidebar/40 uppercase mb-8 block">The Philosophy</span>
-                    <h2 class="font-display text-4xl md:text-6xl leading-tight mb-10 italic">"Design is not just what it looks like. Design is the <span class="highlight-text-dark">soul</span> of how it works."</h2>
-                    <p class="font-body text-lg opacity-80 leading-relaxed">We believe in creating experiences that resonate on a deeper level. Our work is a synthesis of art and logic, where every detail is considered and every interaction is intentional.</p>
+                    <h2 class="font-display text-4xl md:text-6xl leading-tight mb-10 italic">"Design is not just what it looks like. Design is the <span class="tft-elite-highlight not-italic">unbreakable</span> logic of how it works."</h2>
+                    <p class="font-body text-lg opacity-80 leading-relaxed">In an era of fleeting digital trends, we choose the path of permanence. Our work is defined by high-fidelity synthesis, where every pixel serves a purpose and every interaction is a calculated breath.</p>
                 </div>
                 <div class="lg:w-1/2 relative reveal-up">
-                    <div class="aspect-square bg-gray-100 overflow-hidden rounded-sm shadow-2xl">
+                    <div class="aspect-square bg-gray-100 overflow-hidden rounded-sm">
                         <img alt="Manifesto" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" src="realiz/assets/img/project_editorial.png">
+                    </div>
+                    <div class="absolute -bottom-10 -left-10 w-48 h-48 bg-brand-lime flex items-center justify-center p-8 hidden md:flex shadow-[20px_20px_60px_rgba(0,0,0,0.1)] border border-white/10">
+                        <span class="font-display text-2xl text-brand-sidebar leading-tight tracking-tighter">Elite Crafted <br>Since 2018.</span>
                     </div>
                 </div>
             </div>
@@ -114,33 +92,185 @@
                     </div>
                     <p class="md:w-1/3 font-body text-sm text-white/40 leading-relaxed mt-6 md:mt-0">We operate at the intersection of high-end aesthetics and modern technical rigor.</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-1 bg-white/5 border border-white/5 reveal-up">
-                    <div class="p-12 group hover:bg-white/10 transition-all duration-500">
-                        <h3 class="font-display text-2xl mb-6 text-brand-lime">Brand Identity</h3>
-                        <p class="font-body text-sm text-white/40 leading-relaxed group-hover:text-white transition-colors">Crafting visual souls for brands that want to stand out and connect deeply with their audience.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-1px bg-white/5 border border-white/5 reveal-up">
+                    <div class="p-12 group hover:bg-brand-sidebar transition-all duration-500">
+                        <i class="w-10 h-10 text-brand-lime mb-10" data-lucide="layers"></i>
+                        <h3 class="font-display text-2xl mb-6 text-white">Multi-Scale UI</h3>
+                        <p class="font-body text-sm text-white/40 leading-relaxed group-hover:text-white/60 transition-colors">Crafting fluid interfaces that scale seamlessly from handheld displays to immersive architectural projections.</p>
                     </div>
-                    <div class="p-12 group hover:bg-white/10 transition-all duration-500 border-x border-white/5">
-                        <h3 class="font-display text-2xl mb-6 text-brand-lime">Web Experience</h3>
-                        <p class="font-body text-sm text-white/40 leading-relaxed group-hover:text-white transition-colors">Building high-performance digital environments that are as beautiful as they are functional.</p>
+                    <div class="p-12 group hover:bg-brand-sidebar transition-all duration-500 border-x border-white/5">
+                        <i class="w-10 h-10 text-brand-lime mb-10" data-lucide="cpu"></i>
+                        <h3 class="font-display text-2xl mb-6 text-white">Predictive Tech</h3>
+                        <p class="font-body text-sm text-white/40 leading-relaxed group-hover:text-white/60 transition-colors">Integrating AI-driven predictive models to anticipate user intent and personalize spatial experiences.</p>
                     </div>
-                    <div class="p-12 group hover:bg-white/10 transition-all duration-500">
-                        <h3 class="font-display text-2xl mb-6 text-brand-lime">Strategy & Motion</h3>
-                        <p class="font-body text-sm text-white/40 leading-relaxed group-hover:text-white transition-colors">Directing the narrative through movement and strategic insight to guide users effortlessly.</p>
+                    <div class="p-12 group hover:bg-brand-sidebar transition-all duration-500">
+                        <i class="w-10 h-10 text-brand-lime mb-10" data-lucide="activity"></i>
+                        <h3 class="font-display text-2xl mb-6 text-white">Strategic Motion</h3>
+                        <p class="font-body text-sm text-white/40 leading-relaxed group-hover:text-white/60 transition-colors">Utilizing motion as a functional guide, ensuring users navigate complex data with effortless intuition.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- FOOTER -->
-        <footer class="py-20 border-t border-white/5 bg-brand-bg">
-            <div class="container mx-auto px-6 text-center">
-                <img src="logo.png" alt="Logo" class="h-10 mx-auto mb-10 opacity-50">
-                <p class="text-white/30 text-sm">© 2026 Mood Designz. All rights reserved.</p>
+        <!-- SECTION 4: THE COLLECTIVE -->
+        <section class="py-32 md:py-56 bg-white text-brand-sidebar overflow-hidden">
+            <div class="container mx-auto px-6 md:px-12">
+                <div class="text-center mb-24 reveal-up">
+                    <span class="font-body text-xs font-bold tracking-[0.5em] text-brand-sidebar/30 uppercase mb-4 block">The Hum</span>
+                    <h2 class="font-display text-5xl md:text-8xl italic">The <span class="tft-elite-highlight not-italic">Collective.</span></h2>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+                    <!-- Member 1 -->
+                    <div class="tft-team-card-elite group reveal-up">
+                        <div class="tft-team-card-elite__img-wrap">
+                            <img alt="Julian Voss" class="tft-team-card-elite__img" src="realiz/assets/img/member1.jpg">
+                            <div class="tft-team-card-elite__overlay">
+                                <div class="tft-team-card-elite__glass">
+                                    <div class="tft-team-specialty-hud">
+                                        <div class="tft-team-dot"></div>
+                                        <span class="font-body text-[8px] font-bold tracking-[0.2em] text-brand-lime uppercase">Elite Lead</span>
+                                    </div>
+                                    <h3 class="font-display text-xl text-white mb-1">Julian Voss</h3>
+                                    <p class="font-body text-[10px] text-white/40 leading-relaxed">Master of conceptual logic and minimal form.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Member 2 -->
+                    <div class="tft-team-card-elite group reveal-up">
+                        <div class="tft-team-card-elite__img-wrap">
+                            <img alt="Elena Vance" class="tft-team-card-elite__img" src="realiz/assets/img/member3.jpg">
+                            <div class="tft-team-card-elite__overlay">
+                                <div class="tft-team-card-elite__glass">
+                                    <div class="tft-team-specialty-hud">
+                                        <div class="tft-team-dot"></div>
+                                        <span class="font-body text-[8px] font-bold tracking-[0.2em] text-brand-lime uppercase">Code Architect</span>
+                                    </div>
+                                    <h3 class="font-display text-xl text-white mb-1">Elena Vance</h3>
+                                    <p class="font-body text-[10px] text-white/40 leading-relaxed">Orchestrating complex digital infrastructures.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Member 3 -->
+                    <div class="tft-team-card-elite group reveal-up">
+                        <div class="tft-team-card-elite__img-wrap">
+                            <img alt="Marcus Chen" class="tft-team-card-elite__img" src="realiz/assets/img/member4.jpg">
+                            <div class="tft-team-card-elite__overlay">
+                                <div class="tft-team-card-elite__glass">
+                                    <div class="tft-team-specialty-hud">
+                                        <div class="tft-team-dot"></div>
+                                        <span class="font-body text-[8px] font-bold tracking-[0.2em] text-brand-lime uppercase">Spatial UX</span>
+                                    </div>
+                                    <h3 class="font-display text-xl text-white mb-1">Marcus Chen</h3>
+                                    <p class="font-body text-[10px] text-white/40 leading-relaxed">Designing the flow of tomorrow's spaces.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: EVOLUTION TIMELINE -->
+        <section class="py-32 md:py-56 bg-brand-bg relative overflow-hidden">
+            <div class="container mx-auto px-6 md:px-12">
+                <div class="max-w-2xl mx-auto text-center mb-32 reveal-up">
+                    <span class="font-body text-xs font-bold tracking-[0.4em] text-brand-lime uppercase mb-4 block">Milestones</span>
+                    <h2 class="font-display text-5xl md:text-7xl italic">Logical <span class="tft-elite-highlight not-italic font-body text-4xl">Path.</span></h2>
+                </div>
+                <div class="tft-evolution-track">
+                    <div class="tft-evolution-guide"></div>
+                    <!-- Milestone 1 -->
+                    <div class="tft-milestone reveal-up">
+                        <div class="tft-milestone-marker"></div>
+                        <div class="tft-milestone__year-side text-right pr-4 md:pr-20">
+                            <span class="font-display text-4xl md:text-6xl text-brand-lime block">2018</span>
+                        </div>
+                        <div class="tft-milestone__content pl-4 md:pl-20">
+                            <h3 class="font-display text-2xl md:text-3xl italic text-white mb-4">The Genesis</h3>
+                            <p class="font-body text-base md:text-lg text-white/40 leading-relaxed font-light">Mood Designz was founded with a mission to bridge architectural theory with interactive design.</p>
+                        </div>
+                    </div>
+                    <!-- Milestone 2 -->
+                    <div class="tft-milestone tft-milestone--reverse reveal-up">
+                        <div class="tft-milestone-marker"></div>
+                        <div class="tft-milestone__year-side text-left pl-4 md:pl-20">
+                            <span class="font-display text-4xl md:text-6xl text-brand-lime block">2021</span>
+                        </div>
+                        <div class="tft-milestone__content pr-4 md:pr-20 text-right">
+                            <h3 class="font-display text-2xl md:text-3xl italic text-white mb-4">Global Reach</h3>
+                            <p class="font-body text-base md:text-lg text-white/40 leading-relaxed font-light">Scaling our methodology across international borders, delivering high-impact digital products.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: CTA PORTAL -->
+        <section class="tft-cta-portal py-48 md:py-80 flex items-center justify-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-brand-bg/60 z-0"></div>
+            <div class="container mx-auto px-6 relative z-10 text-center reveal-up">
+                <span class="font-body text-xs font-bold tracking-[0.6em] text-white/30 uppercase mb-10 block font-light">Concept to Creation</span>
+                <h2 class="font-display text-6xl md:text-9xl italic mb-20 leading-none text-white">Ready to <span class="tft-elite-highlight not-italic">Evolve?</span></h2>
+                <a class="tft-btn-blade-lg" href="contact.html">
+                    <span>Start Project</span>
+                    <i data-lucide="arrow-right"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="tft-vanguard-footer">
+            <div class="tft-footer-main-grid">
+                <div class="tft-footer-column reveal-up">
+                    <div class="mb-10">
+                        <img alt="Mood Designz Logo" class="h-12 w-auto opacity-80 hover:opacity-100 transition-opacity" src="logo.png">
+                    </div>
+                    <p class="text-sm text-white/40 max-w-xs leading-relaxed font-body">
+                        A boutique digital laboratory specialized in high-fidelity architectural web experiences.
+                    </p>
+                </div>
+                <div class="tft-footer-column reveal-up">
+                    <h3 class="font-body text-[10px] font-bold tracking-[0.4em] text-white/40 uppercase mb-8">Discover</h3>
+                    <nav>
+                        <a class="tft-footer-link" href="about.html">The Studio</a>
+                        <a class="tft-footer-link" href="portfolio.html">Showcase</a>
+                        <a class="tft-footer-link" href="contact.html">Get in Touch</a>
+                    </nav>
+                </div>
+                <div class="tft-footer-column reveal-up">
+                    <h4 class="font-body text-[10px] font-bold tracking-[0.4em] text-white/40 uppercase mb-8">Connect</h4>
+                    <div class="tft-footer-socials">
+                        <a class="tft-footer-link" href="#">Instagram</a>
+                        <a class="tft-footer-link" href="#">Behance</a>
+                        <a class="tft-footer-link" href="#">LinkedIn</a>
+                    </div>
+                </div>
+                <div class="tft-footer-column reveal-up">
+                    <h4 class="font-body text-[10px] font-bold tracking-[0.4em] text-white/40 uppercase mb-8">Newsletter</h4>
+                    <p class="text-xs text-white/30 mb-8 italic font-body">Join our elite circle for architectural design insights.</p>
+                    <form class="tft-footer-newsletter">
+                        <input class="tft-footer-newsletter-input" placeholder="Email address" type="email">
+                        <button class="tft-footer-submit-btn" type="submit">
+                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><line x1="5" x2="19" y1="12" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="tft-footer-bottom reveal-up">
+                <span class="tft-copyright">© 2026 Mood Designz. All rights reserved.</span>
+                <div class="flex gap-8">
+                    <a class="tft-copyright hover:text-white transition-colors" href="#">Privacy</a>
+                    <a class="tft-copyright hover:text-white transition-colors" href="#">Terms</a>
+                </div>
+                <a aria-label="Back to top" class="tft-back-to-top group" href="#page-top">
+                    <svg class="transition-transform group-hover:-translate-y-1" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"><line x1="12" x2="12" y1="19" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+                </a>
             </div>
         </footer>
     </div>
 
-    <!-- JS Scripts -->
     <script src="realiz/assets/js/lucide-local.js"></script>
     <script src="realiz/assets/js/main.js"></script>
     <script src="header.js"></script>

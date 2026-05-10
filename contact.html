@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Contact Us - Mood Designz</title>
-    <meta name="description" content="Get in touch with Mood Designz. Let's create something magic together. Reach out for inquiries, collaborations, or just to say hello."/>
+    <meta name="description" content="Get in touch with Mood Designz. Let's create something magic together. Reach out for inquiries, collaborations, or just to say hello.">
     
     <!-- Realiz Assets -->
-    <link href="realiz/assets/css/main.css" rel="stylesheet"/>
+    <link href="realiz/assets/css/main.css" rel="stylesheet">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -16,8 +16,6 @@
         :root {
             --brand-lime: #c3ff06;
             --brand-bg: #0d2620;
-            --glass-bg: rgba(255, 255, 255, 0.05);
-            --glass-border: rgba(255, 255, 255, 0.1);
         }
 
         body {
@@ -26,77 +24,195 @@
             overflow-x: hidden;
         }
 
-        /* Conflict Fixes */
-        aside, header.fixed { display: none !important; }
+        /* Conflict Fixes: Hide Realiz Sidebars and Headers */
+        aside, header.fixed, nav#menu-panel:not(.mood-panel) { 
+            display: none !important; 
+        }
+
+        /* Ensure content is not padded for a sidebar that isn't there */
+        body { padding-left: 0 !important; }
     </style>
     <link rel="stylesheet" href="header.css">
 </head>
-<body class="relative h-[100dvh] w-screen bg-brand-bg text-white overflow-hidden selection:bg-brand-lime selection:text-brand-sidebar tft-page-contact" id="page-top">
-
+<body class="relative h-[100dvh] w-full bg-brand-bg text-white tft-page-contact" id="page-top">
+    
     <div id="header-container"></div>
 
-    <div id="main-scroll-container" class="absolute inset-0 overflow-y-auto z-10 bg-brand-bg">
+    <!-- MAIN CONTENT AREA -->
+    <div class="absolute inset-0 overflow-y-auto z-10 bg-brand-bg" id="main-scroll-container">
         <!-- Hero Section -->
         <section class="relative w-full py-24 md:py-48 px-8 md:px-20 lg:px-32 flex flex-col overflow-hidden">
             <div class="absolute top-20 right-20 w-64 h-64 bg-brand-lime/10 rounded-full blur-[100px] animate-pulse"></div>
             <div class="reveal-up">
                 <span class="font-body text-xs font-bold tracking-[0.3em] text-brand-lime uppercase mb-6 block">Ready to start?</span>
-                <h1 class="font-display text-6xl md:text-[10vw] lg:text-[12vw] leading-[0.85] tracking-tighter text-white">
+                <h1 class="font-display text-6xl md:text-[10vw] lg:text-[12vw] leading-[0.85] tracking-tighter mb-12">
                     Let's create<br><span class="italic text-brand-lime">something</span><br>magic.
                 </h1>
             </div>
-            
             <div class="w-full h-px bg-white/10 mt-12 mb-20 reveal-up"></div>
-
             <!-- Contact Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 reveal-up">
                 <!-- Column 1: Info -->
-                <div class="flex flex-col gap-12">
-                    <div>
-                        <h2 class="font-body text-[10px] font-bold tracking-[0.2em] text-brand-lime uppercase mb-4">Email Inquiry</h2>
-                        <a class="font-display text-3xl md:text-4xl hover:text-brand-lime transition-colors block text-white" href="mailto:hello@mooddesignz.com">hello@mooddesignz.com</a>
-                    </div>
-                    <div>
-                        <h2 class="font-body text-[10px] font-bold tracking-[0.2em] text-brand-lime uppercase mb-4">Direct Dial</h2>
-                        <a class="font-display text-3xl md:text-3xl hover:text-brand-lime transition-colors block text-white" href="tel:+123456789">+1 (234) 567-890</a>
+                <div class="tft-premium-info-grid reveal-up">
+                    <div class="flex flex-col gap-12">
+                        <div>
+                            <h2 class="font-body text-[10px] font-bold tracking-[0.2em] text-brand-lime uppercase mb-4">Email Inquiry</h2>
+                            <a class="font-display text-3xl md:text-4xl hover:text-brand-lime transition-colors block text-white" href="mailto:hello@mooddesignz.com">hello@mooddesignz.com</a>
+                        </div>
+                        <div>
+                            <h2 class="font-body text-[10px] font-bold tracking-[0.2em] text-brand-lime uppercase mb-4">Direct Dial</h2>
+                            <a class="font-display text-3xl md:text-3xl hover:text-brand-lime transition-colors block text-white" href="tel:+123456789">+1 (234) 567-890</a>
+                        </div>
+                        <div>
+                            <h2 class="font-body text-[10px] font-bold tracking-[0.2em] text-brand-lime uppercase mb-4">Creative HQ</h2>
+                            <p class="font-body text-lg text-white/60 leading-relaxed italic">Skalitzer Str. 104<br>10997 Berlin, Germany</p>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Column 2: Form -->
+                <!-- Column 2: Premium Form -->
                 <div class="lg:col-span-2">
-                    <div class="tft-premium-form-wrap">
-                        <form action="#" class="tft-contact-form grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <div class="tft-input-group relative">
-                                <input class="w-full bg-white/5 border border-white/10 rounded-none p-6 text-white outline-none focus:border-brand-lime transition-colors" placeholder="Full Name" required type="text">
+                    <div class="tft-premium-form-wrap reveal-up" id="wp-block-contact-form">
+                        <div class="tft-form-header">
+                            <span class="tft-label-mini">Ready to start?</span>
+                            <h2 class="font-display text-3xl md:text-5xl">Add to <span class="text-brand-lime italic">Conversation</span></h2>
+                        </div>
+                        <form action="#" class="tft-contact-form" id="contact-form" method="post">
+                            <div class="tft-input-group">
+                                <input class="tft-contact-input" id="name" name="name" placeholder=" " required="" type="text">
+                                <label class="tft-contact-label" for="name">Full Name</label>
                             </div>
-                            <div class="tft-input-group relative">
-                                <input class="w-full bg-white/5 border border-white/10 rounded-none p-6 text-white outline-none focus:border-brand-lime transition-colors" placeholder="Email Address" required type="email">
+                            <div class="tft-input-group">
+                                <input class="tft-contact-input" id="email" name="email" placeholder=" " required="" type="email">
+                                <label class="tft-contact-label" for="email">Email Address</label>
                             </div>
-                            <div class="tft-input-group md:col-span-2 relative">
-                                <textarea class="w-full bg-white/5 border border-white/10 rounded-none p-6 text-white outline-none focus:border-brand-lime transition-colors min-h-[200px]" placeholder="Your Message" required></textarea>
+                            <div class="tft-input-group md:col-span-2">
+                                <input class="tft-contact-input" id="subject" name="subject" placeholder=" " type="text">
+                                <label class="tft-contact-label" for="subject">Subject</label>
                             </div>
-                            <div class="md:col-span-2 pt-10">
-                                <button class="px-12 py-6 bg-brand-lime text-black font-bold uppercase tracking-[0.2em] hover:bg-white transition-all flex items-center gap-4" type="submit">
-                                    Send Inquiry
-                                    <span class="w-8 h-px bg-black"></span>
+                            <div class="tft-input-group md:col-span-2">
+                                <textarea class="tft-contact-input tft-contact-textarea" id="message" name="message" placeholder=" " required=""></textarea>
+                                <label class="tft-contact-label" for="message">Message</label>
+                            </div>
+                            <div class="md:col-span-2 pt-10 flex flex-col md:flex-row items-start md:items-center gap-10">
+                                <button class="tft-btn-submit-contact group" type="submit">
+                                    <span class="flex items-center gap-4 text-black">
+                                        Send Inquiry
+                                        <i class="w-4 h-4 transition-transform group-hover:translate-x-1" data-lucide="arrow-right"></i>
+                                    </span>
                                 </button>
+                                <p class="font-body text-[10px] text-white/40 max-w-[280px] leading-relaxed italic">
+                                    We typically respond within 24 hours. Your information is processed securely for inquiry purposes.
+                                </p>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- FOOTER -->
-        <footer class="py-20 border-t border-white/5 bg-brand-bg">
-            <div class="container mx-auto px-6 text-center">
-                <img src="logo.png" alt="Logo" class="h-10 mx-auto mb-10 opacity-50">
-                <p class="text-white/30 text-sm">© 2026 Mood Designz. All rights reserved.</p>
+        <!-- Location Spotlight -->
+        <section class="w-full py-24 px-8 md:px-20 lg:px-32 reveal-up">
+            <div class="relative w-full h-[60vh] md:h-[80vh] overflow-hidden rounded-[2rem] shadow-2xl group cursor-pointer">
+                <img alt="Berlin Studio" class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110" src="realiz/assets/img/project_workspace.png">
+                <div class="absolute inset-0 bg-brand-bg/40 transition-opacity duration-700 group-hover:opacity-20"></div>
+                <div class="absolute inset-0 flex items-center justify-center p-12">
+                    <div class="text-center group-hover:scale-105 transition-transform duration-700">
+                        <h2 class="font-display text-4xl md:text-8xl text-white drop-shadow-2xl mb-8">Creative<br>Sanctuary</h2>
+                        <div class="tft-location-wrap reveal-up">
+                            <a class="tft-location-btn group" href="#">
+                                <span class="tft-location-btn__text">Visit Us</span>
+                                <span class="tft-location-btn__bg"></span>
+                            </a>
+                            <a class="tft-location-btn group" href="#">
+                                <span class="tft-location-btn__text">Our HQ</span>
+                                <span class="tft-location-btn__bg"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Social Grid -->
+        <section class="tft-social-grid-wrap px-8 md:px-20 lg:px-32 reveal-up" id="wp-block-social-grid">
+            <div class="tft-social-grid">
+                <!-- Instagram -->
+                <a class="tft-social-card group" href="#" rel="noopener noreferrer" target="_blank">
+                    <div class="flex flex-col gap-2">
+                        <h3 class="tft-social-title text-white">Instagram</h3>
+                        <p class="tft-social-desc">Daily studio process and curated inspiration for creative minds.</p>
+                    </div>
+                </a>
+                <!-- LinkedIn -->
+                <a class="tft-social-card group" href="#" rel="noopener noreferrer" target="_blank">
+                    <div class="flex flex-col gap-2">
+                        <h3 class="tft-social-title text-white">LinkedIn</h3>
+                        <p class="tft-social-desc">B2B updates, industry insights, and career opportunities.</p>
+                    </div>
+                </a>
+                <!-- Behance -->
+                <a class="tft-social-card group" href="#" rel="noopener noreferrer" target="_blank">
+                    <div class="flex flex-col gap-2">
+                        <h3 class="tft-social-title text-white">Behance</h3>
+                        <p class="tft-social-desc">Full project deep-dives, case studies, and detailed portfolios.</p>
+                    </div>
+                </a>
+                <!-- Dribbble -->
+                <a class="tft-social-card group" href="#" rel="noopener noreferrer" target="_blank">
+                    <div class="flex flex-col gap-2">
+                        <h3 class="tft-social-title text-white">Dribbble</h3>
+                        <p class="tft-social-desc">Visual experiments, micro-interactions, and quick shots.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+        <footer class="tft-vanguard-footer">
+            <div class="tft-footer-main-grid">
+                <div class="tft-footer-column reveal-up">
+                    <div class="mb-10">
+                        <img alt="Mood Designz Logo" class="h-12 w-auto opacity-80 hover:opacity-100 transition-opacity" src="logo.png">
+                    </div>
+                    <p class="text-sm text-white/40 max-w-xs leading-relaxed font-body">
+                        A boutique digital laboratory specialized in high-fidelity architectural web experiences.
+                    </p>
+                </div>
+                <div class="tft-footer-column reveal-up">
+                    <h3 class="font-body text-[10px] font-bold tracking-[0.4em] text-white/40 uppercase mb-8">Discover</h3>
+                    <nav>
+                        <a class="tft-footer-link" href="about.html">The Studio</a>
+                        <a class="tft-footer-link" href="portfolio.html">Showcase</a>
+                        <a class="tft-footer-link" href="contact.html">Get in Touch</a>
+                    </nav>
+                </div>
+                <div class="tft-footer-column reveal-up">
+                    <h3 class="font-body text-[10px] font-bold tracking-[0.4em] text-white/40 uppercase mb-8">Connect</h3>
+                    <div class="tft-footer-socials">
+                        <a class="tft-footer-link" href="#">Instagram</a>
+                        <a class="tft-footer-link" href="#">Behance</a>
+                        <a class="tft-footer-link" href="#">LinkedIn</a>
+                    </div>
+                </div>
+                <div class="tft-footer-column reveal-up">
+                    <h3 class="font-body text-[10px] font-bold tracking-[0.4em] text-white/40 uppercase mb-8">Newsletter</h3>
+                    <p class="text-xs text-white/30 mb-8 italic font-body">Join our elite circle for architectural design insights.</p>
+                    <form class="tft-footer-newsletter">
+                        <input class="tft-footer-newsletter-input" placeholder="Email address" type="email">
+                        <button class="tft-footer-submit-btn" type="submit">
+                            <i data-lucide="arrow-right"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="tft-footer-bottom reveal-up">
+                <span class="tft-copyright">© 2026 Mood Designz. All rights reserved.</span>
+                <div class="flex gap-8">
+                    <a class="tft-copyright hover:text-white transition-colors" href="#">Privacy</a>
+                    <a class="tft-copyright hover:text-white transition-colors" href="#">Terms</a>
+                </div>
+                <a aria-label="Back to top" class="tft-back-to-top group" href="#page-top">
+                    <svg class="transition-transform group-hover:-translate-y-1" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"><line x1="12" x2="12" y1="19" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+                </a>
             </div>
         </footer>
     </div>
-
-    <!-- JS Scripts -->
     <script src="realiz/assets/js/lucide-local.js"></script>
     <script src="realiz/assets/js/main.js"></script>
     <script src="header.js"></script>
