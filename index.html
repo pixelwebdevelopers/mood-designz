@@ -66,6 +66,114 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Marquee Section Styles */
+        .section-brand {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.02), rgba(255,255,255,0.05));
+            border-top: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            overflow: hidden;
+        }
+
+        /* === MARQUEE: Bulletproof overrides — scoped to .section-brand to kill ALL external interference === */
+        .section-brand .marquee-wrapper {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 40px !important;
+            margin-top: 50px !important;
+            /* Kill Davies' infiniteScroll animation on .marquee-wrapper */
+            animation: none !important;
+            -webkit-animation: none !important;
+            transform: none !important;
+            -webkit-transform: none !important;
+        }
+
+        .section-brand .marquee-container {
+            width: 100% !important;
+            overflow: hidden !important;
+            display: flex !important;
+            mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent) !important;
+            -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent) !important;
+        }
+
+        .section-brand .marquee-content {
+            display: flex !important;
+            flex-shrink: 0 !important;
+            width: max-content !important;
+            gap: 80px !important;
+            padding: 10px 0 !important;
+        }
+
+        .section-brand .marquee-content.marquee-ltr {
+            animation: md-marquee-ltr 40s linear infinite !important;
+            -webkit-animation: md-marquee-ltr 40s linear infinite !important;
+        }
+
+        .section-brand .marquee-content.marquee-rtl {
+            animation: md-marquee-rtl 45s linear infinite !important;
+            -webkit-animation: md-marquee-rtl 45s linear infinite !important;
+        }
+
+        .section-brand .marquee-container:hover .marquee-content {
+            animation-play-state: paused !important;
+            -webkit-animation-play-state: paused !important;
+        }
+
+        /* Unique keyframe names to avoid collision with Davies/Realiz animations */
+        @keyframes md-marquee-ltr {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0%); }
+        }
+
+        @keyframes md-marquee-rtl {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .brand-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 220px;
+            height: 100px;
+            padding: 0 60px;
+            flex-shrink: 0;
+        }
+
+        .text-glow {
+            text-shadow: 0 0 20px rgba(195, 255, 6, 0.4);
+        }
+
+        .brand-item img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: grayscale(100%) brightness(1.2);
+            opacity: 0.5;
+            transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .brand-item:hover img {
+            filter: grayscale(0%) brightness(1);
+            opacity: 1;
+            transform: scale(1.2) rotate(3deg);
+        }
+
+        .section-brand .mini-title-wrapper {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 60px;
+        }
+
+        .section-brand .mini-title-wrapper .title-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--brand-lime), transparent);
+            width: 100%;
+            max-width: 200px;
+            margin: 15px auto 0;
+            opacity: 0.5;
+        }
     </style>
     <link rel="stylesheet" href="header.css">
 </head>
@@ -441,21 +549,21 @@
                     <h2 class="text-display-2 letter-space--3 text-center effectFade fadeUp">Tech Stack</h2>
                 </div>
                 <div class="tf-grid-layout lg-col-3">
-                    <div class="wg-tech-v2">
+                    <div class="wg-tech-v2" data-us-project="lHlDvoJDIXCxxXVqTNOC?update=0.8924711990022087">
                         <div class="tech-content">
                             <h5 class="tech-name letter-space--2">Figma</h5>
                             <p class="tech-desc letter-space--1">Collaborative design tool.</p>
                             <div class="ic-img"><img loading="lazy" width="33" height="48" src="davies/assets/images/item/figma.svg" alt="Image Icon"></div>
                         </div>
                     </div>
-                    <div class="wg-tech-v2">
+                    <div class="wg-tech-v2" data-us-project="lHlDvoJDIXCxxXVqTNOC?update=0.8924711990022087">
                         <div class="tech-content">
                             <h5 class="tech-name letter-space--2">Next.js</h5>
                             <p class="tech-desc letter-space--1">Modern web framework.</p>
                             <div class="ic-img"><img loading="lazy" width="48" height="48" src="davies/assets/images/item/framer.svg" alt="Image Icon"></div>
                         </div>
                     </div>
-                    <div class="wg-tech-v2">
+                    <div class="wg-tech-v2" data-us-project="lHlDvoJDIXCxxXVqTNOC?update=0.8924711990022087">
                         <div class="tech-content">
                             <h5 class="tech-name letter-space--2">Tailwind</h5>
                             <p class="tech-desc letter-space--1">Utility-first CSS.</p>
@@ -466,22 +574,78 @@
             </div>
         </section>
 
-        <!-- SECTION 5: Davies Version 2 Brands & Partners (Carousel) -->
-        <div class="section-brand flat-spacing bg-white/5">
-            <div class="container">
-                <h6 class="mini-title text-caption text-white-64 text-center mb-10">BRANDS AND PARTNERS</h6>
-                <div class="brand-carousel swiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="davies/assets/images/brand/brandv2-1.svg" alt="Brand" class="opacity-50 hover:opacity-100 transition-opacity"></div>
-                        <div class="swiper-slide"><img src="davies/assets/images/brand/brandv2-2.svg" alt="Brand" class="opacity-50 hover:opacity-100 transition-opacity"></div>
-                        <div class="swiper-slide"><img src="davies/assets/images/brand/brandv2-3.svg" alt="Brand" class="opacity-50 hover:opacity-100 transition-opacity"></div>
-                        <div class="swiper-slide"><img src="davies/assets/images/brand/brandv2-4.svg" alt="Brand" class="opacity-50 hover:opacity-100 transition-opacity"></div>
-                        <div class="swiper-slide"><img src="davies/assets/images/brand/brandv2-5.svg" alt="Brand" class="opacity-50 hover:opacity-100 transition-opacity"></div>
-                        <div class="swiper-slide"><img src="davies/assets/images/brand/brandv2-6.svg" alt="Brand" class="opacity-50 hover:opacity-100 transition-opacity"></div>
+        <!-- SECTION 5: Marquee Brands & Partners -->
+        <section class="section-brand">
+            <div class="container-fluid px-0">
+                <div class="container mini-title-wrapper">
+                    <div class="text-center">
+                        <h6 class="mini-title text-brand-lime uppercase tracking-[0.6em] text-xs font-bold mb-4 effectFade fadeUp">Strategic Network</h6>
+                        <h2 class="text-display-2 font-display italic font-black uppercase text-white effectFade fadeUp">
+                            Global <span class="text-brand-lime text-glow">Brands_</span> & Partners
+                        </h2>
+                        <div class="title-line effectFade fadeUp" style="max-width: 300px; height: 2px;"></div>
+                    </div>
+                </div>
+                
+                <div class="marquee-wrapper">
+                    <!-- Row 1: Left to Right -->
+                    <div class="marquee-container">
+                        <div class="marquee-content marquee-ltr">
+                            <!-- Set 1 -->
+                            <div class="brand-item"><img src="davies/assets/images/brand/brandv2-1.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="davies/assets/images/brand/brandv2-2.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="davies/assets/images/brand/brandv2-3.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="davies/assets/images/brand/brandv2-4.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="davies/assets/images/brand/brandv2-5.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="davies/assets/images/brand/brandv2-6.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="davies/assets/images/brand/brandv2-7.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="davies/assets/images/brand/brandv2-8.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="davies/assets/images/brand/brandv2-9.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="davies/assets/images/brand/brandv2-10.svg" alt="Brand"></div>
+                            <!-- Set 2 (Endless Loop) -->
+                            <div class="brand-item"><img src="davies/assets/images/brand/brandv2-1.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="davies/assets/images/brand/brandv2-2.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="davies/assets/images/brand/brandv2-3.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="davies/assets/images/brand/brandv2-4.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="davies/assets/images/brand/brandv2-5.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="davies/assets/images/brand/brandv2-6.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="davies/assets/images/brand/brandv2-7.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="davies/assets/images/brand/brandv2-8.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="davies/assets/images/brand/brandv2-9.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="davies/assets/images/brand/brandv2-10.svg" alt="Brand"></div>
+                        </div>
+                    </div>
+
+                    <!-- Row 2: Right to Left -->
+                    <div class="marquee-container">
+                        <div class="marquee-content marquee-rtl">
+                            <!-- Set 1 -->
+                            <div class="brand-item"><img src="davies/assets/images/brand/brand-1.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="davies/assets/images/brand/brand-2.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="davies/assets/images/brand/brand-3.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="davies/assets/images/brand/brand-4.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="davies/assets/images/brand/brand-5.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="davies/assets/images/brand/brand-6.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="davies/assets/images/brand/brand-7.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="davies/assets/images/brand/brand-8.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="davies/assets/images/brand/brand-9.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="davies/assets/images/brand/brand-10.svg" alt="Brand"></div>
+                            <!-- Set 2 (Endless Loop) -->
+                            <div class="brand-item"><img src="davies/assets/images/brand/brand-1.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="davies/assets/images/brand/brand-2.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="davies/assets/images/brand/brand-3.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="davies/assets/images/brand/brand-4.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="davies/assets/images/brand/brand-5.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="davies/assets/images/brand/brand-6.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="davies/assets/images/brand/brand-7.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="davies/assets/images/brand/brand-8.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="davies/assets/images/brand/brand-9.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="davies/assets/images/brand/brand-10.svg" alt="Brand"></div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- SECTION 6: Davies Version 2 Awards Section -->
         <section class="section-award flat-spacing bg-surface/5">
@@ -528,6 +692,7 @@
     </script>
     <script src="davies/assets/js/gsapAnimation.js"></script>
     <script src="davies/assets/js/main.js"></script>
+    <script src="davies/assets/js/unicornStudio.umd.js"></script>
     <script src="realiz/assets/js/main.js"></script>
 
     <script>
@@ -550,21 +715,10 @@
     </script>
     <script src="header.js"></script>
     <script>
-        // Initialize Swiper for Brands Carousel
-        new Swiper('.brand-carousel', {
-            slidesPerView: 2,
-            spaceBetween: 30,
-            loop: true,
-            autoplay: {
-                delay: 2000,
-                disableOnInteraction: false,
-            },
-            breakpoints: {
-                640: { slidesPerView: 3 },
-                768: { slidesPerView: 4 },
-                1024: { slidesPerView: 5 },
-            }
-        });
+        // Initialize UnicornStudio for Tech Stack animations
+        if (typeof UnicornStudio !== 'undefined') {
+            UnicornStudio.init();
+        }
     </script>
 </body>
 </html>
