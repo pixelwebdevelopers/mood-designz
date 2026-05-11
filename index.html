@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="davies/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="davies/assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="davies/assets/css/animate.css">
+    <link rel="stylesheet" href="davies/assets/css/odometer.min.css">
     <link rel="stylesheet" href="davies/assets/css/slick.css">
     <link rel="stylesheet" href="davies/assets/css/slick.theme.css">
     <link rel="stylesheet" type="text/css" href="davies/assets/css/styles.css">
@@ -173,6 +174,32 @@
             max-width: 200px;
             margin: 15px auto 0;
             opacity: 0.5;
+        }
+
+        /* Awards Section Overrides */
+        .section-award .award-item {
+            color: rgba(255, 255, 255, 0.3) !important;
+        }
+        .section-award .swiper-slide-active .award-item {
+            color: var(--brand-lime) !important;
+            text-shadow: 0 0 15px rgba(195, 255, 6, 0.3);
+        }
+        .section-award .mini-title {
+            color: var(--brand-lime) !important;
+            letter-spacing: 0.3em !important;
+            font-weight: 700 !important;
+        }
+        .section-award .text-white-64 {
+            color: rgba(255, 255, 255, 0.64) !important;
+        }
+        .section-award .flip-image img {
+            border-radius: 20px;
+            filter: grayscale(100%) brightness(0.8);
+            transition: all 0.5s ease;
+        }
+        .section-award .flip-image:hover img {
+            filter: grayscale(0%) brightness(1);
+            transform: scale(1.05);
         }
     </style>
     <link rel="stylesheet" href="header.css">
@@ -648,19 +675,99 @@
         </section>
 
         <!-- SECTION 6: Davies Version 2 Awards Section -->
-        <section class="section-award flat-spacing bg-surface/5">
+        <section class="section-award flat-spacing" style="background: rgba(255,255,255,0.03); border-top: 1px solid rgba(255,255,255,0.05);">
             <div class="container">
                 <div class="row">
                     <div class="col-md-5 ms-auto">
                         <div class="col-right">
-                            <h6 class="mini-title text-caption text-white-64">AWARDS</h6>
-                            <h5 class="fw-normal letter-space--2 text-white">
-                                Recognized by leading design platforms worldwide for excellence in digital innovation.
+                            <h6 class="mini-title text-caption text-white-64 effectFade fadeUp">
+                                AWARDS
+                            </h6>
+                            <h5 class="fw-normal letter-space--2 text-white effectFade fadeUp" data-delay="0.1">
+                                Since our inception, Mood Designz has been recognized by leading design platforms worldwide for excellence in digital innovation and creative strategy.
                             </h5>
                         </div>
                     </div>
                 </div>
-                <!-- Awards content... -->
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="col-left">
+                            <p class="desc text-white-64 mini-title effectFade fadeUp" data-delay="0.2">
+                                150+ industry recognitions. <br>
+                                Bold ideas. Flawless execution.
+                            </p>
+                            <div dir="ltr" class="swiper tf-swiper swiper-t2 effectFade fadeUp" data-delay="0.3" data-preview="3" data-tablet="3" data-mobile="3" data-mobile-sm="3"
+                                data-loop="true" data-auto="true" data-delay="1000" data-speed="1000" data-direction="vertical" data-space="4">
+                                <div class="swiper-wrapper">
+                                    <!-- item 1 -->
+                                    <div class="swiper-slide">
+                                        <div class="award-item h4 letter-space--2 text-white">
+                                            Behance
+                                            <span class="text-body-1 letter-space--1 text-white-64">x28</span>
+                                        </div>
+                                    </div>
+                                    <!-- item 2 -->
+                                    <div class="swiper-slide">
+                                        <div class="award-item h4 letter-space--2 text-white">
+                                            Awwwards
+                                            <span class="text-body-1 letter-space--1 text-white-64">x41</span>
+                                        </div>
+                                    </div>
+                                    <!-- item 3 -->
+                                    <div class="swiper-slide">
+                                        <div class="award-item h4 letter-space--2 text-white">
+                                            CSS Design Awards
+                                            <span class="text-body-1 letter-space--1 text-white-64">x67</span>
+                                        </div>
+                                    </div>
+                                    <!-- Repetition for loop -->
+                                    <div class="swiper-slide">
+                                        <div class="award-item h4 letter-space--2 text-white">
+                                            Behance
+                                            <span class="text-body-1 letter-space--1 text-white-64">x28</span>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="award-item h4 letter-space--2 text-white">
+                                            Awwwards
+                                            <span class="text-body-1 letter-space--1 text-white-64">x41</span>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="award-item h4 letter-space--2 text-white">
+                                            CSS Design Awards
+                                            <span class="text-body-1 letter-space--1 text-white-64">x67</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrap-flip-image flat-spacing">
+                <div class="container">
+                    <div class="flip-image-list gsap-anime-2">
+                        <div class="flip-image">
+                            <img loading="lazy" width="325" height="325" src="davies/assets/images/section/award-1.jpg" alt="Award 1">
+                        </div>
+                        <div class="flip-image">
+                            <img loading="lazy" width="325" height="325" src="davies/assets/images/section/award-2.jpg" alt="Award 2">
+                        </div>
+                        <div class="flip-image">
+                            <img loading="lazy" width="325" height="325" src="davies/assets/images/section/award-3.jpg" alt="Award 3">
+                        </div>
+                        <div class="flip-image">
+                            <img loading="lazy" width="325" height="325" src="davies/assets/images/section/award-4.jpg" alt="Award 4">
+                        </div>
+                        <div class="flip-image">
+                            <img loading="lazy" width="325" height="325" src="davies/assets/images/section/award-5.jpg" alt="Award 5">
+                        </div>
+                        <div class="flip-image">
+                            <img loading="lazy" width="325" height="325" src="davies/assets/images/section/award-6.jpg" alt="Award 6">
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -691,6 +798,8 @@
         });
     </script>
     <script src="davies/assets/js/gsapAnimation.js"></script>
+    <script src="davies/assets/js/odometer.min.js"></script>
+    <script src="davies/assets/js/carousel.js"></script>
     <script src="davies/assets/js/main.js"></script>
     <script src="davies/assets/js/unicornStudio.umd.js"></script>
     <script src="realiz/assets/js/main.js"></script>
