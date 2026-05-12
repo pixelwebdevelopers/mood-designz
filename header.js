@@ -14,6 +14,7 @@
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="portfolio.html">Portfolio</a>
+            <a href="contact.html">Contact</a>
         </nav>
         <div class="nav-actions">
             <a href="contact.html" class="primary-btn">Get in Touch</a>

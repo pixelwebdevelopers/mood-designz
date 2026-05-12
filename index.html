@@ -6,29 +6,27 @@
     <title>Mood Designz - Creative Agency</title>
     <meta name="description" content="Mood Designz is a premier creative agency specializing in design, strategy, and digital experiences."/>
     
-    <!-- Realiz Assets -->
-    <link href="realiz/assets/css/main.css" rel="stylesheet"/>
-    
-    <!-- Davies Assets -->
-    <link rel="stylesheet" href="davies/assets/fonts/fonts.css">
-    <link rel="stylesheet" href="davies/assets/icon/icomoon/style.css">
+    <!-- Consolidated Assets -->
+    <link href="assets/css/main.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/fonts/fonts.css">
+    <link rel="stylesheet" href="assets/icons/icomoon/style.css">
     <!-- Use a scoped approach for Bootstrap to avoid conflicts if possible, 
          but for now we'll include it and override as needed -->
-    <link rel="stylesheet" href="davies/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="davies/assets/css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="davies/assets/css/animate.css">
-    <link rel="stylesheet" href="davies/assets/css/odometer.min.css">
-    <link rel="stylesheet" href="davies/assets/css/slick.css">
-    <link rel="stylesheet" href="davies/assets/css/slick.theme.css">
-    <link rel="stylesheet" type="text/css" href="davies/assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/odometer.min.css">
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/slick.theme.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
     <style>
         :root {
             --brand-lime: #c3ff06;
-            --brand-bg: #0d2620;
+            --brand-bg: #000000;
             --glass-bg: rgba(255, 255, 255, 0.05);
             --glass-border: rgba(255, 255, 255, 0.1);
         }
@@ -37,6 +35,7 @@
             background-color: var(--brand-bg);
             color: #fff;
             overflow-x: hidden;
+            font-family: 'Poppins', sans-serif;
         }
 
         /* SECTION ADJUSTMENTS */
@@ -201,6 +200,40 @@
             filter: grayscale(0%) brightness(1);
             transform: scale(1.05);
         }
+
+        /* Davies Parity Styles */
+        .bg-surface {
+            background-color: #D8D8D8 !important;
+        }
+        .text-black {
+            color: #000000 !important;
+        }
+        .text-black-64 {
+            color: rgba(0, 0, 0, 0.64) !important;
+        }
+
+        /* Enforce Black Backgrounds */
+        body, 
+        .bg-brand-bg, 
+        #main-scroll-container, 
+        section:not(.bg-surface) {
+            background-color: #000000 !important;
+            background-image: none !important;
+        }
+
+        /* Filter out green from background images and canvases */
+        .section-selected-work-v2 .bg-img img,
+        .section-about-me .s-img-bg img,
+        .section-tech-stack-v2 .s-img-bg img,
+        .section-tech-stack-v2 canvas,
+        .wg-tech-v2 canvas {
+            filter: grayscale(100%) brightness(0.4) !important;
+        }
+
+        /* Special handling for Hero overlays */
+        .overlay-dim {
+            background-color: rgba(0, 0, 0, 0.6) !important;
+        }
     </style>
     <link rel="stylesheet" href="header.css">
 </head>
@@ -214,7 +247,7 @@
         <section id="hero-section" class="h-screen w-full overflow-hidden">
             <div class="view-section flex flex-col md:flex-row h-full w-full" id="view-home-4">
                 <div class="h4-col tft-v4-col flex-1 relative border-b md:border-b-0 md:border-r border-white/5 cursor-pointer group overflow-hidden">
-                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('realiz/assets/img/s1.jpg');"></div>
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('assets/img/s1.jpg');"></div>
                     <div class="absolute inset-0 bg-brand-bg/60 overlay-dim transition-opacity duration-500"></div>
                     <div class="absolute inset-0 flex flex-col items-center justify-center z-20">
                         <h2 class="font-display text-4xl md:text-6xl lg:text-7xl text-white text-center leading-[0.9] mb-8 drop-shadow-lg uppercase italic font-black">Digital<br/>Visions</h2>
@@ -225,7 +258,7 @@
                     </div>
                 </div>
                 <div class="h4-col tft-v4-col flex-1 relative border-b md:border-b-0 md:border-r border-white/5 cursor-pointer group overflow-hidden">
-                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('realiz/assets/img/s2.jpg');"></div>
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('assets/img/s2.jpg');"></div>
                     <div class="absolute inset-0 bg-brand-bg/70 overlay-dim transition-opacity duration-500"></div>
                     <div class="absolute inset-0 flex flex-col items-center justify-center z-20">
                         <h2 class="font-display text-4xl md:text-6xl lg:text-7xl text-white text-center leading-[0.9] mb-8 drop-shadow-lg uppercase italic font-black">Brand<br/>Soul</h2>
@@ -236,7 +269,7 @@
                     </div>
                 </div>
                 <div class="h4-col tft-v4-col flex-1 relative cursor-pointer group overflow-hidden">
-                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('realiz/assets/img/s3.jpg');"></div>
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('assets/img/s3.jpg');"></div>
                     <div class="absolute inset-0 bg-brand-bg/60 overlay-dim transition-opacity duration-500"></div>
                     <div class="absolute inset-0 flex flex-col items-center justify-center z-20">
                         <h2 class="font-display text-4xl md:text-6xl lg:text-7xl text-white text-center leading-[0.9] mb-8 drop-shadow-lg uppercase italic font-black">Creative<br/>Pulse</h2>
@@ -250,7 +283,7 @@
         </section>
 
         <!-- SECTION 2: Davies Version 2 Select Work -->
-        <section class="section-selected-work-v2 flat-spacing stack-element" id="workScroll">
+        <section class="section-selected-work-v2 flat-spacing stack-element" id="workScroll" style="background-color: #000 !important;">
             <div class="s-header d-block overflow-hidden">
                 <div class="infiniteSlide infiniteSlide_select_work" data-clone="5">
                     <!-- clone 1 -->
@@ -258,21 +291,21 @@
                         Selected Work
                     </p>
                     <div class="icon-app">
-                        <img loading="lazy" width="120" height="120" src="davies/assets/images/item/global.svg" alt="Image">
+                        <img loading="lazy" width="120" height="120" src="assets/img/item/global.svg" alt="Image">
                     </div>
                     <!-- clone 2 -->
                     <p class="text-display-1 letter-space--3 fw-semibold">
                         Selected Work
                     </p>
                     <div class="icon-app">
-                        <img loading="lazy" width="120" height="120" src="davies/assets/images/item/global.svg" alt="Image">
+                        <img loading="lazy" width="120" height="120" src="assets/img/item/global.svg" alt="Image">
                     </div>
                     <!-- clone 3 -->
                     <p class="text-display-1 letter-space--3 fw-semibold">
                         Selected Work
                     </p>
                     <div class="icon-app">
-                        <img loading="lazy" width="120" height="120" src="davies/assets/images/item/global.svg" alt="Image">
+                        <img loading="lazy" width="120" height="120" src="assets/img/item/global.svg" alt="Image">
                     </div>
                 </div>
             </div>
@@ -282,7 +315,7 @@
                         <a href="casestudy.html" class="wg-work effectFade fadeUp no-div">
                             <div class="work-image">
                                 <video class="" muted="" autoplay="" loop="" playsinline="">
-                                    <source src="davies/assets/images/video/nexbot.mp4" type="video/mp4">
+                                    <source src="assets/img/video/nexbot.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="work-content">
@@ -309,7 +342,7 @@
                     <div class="element">
                         <a href="casestudy.html" class="wg-work">
                             <div class="work-image">
-                                <img loading="lazy" width="1296" height="648" src="davies/assets/images/section/work-5.jpg" alt="Image">
+                                <img loading="lazy" width="1296" height="648" src="assets/img/section/work-5.jpg" alt="Image">
                             </div>
                             <div class="work-content">
                                 <div class="work_top">
@@ -337,7 +370,7 @@
                     <div class="element">
                         <a href="casestudy.html" class="wg-work">
                             <div class="work-image">
-                                <img loading="lazy" width="1296" height="648" src="davies/assets/images/section/work-6.jpg" alt="Image">
+                                <img loading="lazy" width="1296" height="648" src="assets/img/section/work-6.jpg" alt="Image">
                             </div>
                             <div class="work-content">
                                 <div class="work_top">
@@ -378,11 +411,11 @@
                 <div class="about-main flat-spacing-bottom">
                     <div class="davies-video">
                         <video class="video" muted="" autoplay="" loop="" playsinline="">
-                            <source src="davies/assets/images/video/davies-video.mp4" type="video/mp4">
+                            <source src="assets/img/video/davies-video.mp4" type="video/mp4">
                         </video>
                         <div class="overlay mark"></div>
                         <div class="overlay bg-effect">
-                            <img loading="lazy" width="1296" height="729" src="davies/assets/images/item/dither-effect.svg" alt="Image">
+                            <img loading="lazy" width="1296" height="729" src="assets/img/item/dither-effect.svg" alt="Image">
                         </div>
                     </div>
                     <div class="content">
@@ -403,21 +436,21 @@
         <section class="section-service-2 overflow-hidden flat-spacing" id="serviceScroll">
             <div class="bg-image-list">
                 <div class="bg-image">
-                    <img loading="lazy" width="1440" height="938" src="davies/assets/images/section/bg-service-1.jpg" alt="Image">
+                    <img loading="lazy" width="1440" height="938" src="assets/img/section/bg-service-1.jpg" alt="Image">
                     <div class="img-item">
-                        <img loading="lazy" width="1440" height="938" src="davies/assets/images/item/overlay.png" alt="Image">
+                        <img loading="lazy" width="1440" height="938" src="assets/img/item/overlay.png" alt="Image">
                     </div>
                 </div>
                 <div class="bg-image">
-                    <img loading="lazy" width="1440" height="938" src="davies/assets/images/section/bg-service-2.jpg" alt="Image">
+                    <img loading="lazy" width="1440" height="938" src="assets/img/section/bg-service-2.jpg" alt="Image">
                     <div class="img-item">
-                        <img loading="lazy" width="1440" height="938" src="davies/assets/images/item/overlay.png" alt="Image">
+                        <img loading="lazy" width="1440" height="938" src="assets/img/item/overlay.png" alt="Image">
                     </div>
                 </div>
                 <div class="bg-image">
-                    <img loading="lazy" width="1440" height="938" src="davies/assets/images/section/bg-service-3.jpg" alt="Image">
+                    <img loading="lazy" width="1440" height="938" src="assets/img/section/bg-service-3.jpg" alt="Image">
                     <div class="img-item">
-                        <img loading="lazy" width="1440" height="938" src="davies/assets/images/item/overlay.png" alt="Image">
+                        <img loading="lazy" width="1440" height="938" src="assets/img/item/overlay.png" alt="Image">
                     </div>
                 </div>
             </div>
@@ -434,7 +467,7 @@
                     <div class="wg-service-2">
                         <div class="main-image">
                             <div class="image">
-                                <img loading="lazy" width="424" height="530" src="davies/assets/images/section/service-1.jpg" alt="Image">
+                                <img loading="lazy" width="424" height="530" src="assets/img/section/service-1.jpg" alt="Image">
                             </div>
                             <div class="action tf-btn-2 cs-pointer">
                                 <i class="icon icon-arrow-long-right"></i>
@@ -474,13 +507,13 @@
                         <div class="image-simu">
                         </div>
                         <div class="image-2">
-                            <img loading="lazy" width="212" height="265" src="davies/assets/images/section/service-mini-1.jpg" alt="Image">
+                            <img loading="lazy" width="212" height="265" src="assets/img/section/service-mini-1.jpg" alt="Image">
                         </div>
                     </div>
                     <div class="wg-service-2">
                         <div class="main-image">
                             <div class="image">
-                                <img loading="lazy" width="424" height="530" src="davies/assets/images/section/service-2.jpg" alt="Image">
+                                <img loading="lazy" width="424" height="530" src="assets/img/section/service-2.jpg" alt="Image">
                             </div>
                             <div class="action tf-btn-2 cs-pointer">
                                 <i class="icon icon-arrow-long-right"></i>
@@ -519,13 +552,13 @@
                         <div class="image-simu">
                         </div>
                         <div class="image-2">
-                            <img loading="lazy" width="212" height="265" src="davies/assets/images/section/service-mini-2.jpg" alt="Image">
+                            <img loading="lazy" width="212" height="265" src="assets/img/section/service-mini-2.jpg" alt="Image">
                         </div>
                     </div>
                     <div class="wg-service-2">
                         <div class="main-image">
                             <div class="image">
-                                <img loading="lazy" width="424" height="530" src="davies/assets/images/section/service-3.jpg" alt="Image">
+                                <img loading="lazy" width="424" height="530" src="assets/img/section/service-3.jpg" alt="Image">
                             </div>
                             <div class="action tf-btn-2 cs-pointer">
                                 <i class="icon icon-arrow-long-left"></i>
@@ -580,21 +613,21 @@
                         <div class="tech-content">
                             <h5 class="tech-name letter-space--2">Figma</h5>
                             <p class="tech-desc letter-space--1">Collaborative design tool.</p>
-                            <div class="ic-img"><img loading="lazy" width="33" height="48" src="davies/assets/images/item/figma.svg" alt="Image Icon"></div>
+                            <div class="ic-img"><img loading="lazy" width="33" height="48" src="assets/img/item/figma.svg" alt="Image Icon"></div>
                         </div>
                     </div>
                     <div class="wg-tech-v2" data-us-project="lHlDvoJDIXCxxXVqTNOC?update=0.8924711990022087">
                         <div class="tech-content">
                             <h5 class="tech-name letter-space--2">Next.js</h5>
                             <p class="tech-desc letter-space--1">Modern web framework.</p>
-                            <div class="ic-img"><img loading="lazy" width="48" height="48" src="davies/assets/images/item/framer.svg" alt="Image Icon"></div>
+                            <div class="ic-img"><img loading="lazy" width="48" height="48" src="assets/img/item/framer.svg" alt="Image Icon"></div>
                         </div>
                     </div>
                     <div class="wg-tech-v2" data-us-project="lHlDvoJDIXCxxXVqTNOC?update=0.8924711990022087">
                         <div class="tech-content">
                             <h5 class="tech-name letter-space--2">Tailwind</h5>
                             <p class="tech-desc letter-space--1">Utility-first CSS.</p>
-                            <div class="ic-img"><img loading="lazy" width="77" height="48" src="davies/assets/images/item/webflow.svg" alt="Image Icon"></div>
+                            <div class="ic-img"><img loading="lazy" width="77" height="48" src="assets/img/item/webflow.svg" alt="Image Icon"></div>
                         </div>
                     </div>
                 </div>
@@ -602,15 +635,15 @@
         </section>
 
         <!-- SECTION 5: Marquee Brands & Partners -->
-        <section class="section-brand">
+        <section class="section-brand bg-surface">
             <div class="container-fluid px-0">
                 <div class="container mini-title-wrapper">
                     <div class="text-center">
-                        <h6 class="mini-title text-brand-lime uppercase tracking-[0.6em] text-xs font-bold mb-4 effectFade fadeUp">Strategic Network</h6>
-                        <h2 class="text-display-2 font-display italic font-black uppercase text-white effectFade fadeUp">
-                            Global <span class="text-brand-lime text-glow">Brands_</span> & Partners
+                        <h6 class="mini-title text-black-64 uppercase tracking-[0.6em] text-xs font-bold mb-4 effectFade fadeUp">Strategic Network</h6>
+                        <h2 class="text-display-2 font-display italic font-black uppercase text-black effectFade fadeUp">
+                            Global <span class="text-brand-lime">Brands_</span> & Partners
                         </h2>
-                        <div class="title-line effectFade fadeUp" style="max-width: 300px; height: 2px;"></div>
+                        <div class="title-line effectFade fadeUp" style="max-width: 300px; height: 2px; background: rgba(0,0,0,0.1);"></div>
                     </div>
                 </div>
                 
@@ -619,27 +652,27 @@
                     <div class="marquee-container">
                         <div class="marquee-content marquee-ltr">
                             <!-- Set 1 -->
-                            <div class="brand-item"><img src="davies/assets/images/brand/brandv2-1.svg" alt="Brand"></div>
-                            <div class="brand-item"><img src="davies/assets/images/brand/brandv2-2.svg" alt="Brand"></div>
-                            <div class="brand-item"><img src="davies/assets/images/brand/brandv2-3.svg" alt="Brand"></div>
-                            <div class="brand-item"><img src="davies/assets/images/brand/brandv2-4.svg" alt="Brand"></div>
-                            <div class="brand-item"><img src="davies/assets/images/brand/brandv2-5.svg" alt="Brand"></div>
-                            <div class="brand-item"><img src="davies/assets/images/brand/brandv2-6.svg" alt="Brand"></div>
-                            <div class="brand-item"><img src="davies/assets/images/brand/brandv2-7.svg" alt="Brand"></div>
-                            <div class="brand-item"><img src="davies/assets/images/brand/brandv2-8.svg" alt="Brand"></div>
-                            <div class="brand-item"><img src="davies/assets/images/brand/brandv2-9.svg" alt="Brand"></div>
-                            <div class="brand-item"><img src="davies/assets/images/brand/brandv2-10.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brandv2-1.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brandv2-2.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brandv2-3.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brandv2-4.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brandv2-5.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brandv2-6.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brandv2-7.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brandv2-8.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brandv2-9.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brandv2-10.svg" alt="Brand"></div>
                             <!-- Set 2 (Endless Loop) -->
-                            <div class="brand-item"><img src="davies/assets/images/brand/brandv2-1.svg" alt="Brand"></div>
-                            <div class="brand-item"><img src="davies/assets/images/brand/brandv2-2.svg" alt="Brand"></div>
-                            <div class="brand-item"><img src="davies/assets/images/brand/brandv2-3.svg" alt="Brand"></div>
-                            <div class="brand-item"><img src="davies/assets/images/brand/brandv2-4.svg" alt="Brand"></div>
-                            <div class="brand-item"><img src="davies/assets/images/brand/brandv2-5.svg" alt="Brand"></div>
-                            <div class="brand-item"><img src="davies/assets/images/brand/brandv2-6.svg" alt="Brand"></div>
-                            <div class="brand-item"><img src="davies/assets/images/brand/brandv2-7.svg" alt="Brand"></div>
-                            <div class="brand-item"><img src="davies/assets/images/brand/brandv2-8.svg" alt="Brand"></div>
-                            <div class="brand-item"><img src="davies/assets/images/brand/brandv2-9.svg" alt="Brand"></div>
-                            <div class="brand-item"><img src="davies/assets/images/brand/brandv2-10.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brandv2-1.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brandv2-2.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brandv2-3.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brandv2-4.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brandv2-5.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brandv2-6.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brandv2-7.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brandv2-8.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brandv2-9.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brandv2-10.svg" alt="Brand"></div>
                         </div>
                     </div>
 
@@ -647,27 +680,27 @@
                     <div class="marquee-container">
                         <div class="marquee-content marquee-rtl">
                             <!-- Set 1 -->
-                            <div class="brand-item"><img src="davies/assets/images/brand/brand-1.svg" alt="Brand"></div>
-                            <div class="brand-item"><img src="davies/assets/images/brand/brand-2.svg" alt="Brand"></div>
-                            <div class="brand-item"><img src="davies/assets/images/brand/brand-3.svg" alt="Brand"></div>
-                            <div class="brand-item"><img src="davies/assets/images/brand/brand-4.svg" alt="Brand"></div>
-                            <div class="brand-item"><img src="davies/assets/images/brand/brand-5.svg" alt="Brand"></div>
-                            <div class="brand-item"><img src="davies/assets/images/brand/brand-6.svg" alt="Brand"></div>
-                            <div class="brand-item"><img src="davies/assets/images/brand/brand-7.svg" alt="Brand"></div>
-                            <div class="brand-item"><img src="davies/assets/images/brand/brand-8.svg" alt="Brand"></div>
-                            <div class="brand-item"><img src="davies/assets/images/brand/brand-9.svg" alt="Brand"></div>
-                            <div class="brand-item"><img src="davies/assets/images/brand/brand-10.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brand-1.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brand-2.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brand-3.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brand-4.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brand-5.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brand-6.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brand-7.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brand-8.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brand-9.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brand-10.svg" alt="Brand"></div>
                             <!-- Set 2 (Endless Loop) -->
-                            <div class="brand-item"><img src="davies/assets/images/brand/brand-1.svg" alt="Brand"></div>
-                            <div class="brand-item"><img src="davies/assets/images/brand/brand-2.svg" alt="Brand"></div>
-                            <div class="brand-item"><img src="davies/assets/images/brand/brand-3.svg" alt="Brand"></div>
-                            <div class="brand-item"><img src="davies/assets/images/brand/brand-4.svg" alt="Brand"></div>
-                            <div class="brand-item"><img src="davies/assets/images/brand/brand-5.svg" alt="Brand"></div>
-                            <div class="brand-item"><img src="davies/assets/images/brand/brand-6.svg" alt="Brand"></div>
-                            <div class="brand-item"><img src="davies/assets/images/brand/brand-7.svg" alt="Brand"></div>
-                            <div class="brand-item"><img src="davies/assets/images/brand/brand-8.svg" alt="Brand"></div>
-                            <div class="brand-item"><img src="davies/assets/images/brand/brand-9.svg" alt="Brand"></div>
-                            <div class="brand-item"><img src="davies/assets/images/brand/brand-10.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brand-1.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brand-2.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brand-3.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brand-4.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brand-5.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brand-6.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brand-7.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brand-8.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brand-9.svg" alt="Brand"></div>
+                            <div class="brand-item"><img src="assets/img/brand/brand-10.svg" alt="Brand"></div>
                         </div>
                     </div>
                 </div>
@@ -675,15 +708,15 @@
         </section>
 
         <!-- SECTION 6: Davies Version 2 Awards Section -->
-        <section class="section-award flat-spacing" style="background: rgba(255,255,255,0.03); border-top: 1px solid rgba(255,255,255,0.05);">
+        <section class="section-award flat-spacing bg-surface" style="border-top: 1px solid rgba(0,0,0,0.05);">
             <div class="container">
                 <div class="row">
                     <div class="col-md-5 ms-auto">
                         <div class="col-right">
-                            <h6 class="mini-title text-caption text-white-64 effectFade fadeUp">
+                            <h6 class="mini-title text-caption text-black-64 effectFade fadeUp">
                                 AWARDS
                             </h6>
-                            <h5 class="fw-normal letter-space--2 text-white effectFade fadeUp" data-delay="0.1">
+                            <h5 class="fw-normal letter-space--2 text-black effectFade fadeUp" data-delay="0.1">
                                 Since our inception, Mood Designz has been recognized by leading design platforms worldwide for excellence in digital innovation and creative strategy.
                             </h5>
                         </div>
@@ -692,7 +725,7 @@
                 <div class="row">
                     <div class="col-md-5">
                         <div class="col-left">
-                            <p class="desc text-white-64 mini-title effectFade fadeUp" data-delay="0.2">
+                            <p class="desc text-black-64 mini-title effectFade fadeUp" data-delay="0.2">
                                 150+ industry recognitions. <br>
                                 Bold ideas. Flawless execution.
                             </p>
@@ -701,42 +734,42 @@
                                 <div class="swiper-wrapper">
                                     <!-- item 1 -->
                                     <div class="swiper-slide">
-                                        <div class="award-item h4 letter-space--2 text-white">
+                                        <div class="award-item h4 letter-space--2 text-black">
                                             Behance
-                                            <span class="text-body-1 letter-space--1 text-white-64">x28</span>
+                                            <span class="text-body-1 letter-space--1 text-black-64">x28</span>
                                         </div>
                                     </div>
                                     <!-- item 2 -->
                                     <div class="swiper-slide">
-                                        <div class="award-item h4 letter-space--2 text-white">
+                                        <div class="award-item h4 letter-space--2 text-black">
                                             Awwwards
-                                            <span class="text-body-1 letter-space--1 text-white-64">x41</span>
+                                            <span class="text-body-1 letter-space--1 text-black-64">x41</span>
                                         </div>
                                     </div>
                                     <!-- item 3 -->
                                     <div class="swiper-slide">
-                                        <div class="award-item h4 letter-space--2 text-white">
+                                        <div class="award-item h4 letter-space--2 text-black">
                                             CSS Design Awards
-                                            <span class="text-body-1 letter-space--1 text-white-64">x67</span>
+                                            <span class="text-body-1 letter-space--1 text-black-64">x67</span>
                                         </div>
                                     </div>
                                     <!-- Repetition for loop -->
                                     <div class="swiper-slide">
-                                        <div class="award-item h4 letter-space--2 text-white">
+                                        <div class="award-item h4 letter-space--2 text-black">
                                             Behance
-                                            <span class="text-body-1 letter-space--1 text-white-64">x28</span>
+                                            <span class="text-body-1 letter-space--1 text-black-64">x28</span>
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
-                                        <div class="award-item h4 letter-space--2 text-white">
+                                        <div class="award-item h4 letter-space--2 text-black">
                                             Awwwards
-                                            <span class="text-body-1 letter-space--1 text-white-64">x41</span>
+                                            <span class="text-body-1 letter-space--1 text-black-64">x41</span>
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
-                                        <div class="award-item h4 letter-space--2 text-white">
+                                        <div class="award-item h4 letter-space--2 text-black">
                                             CSS Design Awards
-                                            <span class="text-body-1 letter-space--1 text-white-64">x67</span>
+                                            <span class="text-body-1 letter-space--1 text-black-64">x67</span>
                                         </div>
                                     </div>
                                 </div>
@@ -749,60 +782,102 @@
                 <div class="container">
                     <div class="flip-image-list gsap-anime-2">
                         <div class="flip-image">
-                            <img loading="lazy" width="325" height="325" src="davies/assets/images/section/award-1.jpg" alt="Award 1">
+                            <img loading="lazy" width="325" height="325" src="assets/img/section/award-1.jpg" alt="Award 1">
                         </div>
                         <div class="flip-image">
-                            <img loading="lazy" width="325" height="325" src="davies/assets/images/section/award-2.jpg" alt="Award 2">
+                            <img loading="lazy" width="325" height="325" src="assets/img/section/award-2.jpg" alt="Award 2">
                         </div>
                         <div class="flip-image">
-                            <img loading="lazy" width="325" height="325" src="davies/assets/images/section/award-3.jpg" alt="Award 3">
+                            <img loading="lazy" width="325" height="325" src="assets/img/section/award-3.jpg" alt="Award 3">
                         </div>
                         <div class="flip-image">
-                            <img loading="lazy" width="325" height="325" src="davies/assets/images/section/award-4.jpg" alt="Award 4">
+                            <img loading="lazy" width="325" height="325" src="assets/img/section/award-4.jpg" alt="Award 4">
                         </div>
                         <div class="flip-image">
-                            <img loading="lazy" width="325" height="325" src="davies/assets/images/section/award-5.jpg" alt="Award 5">
+                            <img loading="lazy" width="325" height="325" src="assets/img/section/award-5.jpg" alt="Award 5">
                         </div>
                         <div class="flip-image">
-                            <img loading="lazy" width="325" height="325" src="davies/assets/images/section/award-6.jpg" alt="Award 6">
+                            <img loading="lazy" width="325" height="325" src="assets/img/section/award-6.jpg" alt="Award 6">
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- FOOTER -->
-        <footer class="py-20 border-t border-white/5 bg-brand-bg">
-            <div class="container mx-auto px-6 text-center">
-                <img src="logo.png" alt="Logo" class="h-10 mx-auto mb-10 opacity-50">
-                <p class="text-white/30 text-sm">© 2026 Mood Designz. All rights reserved.</p>
+        <!-- Footer -->
+        <footer class="tft-vanguard-footer">
+            <div class="tft-footer-main-grid">
+                <div class="tft-footer-column reveal-up">
+                    <div class="mb-10">
+                        <img alt="Mood Designz Logo" class="h-12 w-auto opacity-80 hover:opacity-100 transition-opacity" src="logo.png">
+                    </div>
+                    <p class="text-sm text-white/40 max-w-xs leading-relaxed font-body">
+                        A boutique digital laboratory specialized in high-fidelity architectural web experiences.
+                    </p>
+                </div>
+                <div class="tft-footer-column reveal-up">
+                    <h3 class="font-body text-[10px] font-bold tracking-[0.4em] text-white/40 uppercase mb-8">Discover</h3>
+                    <nav>
+                        <a class="tft-footer-link" href="about.html">The Studio</a>
+                        <a class="tft-footer-link" href="portfolio.html">Showcase</a>
+                        <a class="tft-footer-link" href="contact.html">Get in Touch</a>
+                    </nav>
+                </div>
+                <div class="tft-footer-column reveal-up">
+                    <h4 class="font-body text-[10px] font-bold tracking-[0.4em] text-white/40 uppercase mb-8">Connect</h4>
+                    <div class="tft-footer-socials">
+                        <a class="tft-footer-link" href="#">Instagram</a>
+                        <a class="tft-footer-link" href="#">Behance</a>
+                        <a class="tft-footer-link" href="#">LinkedIn</a>
+                    </div>
+                </div>
+                <div class="tft-footer-column reveal-up">
+                    <h4 class="font-body text-[10px] font-bold tracking-[0.4em] text-white/40 uppercase mb-8">Newsletter</h4>
+                    <p class="text-xs text-white/30 mb-8 italic font-body">Join our elite circle for architectural design insights.</p>
+                    <form class="tft-footer-newsletter">
+                        <input class="tft-footer-newsletter-input" placeholder="Email address" type="email">
+                        <button class="tft-footer-submit-btn" type="submit">
+                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><line x1="5" x2="19" y1="12" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="tft-footer-bottom reveal-up">
+                <span class="tft-copyright">© 2026 Mood Designz. All rights reserved.</span>
+                <div class="flex gap-8">
+                    <a class="tft-copyright hover:text-white transition-colors" href="#">Privacy</a>
+                    <a class="tft-copyright hover:text-white transition-colors" href="#">Terms</a>
+                </div>
+                <a aria-label="Back to top" class="tft-back-to-top group" href="#page-top">
+                    <svg class="transition-transform group-hover:-translate-y-1" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20"><line x1="12" x2="12" y1="19" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+                </a>
             </div>
         </footer>
     </div>
 
     <!-- JS Scripts -->
-    <script src="realiz/assets/js/lucide-local.js"></script>
-    <script src="davies/assets/js/jquery.min.js"></script>
-    <script src="davies/assets/js/bootstrap.bundle.min.js"></script>
-    <script src="davies/assets/js/swiper-bundle.min.js"></script>
-    <script src="davies/assets/js/slick.min.js"></script>
-    <script src="davies/assets/js/infinityslide.js"></script>
-    <script src="davies/assets/js/gsap.min.js"></script>
-    <script src="davies/assets/js/SplitText.min.js"></script>
-    <script src="davies/assets/js/ScrollTrigger.min.js"></script>
-    <script src="davies/assets/js/ScrollToPlugin.min.js"></script>
+    <script src="assets/js/vendor/lucide-local.js"></script>
+    <script src="assets/js/vendor/jquery.min.js"></script>
+    <script src="assets/js/vendor/bootstrap.min.js"></script>
+    <script src="assets/js/vendor/swiper-bundle.min.js"></script>
+    <script src="assets/js/vendor/slick.min.js"></script>
+    <script src="assets/js/infinityslide.js"></script>
+    <script src="assets/js/vendor/gsap.min.js"></script>
+    <script src="assets/js/vendor/SplitText.min.js"></script>
+    <script src="assets/js/vendor/ScrollTrigger.min.js"></script>
+    <script src="assets/js/vendor/ScrollToPlugin.min.js"></script>
     <script>
         gsap.registerPlugin(ScrollTrigger);
         ScrollTrigger.defaults({
             scroller: "#main-scroll-container"
         });
     </script>
-    <script src="davies/assets/js/gsapAnimation.js"></script>
-    <script src="davies/assets/js/odometer.min.js"></script>
-    <script src="davies/assets/js/carousel.js"></script>
-    <script src="davies/assets/js/main.js"></script>
-    <script src="davies/assets/js/unicornStudio.umd.js"></script>
-    <script src="realiz/assets/js/main.js"></script>
+    <script src="assets/js/gsapAnimation.js"></script>
+    <script src="assets/js/vendor/odometer.min.js"></script>
+    <script src="assets/js/carousel.js"></script>
+    <script src="assets/js/davies-main.js"></script>
+    <script src="assets/js/vendor/unicornStudio.umd.js"></script>
+    <script src="assets/js/realiz-main.js"></script>
 
     <script>
         // Refresh ScrollTrigger after a short delay to ensure everything is measured correctly

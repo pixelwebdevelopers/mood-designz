@@ -2,7 +2,7 @@
 
 :root {
     --brand-lime: #c3ff06;
-    --brand-bg: #0d2620;
+    --brand-bg: #000000;
 }
 
 #main-header {
@@ -10,7 +10,7 @@
     top: 25px !important;
     left: 50% !important;
     transform: translateX(-50%) !important; 
-    width: 700px !important;
+    width: 750px !important;
     max-width: 90vw !important;
     height: 70px !important;
     z-index: 2147483647 !important; /* Max possible z-index */
@@ -53,12 +53,12 @@ body.menu-open #main-header {
 
 #main-header .nav-links {
     display: flex !important;
-    gap: 30px !important;
+    gap: 20px !important;
 }
 
 #main-header .nav-links a {
     color: #fff !important;
-    font-family: 'Space Grotesk', sans-serif !important;
+    font-family: 'Trevia Groteska', sans-serif !important;
     font-size: 13px !important;
     font-weight: 700 !important;
     text-transform: uppercase !important;
@@ -88,7 +88,7 @@ body.menu-open #main-header {
     font-size: 11px !important;
     text-decoration: none !important;
     text-transform: uppercase !important;
-    font-family: 'Space Grotesk', sans-serif !important;
+    font-family: 'Trevia Groteska', sans-serif !important;
 }
 
 #main-header .menu-toggle {
@@ -156,7 +156,7 @@ body.menu-open #main-header {
     bottom: 0 !important;
     width: 100% !important;
     max-width: 450px !important;
-    background: linear-gradient(135deg, rgba(13, 38, 32, 0.95), rgba(13, 38, 32, 0.8)) !important;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.8)) !important;
     backdrop-filter: blur(30px) saturate(200%) !important;
     -webkit-backdrop-filter: blur(30px) saturate(200%) !important;
     border-left: 1px solid rgba(255, 255, 255, 0.1) !important;
@@ -182,7 +182,7 @@ body.menu-open #main-header {
 }
 
 #menu-panel .menu-links a {
-    font-family: 'Space Grotesk', sans-serif !important;
+    font-family: 'Trevia Groteska', sans-serif !important;
     font-size: 32px !important;
     font-weight: 700 !important;
     color: #fff !important;
