@@ -31,12 +31,265 @@
 
         /* Ensure content is not padded for a sidebar that isn't there */
         body { padding-left: 0 !important; }
+
+        /* ======================================================================
+           PORTFOLIO LOADER: PREMIUM SKELETON + INFINITE SCROLL ENGINE
+           ====================================================================== */
+        
+        /* --- INITIAL PAGE LOADER (Full-screen overlay) --- */
+        .portfolio-loader {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: var(--brand-bg);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.8s;
+        }
+        .portfolio-loader.is-hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .loader-orbit {
+            width: 64px;
+            height: 64px;
+            position: relative;
+        }
+        .loader-orbit::before,
+        .loader-orbit::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            border: 2px solid transparent;
+        }
+        .loader-orbit::before {
+            border-top-color: var(--brand-lime);
+            animation: orbit-spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+        }
+        .loader-orbit::after {
+            border-bottom-color: rgba(255,255,255,0.15);
+            animation: orbit-spin 1.8s cubic-bezier(0.5, 0, 0.5, 1) infinite reverse;
+            inset: 6px;
+        }
+        .loader-orbit-dot {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: var(--brand-lime);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 20px rgba(195, 255, 6, 0.4);
+            animation: dot-pulse 1.2s ease-in-out infinite alternate;
+        }
+
+        @keyframes orbit-spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes dot-pulse {
+            from { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+            to { transform: translate(-50%, -50%) scale(0.5); opacity: 0.4; }
+        }
+
+        .loader-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.6em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.3);
+            animation: loader-text-pulse 1.5s ease-in-out infinite alternate;
+        }
+        @keyframes loader-text-pulse {
+            from { opacity: 0.3; }
+            to { opacity: 0.7; }
+        }
+
+        /* --- SKELETON CARD LOADER --- */
+        .skeleton-card {
+            aspect-ratio: 4/5;
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+            background: rgba(255,255,255,0.03);
+        }
+        .skeleton-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                110deg,
+                transparent 25%,
+                rgba(255,255,255,0.04) 37%,
+                transparent 63%
+            );
+            animation: skeleton-shimmer 1.8s ease-in-out infinite;
+        }
+        .skeleton-card__bar {
+            position: absolute;
+            bottom: 24px;
+            left: 24px;
+            right: 24px;
+        }
+        .skeleton-card__bar-line {
+            height: 10px;
+            background: rgba(255,255,255,0.06);
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+        .skeleton-card__bar-line:last-child {
+            width: 50%;
+            height: 8px;
+        }
+        @keyframes skeleton-shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* --- LOAD MORE SENTINEL & BOTTOM LOADER --- */
+        .load-more-sentinel {
+            height: 1px;
+            width: 100%;
+        }
+        .bottom-loader {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 0 2rem;
+            gap: 1rem;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .bottom-loader.is-visible {
+            opacity: 1;
+        }
+        .bottom-loader__spinner {
+            width: 32px;
+            height: 32px;
+            border: 2px solid rgba(255,255,255,0.08);
+            border-top-color: var(--brand-lime);
+            border-radius: 50%;
+            animation: orbit-spin 0.8s linear infinite;
+        }
+        .bottom-loader__text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 0.5em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.25);
+        }
+
+        /* --- CARD ENTRANCE ANIMATION --- */
+        .tft-card.card-enter {
+            opacity: 0;
+            transform: translateY(60px) scale(0.95);
+        }
+        .tft-card.card-enter-active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), 
+                        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* --- EMPTY STATE --- */
+        .portfolio-empty {
+            grid-column: 1 / -1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 6rem 2rem;
+            text-align: center;
+            gap: 1.5rem;
+        }
+        .portfolio-empty__icon {
+            width: 64px;
+            height: 64px;
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.2);
+        }
+        .portfolio-empty__text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.25);
+        }
+
+        /* --- PROJECT COUNT BADGE --- */
+        .portfolio-count {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: 'Poppins', sans-serif;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.3);
+            margin-top: 1.5rem;
+        }
+        .portfolio-count__num {
+            color: var(--brand-lime);
+            font-weight: 700;
+        }
+
+        /* --- END-OF-LIST INDICATOR --- */
+        .end-of-list {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            padding: 3rem 0 1rem;
+            gap: 0.75rem;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+        .end-of-list.is-visible {
+            display: flex;
+            opacity: 1;
+        }
+        .end-of-list__line {
+            width: 40px;
+            height: 1px;
+            background: rgba(255,255,255,0.1);
+        }
+        .end-of-list__text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 0.5em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.15);
+        }
     </style>
     <link rel="stylesheet" href="header.css">
 </head>
 <body class="relative h-[100dvh] w-full bg-brand-bg text-white overflow-hidden selection:bg-brand-lime selection:text-brand-sidebar noise-bg tft-page-works" id="page-top">
     <div id="tft-cursor">EXPLORE</div>
     <div class="tft-ambiance"></div>
+
+    <!-- FULL PAGE LOADER -->
+    <div class="portfolio-loader" id="portfolio-loader">
+        <div class="loader-orbit">
+            <div class="loader-orbit-dot"></div>
+        </div>
+        <div class="loader-text">Loading Archive</div>
+    </div>
     
     <div id="header-container"></div>
 
@@ -52,35 +305,11 @@
                             <span class="font-body text-[10px] font-bold tracking-[0.6em] text-brand-lime uppercase">Curated Portfolio // 2026 Archive</span>
                         </div>
                         <h1 class="tft-title">The Master <br> <span class="tft-italic">Gallery.</span></h1>
+                        <div class="portfolio-count" id="portfolio-count"></div>
                     </div>
                     <div class="rlz-filter">
-                        <nav aria-label="Project Filtering" class="rlz-filter__nav">
-                            <ul class="rlz-filter__list">
-                                <li class="rlz-filter__item">
-                                    <button class="filter-tab active rlz-filter__btn" data-filter="all">
-                                        <span class="rlz-filter__index">01</span>
-                                        <span class="rlz-filter__label">All</span>
-                                    </button>
-                                </li>
-                                <li class="rlz-filter__item">
-                                    <button class="filter-tab rlz-filter__btn" data-filter="identity">
-                                        <span class="rlz-filter__index">02</span>
-                                        <span class="rlz-filter__label">Identity</span>
-                                    </button>
-                                </li>
-                                <li class="rlz-filter__item">
-                                    <button class="filter-tab rlz-filter__btn" data-filter="concept">
-                                        <span class="rlz-filter__index">03</span>
-                                        <span class="rlz-filter__label">Concept</span>
-                                    </button>
-                                </li>
-                                <li class="rlz-filter__item">
-                                    <button class="filter-tab rlz-filter__btn" data-filter="spatial">
-                                        <span class="rlz-filter__index">04</span>
-                                        <span class="rlz-filter__label">Spatial</span>
-                                    </button>
-                                </li>
-                            </ul>
+                        <nav aria-label="Project Filtering" class="rlz-filter__nav" id="filter-nav">
+                            <!-- Filter tabs will be generated dynamically -->
                         </nav>
                         <!-- MOBILE FILTER -->
                         <button aria-label="Open filter options" class="rlz-filter__mobile-trigger" id="rlz-mobile-filter-trigger">
@@ -93,135 +322,26 @@
         </section>
 
         <!-- SECTION 2: ELITE GRID -->
-        <section class="px-8 md:px-20 pb-64 relative z-20">
+        <section class="px-8 md:px-20 pb-16 relative z-20">
             <h2 class="sr-only">Portfolio Grid</h2>
             <div class="tft-elite-grid" id="portfolio-grid">
-                <!-- Project 1 -->
-                <article class="tft-card aspect-[4/5] reveal-up active" data-category="identity">
-                    <div class="tft-card__media-wrap">
-                        <img alt="Sovereign Identity" class="tft-card__media" src="assets/img/s1.jpg"/>
-                    </div>
-                    <div class="tft-card__overlay"></div>
-                    <div class="tft-card__content">
-                        <div class="tft-card__meta">Studio // Identity</div>
-                        <div class="tft-card__title-mask">
-                            <h3 class="tft-card__title font-display">The Atelier</h3>
-                        </div>
-                    </div>
-                    <a class="tft-card__link" href="casestudy.html"></a>
-                </article>
-                <!-- Project 2 -->
-                <article class="tft-card aspect-[4/5] reveal-up active" data-category="concept">
-                    <div class="tft-card__media-wrap">
-                        <img alt="Digital Core" class="tft-card__media" src="assets/img/s2.jpg"/>
-                    </div>
-                    <div class="tft-card__overlay"></div>
-                    <div class="tft-card__content">
-                        <div class="tft-card__meta">Paper // Texture</div>
-                        <div class="tft-card__title-mask">
-                            <h3 class="tft-card__title font-display">Studio Mono</h3>
-                        </div>
-                    </div>
-                    <a class="tft-card__link" href="casestudy.html"></a>
-                </article>
-                <!-- Project 3 -->
-                <article class="tft-card aspect-[4/5] reveal-up active" data-category="spatial">
-                    <div class="tft-card__media-wrap">
-                        <img alt="Spatial Flow" class="tft-card__media" src="assets/img/s3.jpg"/>
-                    </div>
-                    <div class="tft-card__overlay"></div>
-                    <div class="tft-card__content">
-                        <div class="tft-card__meta">Timber // Frame</div>
-                        <div class="tft-card__title-mask">
-                            <h3 class="tft-card__title font-display">Oak &amp; Iron</h3>
-                        </div>
-                    </div>
-                    <a class="tft-card__link" href="casestudy.html"></a>
-                </article>
-                <!-- Project 4 -->
-                <article class="tft-card aspect-[4/5] reveal-up active" data-category="spatial">
-                    <div class="tft-card__media-wrap">
-                        <img alt="Brutalist Master" class="tft-card__media" src="assets/img/s4.png"/>
-                    </div>
-                    <div class="tft-card__overlay"></div>
-                    <div class="tft-card__content">
-                        <div class="tft-card__meta">Gallery // Pavilion</div>
-                        <div class="tft-card__title-mask">
-                            <h3 class="tft-card__title font-display italic lowercase">The Library</h3>
-                        </div>
-                    </div>
-                    <a class="tft-card__link" href="casestudy.html"></a>
-                </article>
-                <!-- Project 5 -->
-                <article class="tft-card aspect-[4/5] reveal-up active" data-category="identity">
-                    <div class="tft-card__media-wrap">
-                        <img alt="Elite Echo" class="tft-card__media" src="assets/img/project_digital.png"/>
-                    </div>
-                    <div class="tft-card__overlay"></div>
-                    <div class="tft-card__content">
-                        <div class="tft-card__meta">Silk // Identity</div>
-                        <div class="tft-card__title-mask">
-                            <h3 class="tft-card__title font-display">Velvet Room</h3>
-                        </div>
-                    </div>
-                    <a class="tft-card__link" href="casestudy.html"></a>
-                </article>
-                <!-- Project 6 -->
-                <article class="tft-card aspect-[4/5] reveal-up active" data-category="concept">
-                    <div class="tft-card__media-wrap">
-                        <img alt="System Logic" class="tft-card__media" src="assets/img/s6.jpg"/>
-                    </div>
-                    <div class="tft-card__overlay"></div>
-                    <div class="tft-card__content">
-                        <div class="tft-card__meta">Clay // Ceramics</div>
-                        <div class="tft-card__title-mask">
-                            <h3 class="tft-card__title font-display">Raw Materials</h3>
-                        </div>
-                    </div>
-                    <a class="tft-card__link" href="casestudy.html"></a>
-                </article>
-                <!-- Project 7 -->
-                <article class="tft-card aspect-[4/5] reveal-up active" data-category="identity">
-                    <div class="tft-card__media-wrap">
-                        <img alt="Nexus Brand" class="tft-card__media" src="assets/img/s7.png"/>
-                    </div>
-                    <div class="tft-card__overlay"></div>
-                    <div class="tft-card__content">
-                        <div class="tft-card__meta">Lodge // Branding</div>
-                        <div class="tft-card__title-mask">
-                            <h3 class="tft-card__title font-display">Amber Lodge</h3>
-                        </div>
-                    </div>
-                    <a class="tft-card__link" href="casestudy.html"></a>
-                </article>
-                <!-- Project 8 -->
-                <article class="tft-card aspect-[4/5] reveal-up active" data-category="concept">
-                    <div class="tft-card__media-wrap">
-                        <img alt="Alpine Peaks" class="tft-card__media" src="assets/img/s8.png"/>
-                    </div>
-                    <div class="tft-card__overlay"></div>
-                    <div class="tft-card__content">
-                        <div class="tft-card__meta">Alpine // Horizon</div>
-                        <div class="tft-card__title-mask">
-                            <h3 class="tft-card__title font-display">Distant Peaks</h3>
-                        </div>
-                    </div>
-                    <a class="tft-card__link" href="casestudy.html"></a>
-                </article>
-                <!-- Project 9 -->
-                <article class="tft-card aspect-[4/5] reveal-up active" data-category="spatial">
-                    <div class="tft-card__media-wrap">
-                        <img alt="Urban Path" class="tft-card__media" src="assets/img/s9.jpg"/>
-                    </div>
-                    <div class="tft-card__overlay"></div>
-                    <div class="tft-card__content">
-                        <div class="tft-card__meta">Urban // Garden</div>
-                        <div class="tft-card__title-mask">
-                            <h3 class="tft-card__title font-display">Concrete Path</h3>
-                        </div>
-                    </div>
-                    <a class="tft-card__link" href="casestudy.html"></a>
-                </article>
+                <!-- Dynamic project cards rendered here -->
+            </div>
+
+            <!-- BOTTOM LOADER (for infinite scroll) -->
+            <div class="bottom-loader" id="bottom-loader">
+                <div class="bottom-loader__spinner"></div>
+                <div class="bottom-loader__text">Loading Projects</div>
+            </div>
+
+            <!-- INFINITE SCROLL SENTINEL -->
+            <div class="load-more-sentinel" id="load-more-sentinel"></div>
+
+            <!-- END OF LIST -->
+            <div class="end-of-list" id="end-of-list">
+                <div class="end-of-list__line"></div>
+                <div class="end-of-list__text">End of Archive</div>
+                <div class="end-of-list__line"></div>
             </div>
         </section>
 
@@ -281,16 +401,14 @@
         <button aria-label="Close filters" class="rlz-filter-drawer__close" id="rlz-filter-drawer-close">
             <i class="w-8 h-8" data-lucide="x"></i>
         </button>
-        <div class="rlz-filter-drawer__list">
-            <button class="filter-tab rlz-filter-drawer__btn active" data-filter="all">All Archive</button>
-            <button class="filter-tab rlz-filter-drawer__btn" data-filter="identity">Identity</button>
-            <button class="filter-tab rlz-filter-drawer__btn" data-filter="concept">Concept</button>
-            <button class="filter-tab rlz-filter-drawer__btn" data-filter="spatial">Spatial</button>
+        <div class="rlz-filter-drawer__list" id="mobile-filter-list">
+            <!-- Mobile filter buttons generated dynamically -->
         </div>
     </div>
 
     <script src="assets/js/vendor/lucide-local.js"></script>
     <script src="assets/js/realiz-main.js"></script>
+    <script src="assets/js/portfolio-engine.js"></script>
     <script src="header.js"></script>
 </body>
 </html>

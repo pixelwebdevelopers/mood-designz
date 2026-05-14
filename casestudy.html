@@ -35,34 +35,224 @@
 
         /* Ensure content is not padded for a sidebar that isn't there */
         body { padding-left: 0 !important; }
+
+        /* ======================================================================
+           CASE STUDY LOADER: PREMIUM FULL-SCREEN TRANSITION
+           ====================================================================== */
+        .casestudy-loader {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: var(--brand-bg);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2.5rem;
+            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), visibility 1s;
+        }
+        .casestudy-loader.is-hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        /* Orbital Ring Loader */
+        .cs-loader-ring {
+            width: 80px;
+            height: 80px;
+            position: relative;
+        }
+        .cs-loader-ring__track {
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            border: 1.5px solid rgba(255,255,255,0.06);
+        }
+        .cs-loader-ring__progress {
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            border-top-color: var(--brand-lime);
+            animation: cs-orbit 1s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+        }
+        .cs-loader-ring__inner {
+            position: absolute;
+            inset: 12px;
+            border-radius: 50%;
+            border: 1.5px solid transparent;
+            border-bottom-color: rgba(195, 255, 6, 0.3);
+            animation: cs-orbit 1.6s cubic-bezier(0.5, 0, 0.5, 1) infinite reverse;
+        }
+        .cs-loader-ring__core {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: var(--brand-lime);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 24px rgba(195, 255, 6, 0.5), 0 0 48px rgba(195, 255, 6, 0.2);
+            animation: cs-core-pulse 1.2s ease-in-out infinite alternate;
+        }
+
+        @keyframes cs-orbit {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes cs-core-pulse {
+            from { transform: translate(-50%, -50%) scale(1); box-shadow: 0 0 24px rgba(195, 255, 6, 0.5); }
+            to { transform: translate(-50%, -50%) scale(1.5); box-shadow: 0 0 40px rgba(195, 255, 6, 0.7); }
+        }
+
+        .cs-loader-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.6em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.25);
+        }
+        .cs-loader-project-name {
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 300;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--brand-lime);
+            opacity: 0;
+            animation: cs-name-reveal 0.8s 0.3s ease forwards;
+        }
+        @keyframes cs-name-reveal {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 0.7; transform: translateY(0); }
+        }
+
+        /* --- SKELETON PLACEHOLDERS FOR CASE STUDY --- */
+        .cs-skeleton-hero {
+            height: 100vh;
+            background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, transparent 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .cs-skeleton-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(110deg, transparent 25%, rgba(255,255,255,0.03) 37%, transparent 63%);
+            animation: skeleton-shimmer 2s ease-in-out infinite;
+        }
+        @keyframes skeleton-shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .cs-skeleton-block {
+            height: 1rem;
+            background: rgba(255,255,255,0.04);
+            border-radius: 4px;
+            margin-bottom: 0.75rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .cs-skeleton-block::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(110deg, transparent 25%, rgba(255,255,255,0.04) 37%, transparent 63%);
+            animation: skeleton-shimmer 2s ease-in-out infinite;
+        }
+        .cs-skeleton-block.w-75 { width: 75%; }
+        .cs-skeleton-block.w-50 { width: 50%; }
+        .cs-skeleton-block.h-lg { height: 2.5rem; }
+
+        /* --- CASE STUDY IMAGE SECTION (Single Centered) --- */
+        .cs-image-showcase {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 2rem 5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .cs-image-showcase img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 4px;
+            opacity: 0;
+            transform: translateY(40px) scale(0.98);
+            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), 
+                        transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .cs-image-showcase img.is-revealed {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        /* --- CONTENT REVEAL --- */
+        .cs-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), 
+                        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .cs-reveal.is-revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- PARTICLE CANVAS (Next Project Section) --- */
+        #cs-particle-canvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
     </style>
     <link rel="stylesheet" href="header.css">
 </head>
 <body class="bg-brand-bg tft-page-project-detail" id="page-top">
+
+    <!-- FULL PAGE LOADER -->
+    <div class="casestudy-loader" id="casestudy-loader">
+        <div class="cs-loader-ring">
+            <div class="cs-loader-ring__track"></div>
+            <div class="cs-loader-ring__progress"></div>
+            <div class="cs-loader-ring__inner"></div>
+            <div class="cs-loader-ring__core"></div>
+        </div>
+        <div class="cs-loader-text">Loading Case Study</div>
+        <div class="cs-loader-project-name" id="loader-project-name"></div>
+    </div>
 
     <div id="header-container"></div>
 
     <!-- CONTENT WRAPPER -->
     <div class="absolute inset-0 overflow-y-auto z-10 bg-brand-bg" id="main-scroll-container">
         <article id="project-app">
-            <!-- HERO SECTION -->
-            <header class="tft-hero">
-                <div class="tft-hero__bg" style="background-image: url('assets/img/project_vision.png');"></div>
+            <!-- HERO SECTION (Dynamic) -->
+            <header class="tft-hero" id="cs-hero">
+                <div class="tft-hero__bg" id="cs-hero-bg" style="background-image: none;"></div>
                 <div class="tft-hero__overlay"></div>
                 <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none px-8 text-center pt-24 z-10">
                     <!-- KINETIC HUD HEADER -->
                     <div class="tft-hero__hud reveal-up">
                         <div class="hud-path"></div>
                         <div class="hud-node">
-                            <span class="font-body text-[10px] tracking-[0.4em] text-brand-lime uppercase">Creative Direction // 2026</span>
+                            <span class="font-body text-[10px] tracking-[0.4em] text-brand-lime uppercase" id="cs-hero-meta"></span>
                         </div>
                     </div>
                     <!-- SCAN ENGINE OVERLAY -->
                     <div class="tft-hero__scanline"></div>
                     <!-- MAIN TITLE -->
                     <div class="tft-title-elite reveal-up">
-                        <span class="title-sup drop-shadow-2xl">Sovereign</span>
-                        <h1 class="title-base text-6xl md:text-[180px] drop-shadow-2xl">Mastery</h1>
+                        <span class="title-sup drop-shadow-2xl" id="cs-hero-category"></span>
+                        <h1 class="title-base text-6xl md:text-[180px] drop-shadow-2xl" id="cs-hero-name"></h1>
                     </div>
                     <!-- ACTION BUTTON -->
                     <div class="mt-24 reveal-up">
@@ -83,91 +273,38 @@
                 </div>
             </header>
 
-            <!-- THE BRIEF -->
-            <section class="py-32 px-8 max-w-[1320px] mx-auto border-x border-white/5">
+            <!-- THE BRIEF (Dynamic Description) -->
+            <section class="py-32 px-8 max-w-[1320px] mx-auto border-x border-white/5" id="cs-brief-section">
                 <div class="tft-grid">
-                    <div class="grid-item-wide reveal-up">
+                    <div class="grid-item-wide cs-reveal" id="cs-brief-content">
                         <div class="flex items-center gap-6 mb-8">
                             <div class="w-12 h-px bg-brand-lime"></div>
-                            <span class="font-mono text-xs text-brand-lime uppercase tracking-widest">Philosophy</span>
+                            <span class="font-mono text-xs text-brand-lime uppercase tracking-widest" id="cs-brief-category"></span>
                         </div>
-                        <h2 class="tft-subtitle font-display mb-12 leading-tight">Synthesis of bold visual storytelling and digital precision.</h2>
-                        <p class="font-body text-xl md:text-3xl text-white/70 leading-relaxed font-light">
-                            The Master project represents our commitment to the <span class="text-white font-medium">Sovereign Elite</span> philosophy. It is not just a building; it is a statement of architectural dominance, designed to resonate with the high-stakes environment of premium design. Every line matters. Every shadow is calculated.
-                        </p>
+                        <h2 class="tft-subtitle font-display mb-12 leading-tight" id="cs-brief-title"></h2>
+                        <p class="font-body text-xl md:text-3xl text-white/70 leading-relaxed font-light" id="cs-brief-desc"></p>
                     </div>
                 </div>
             </section>
 
-            <!-- ASYMMETRIC GRID GALLERY -->
-            <section class="pb-32 px-8 max-w-[1500px] mx-auto">
-                <h2 class="tft-visually-hidden">Project Gallery</h2>
-                <div class="tft-grid gap-12">
-                    <!-- Large Feature -->
-                    <div class="grid-item-mid-l tft-scan-wrapper group cursor-pointer reveal-up">
-                        <img alt="Process shot" class="w-full h-auto transform group-hover:scale-105 transition-transform duration-1000" loading="lazy" src="assets/img/project_vision.png"/>
-                    </div>
-                    <!-- Side Feature -->
-                    <div class="grid-item-mid-r flex flex-col justify-end pb-20 reveal-up">
-                        <span class="font-mono text-[10px] text-brand-lime uppercase mb-4">01 // Detailed Macro</span>
-                        <p class="text-sm opacity-40 leading-relaxed uppercase tracking-wider">Meticulous attention to the tactile response of digital interfaces surfacing through physical brutalist structures.</p>
-                    </div>
-                    <!-- Mid Breakdown -->
-                    <div class="grid-item-mid-r reveal-up">
-                        <div class="aspect-[4/5] bg-brand-dark flex items-center justify-center p-12 border border-white/5">
-                            <img alt="Abstract detail" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" loading="lazy" src="assets/img/project_vision.png"/>
-                        </div>
-                    </div>
-                    <div class="grid-item-mid-l reveal-up">
-                        <div class="tft-scan-wrapper overflow-hidden aspect-video">
-                            <img alt="Interior shot" class="w-full h-full object-cover" loading="lazy" src="assets/img/project_workspace.png"/>
-                        </div>
-                    </div>
-                </div>
+            <!-- CASE STUDY IMAGE (Single Centered) -->
+            <section class="cs-image-showcase" id="cs-gallery-section">
+                <img alt="Case Study Image" 
+                     id="cs-gallery-main"
+                     loading="lazy" 
+                     src=""/>
             </section>
 
-            <!-- TECH HUD SPECIFICATIONS -->
-            <section class="py-32 bg-brand-dark/50 border-y border-white/5 reveal-up">
-                <div class="max-w-[1320px] mx-auto px-8">
-                    <div class="flex flex-col md:flex-row gap-20">
-                        <div class="w-full md:w-1/3">
-                            <h3 class="font-display text-5xl mb-8">Technical<br/>Framework</h3>
-                            <p class="font-mono text-xs opacity-40 leading-relaxed uppercase tracking-[0.2em]">Our proprietary creative framework ensures long-term clarity, consistency, and performance across every touchpoint.</p>
-                        </div>
-                        <div class="flex-1">
-                            <div class="tft-spec-item flex justify-between group">
-                                <span class="font-mono text-[10px] opacity-40 group-hover:opacity-100 transition-opacity">01 -- Client</span>
-                                <span class="font-body text-xl uppercase tracking-tighter group-hover:text-brand-lime transition-colors">Mood Designz Private</span>
-                            </div>
-                            <div class="tft-spec-item flex justify-between group">
-                                <span class="font-mono text-[10px] opacity-40 group-hover:opacity-100 transition-opacity">02 -- Services</span>
-                                <span class="font-body text-xl uppercase tracking-tighter group-hover:text-brand-lime transition-colors">Full-Scale Design / Code / Vision</span>
-                            </div>
-                            <div class="tft-spec-item flex justify-between group">
-                                <span class="font-mono text-[10px] opacity-40 group-hover:opacity-100 transition-opacity">03 -- Tech Stack</span>
-                                <span class="font-body text-xl uppercase tracking-tighter group-hover:text-brand-lime transition-colors">WebGL / GSAP / Vanilla ES2026</span>
-                            </div>
-                            <div class="tft-spec-item flex justify-between group pt-6">
-                                <span class="font-mono text-[10px] opacity-40 group-hover:opacity-100 transition-opacity">04 -- External</span>
-                                <a class="font-body text-xl uppercase tracking-tighter text-brand-lime flex items-center gap-3 group-hover:gap-6 transition-all" href="portfolio.html">
-                                    View Full Portfolio 
-                                    <i class="w-5 h-5" data-lucide="arrow-up-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+
 
             <!-- NEXT PROJECT NAVIGATION -->
-            <section class="py-60 px-8 text-center bg-brand-bg overflow-hidden relative">
+            <section class="py-60 px-8 text-center bg-brand-bg overflow-hidden relative" id="cs-next-section">
                 <h2 class="tft-visually-hidden">Call to Action</h2>
-                <div class="absolute inset-0 opacity-40 pointer-events-none">
-                    <div class="w-full h-full bg-[radial-gradient(circle_at_center,rgba(212,245,76,0.08)_0%,transparent_70%)]"></div>
-                </div>
+                <canvas id="cs-particle-canvas"></canvas>
                 <div class="relative z-10 tft-next-pjt group inline-block">
                     <span class="font-mono text-[10px] text-brand-lime uppercase tracking-[0.5em] mb-10 block group-hover:mb-14 transition-all">Next Masterpiece</span>
-                    <a class="font-display italic block text-7xl md:text-9xl transform group-hover:scale-105 transition-transform duration-1000" href="portfolio.html">Urban Oasis</a>
+                    <a class="font-display italic block text-7xl md:text-9xl transform group-hover:scale-105 transition-transform duration-1000" 
+                       href="#" id="cs-next-link"></a>
                     <div class="mt-16 w-32 h-32 rounded-full border border-brand-lime/30 mx-auto flex items-center justify-center group-hover:bg-brand-lime group-hover:text-black transition-all duration-700 shadow-[0_0_30px_rgba(212,245,76,0.1)]">
                         <i class="w-14 h-14" data-lucide="arrow-right"></i>
                     </div>
@@ -229,6 +366,7 @@
     <!-- JS Scripts -->
     <script src="assets/js/vendor/lucide-local.js"></script>
     <script src="assets/js/realiz-main.js"></script>
+    <script src="assets/js/casestudy-engine.js"></script>
     <script src="header.js"></script>
 </body>
 </html>

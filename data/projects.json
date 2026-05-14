@@ -1,0 +1,137 @@
+[
+  {
+    "id": "the-atelier",
+    "name": "The Atelier",
+    "category": "identity",
+    "meta": "Studio // Identity",
+    "description": "The Atelier project represents a bold new chapter in contemporary identity design. Crafted for a prestigious creative studio, this body of work channels the raw energy of brutalist architecture into a refined visual language. Every typographic detail, every color choice, was meticulously calibrated to evoke a sense of sovereign authority and creative dominance. The result is a brand identity system that is not just a logo — it is a statement. A statement that commands attention, inspires trust, and refuses to be ignored.",
+    "coverImage": "assets/img/s1.jpg",
+    "caseStudyImage": "assets/img/project_vision.png"
+  },
+  {
+    "id": "studio-mono",
+    "name": "Studio Mono",
+    "category": "concept",
+    "meta": "Paper // Texture",
+    "description": "Studio Mono is a deep dive into the intersection of analog craft and digital precision. Born from a fascination with the tactile qualities of paper, this conceptual project explores how organic textures can be synthesized into a hyper-modern digital aesthetic. The design philosophy revolves around constraint as a creative catalyst — monochromatic palettes, geometric grids, and the quiet power of negative space. The outcome is a visual system that feels simultaneously ancient and futuristic.",
+    "coverImage": "assets/img/s2.jpg",
+    "caseStudyImage": "assets/img/project_workspace.png"
+  },
+  {
+    "id": "oak-and-iron",
+    "name": "Oak & Iron",
+    "category": "spatial",
+    "meta": "Timber // Frame",
+    "description": "Oak & Iron is the physical manifestation of our design philosophy: that true luxury lives in the dialogue between raw materials and masterful craftsmanship. This spatial design project for a high-end residential pavilion in rural Provence juxtaposes the warmth of reclaimed oak with the unforgiving strength of hand-forged iron. Every structural beam, every joint, every shadow cast by the afternoon sun was considered. The space does not just exist; it breathes, ages, and tells a story.",
+    "coverImage": "assets/img/s3.jpg",
+    "caseStudyImage": "assets/img/project_vision.png"
+  },
+  {
+    "id": "the-library",
+    "name": "The Library",
+    "category": "spatial",
+    "meta": "Gallery // Pavilion",
+    "description": "The Library is more than a building; it is an intellectual fortress. Designed as a private gallery and reading pavilion for a collector of rare architectural manuscripts, this project channels the spirit of brutalism into a sanctuary for the mind. The monolithic concrete exterior hides a warm, timber-lined interior flooded with carefully angled natural light. It is a space designed for contemplation, where every surface invites the hand and every sightline leads to a curated discovery.",
+    "coverImage": "assets/img/s4.png",
+    "caseStudyImage": "assets/img/project_workspace.png"
+  },
+  {
+    "id": "velvet-room",
+    "name": "Velvet Room",
+    "category": "identity",
+    "meta": "Silk // Identity",
+    "description": "Velvet Room is a masterclass in sensory branding. Created for an exclusive members-only design club, the identity system was built to be felt before it was seen. From the weight of the embossed business cards on premium cotton stock to the deep, saturated color palette that evokes midnight velvet, every element was designed to trigger an emotional, almost tactile response. The digital presence mirrors this philosophy with fluid micro-animations and a UI that feels like silk under the cursor.",
+    "coverImage": "assets/img/project_digital.png",
+    "caseStudyImage": "assets/img/project_vision.png"
+  },
+  {
+    "id": "raw-materials",
+    "name": "Raw Materials",
+    "category": "concept",
+    "meta": "Clay // Ceramics",
+    "description": "Raw Materials is a conceptual exploration of imperfection as a design principle. Inspired by the Japanese philosophy of Wabi-Sabi, this project celebrates the beauty of the unfinished, the cracked, and the weathered. We developed a comprehensive visual language for a ceramics atelier, grounding their digital presence in the same organic honesty that defines their physical craft. The color palette is drawn directly from kiln-fired glazes, and the typography carries the weight and texture of hand-pressed clay.",
+    "coverImage": "assets/img/s6.jpg",
+    "caseStudyImage": "assets/img/project_workspace.png"
+  },
+  {
+    "id": "amber-lodge",
+    "name": "Amber Lodge",
+    "category": "identity",
+    "meta": "Lodge // Branding",
+    "description": "Amber Lodge is a brand identity forged in the fires of heritage and ambition. Created for a world-class alpine hospitality brand, the project demanded a visual language that could honour centuries of mountain tradition while feeling utterly contemporary. The solution is a design system rooted in the amber glow of a crackling fireplace — warm, inviting, and unmistakably premium. The identity spans from wayfinding signage carved in stone to a responsive digital experience that mirrors the warmth of the physical lodge.",
+    "coverImage": "assets/img/s7.png",
+    "caseStudyImage": "assets/img/project_vision.png"
+  },
+  {
+    "id": "distant-peaks",
+    "name": "Distant Peaks",
+    "category": "concept",
+    "meta": "Alpine // Horizon",
+    "description": "Distant Peaks is a study in the power of landscape as a narrative device. This conceptual project for a premium outdoor lifestyle brand uses the vast, untouched beauty of alpine horizons as its primary visual ingredient. The design system is built on a foundation of extreme negative space, allowing the grandeur of the mountain landscapes to speak for themselves. The typography is minimal, the interactions are subtle, and the overall effect is one of profound, quiet awe.",
+    "coverImage": "assets/img/s8.png",
+    "caseStudyImage": "assets/img/project_workspace.png"
+  },
+  {
+    "id": "concrete-path",
+    "name": "Concrete Path",
+    "category": "spatial",
+    "meta": "Urban // Garden",
+    "description": "Concrete Path is a spatial design intervention that challenges the boundary between the built environment and the natural world. Commissioned by a forward-thinking urban development collective, this project transforms a derelict industrial alleyway into a thriving urban garden. The design language is deliberately confrontational: raw, poured concrete walkways carve through bursts of wild, untamed greenery. It is a statement that nature does not merely coexist with the city — it reclaims it.",
+    "coverImage": "assets/img/s9.jpg",
+    "caseStudyImage": "assets/img/project_vision.png"
+  },
+  {
+    "id": "sovereign-mastery",
+    "name": "Sovereign Mastery",
+    "category": "identity",
+    "meta": "Creative Direction // 2026",
+    "description": "The Sovereign Mastery project represents our commitment to the Sovereign Elite philosophy. It is not just a building; it is a statement of architectural dominance, designed to resonate with the high-stakes environment of premium design. Every line matters. Every shadow is calculated. This is the synthesis of bold visual storytelling and digital precision, a comprehensive creative direction engagement that pushed the boundaries of what a design studio can deliver.",
+    "coverImage": "assets/img/project_vision.png",
+    "caseStudyImage": "assets/img/project_workspace.png"
+  },
+  {
+    "id": "crystalline-logic",
+    "name": "Crystalline Logic",
+    "category": "concept",
+    "meta": "Techno // Structure",
+    "description": "Crystalline Logic is a conceptual design exploration that merges the mathematical precision of crystallographic structures with the fluidity of digital design. Created for a cutting-edge technology firm in Tokyo, this project translates complex data architectures into a visual language of geometric beauty. The design system features a generative identity that shifts and refracts like light through a prism, ensuring that every touchpoint is unique yet unmistakably part of the same crystalline family.",
+    "coverImage": "assets/img/project_code.png",
+    "caseStudyImage": "assets/img/project_vision.png"
+  },
+  {
+    "id": "kinetic-flow",
+    "name": "Kinetic Flow",
+    "category": "concept",
+    "meta": "Motion // Design",
+    "description": "Kinetic Flow is a motion design project that explores the poetry of movement in digital interfaces. Commissioned by a leading European automotive brand, this project redefined their digital showroom experience through a system of choreographed micro-interactions, seamless page transitions, and physics-based scroll behaviors. The result is a digital environment that feels less like a website and more like a living, breathing organism responding to the user's every gesture.",
+    "coverImage": "assets/img/project_kinetic.png",
+    "caseStudyImage": "assets/img/project_workspace.png"
+  },
+  {
+    "id": "editorial-noir",
+    "name": "Editorial Noir",
+    "category": "identity",
+    "meta": "Print // Editorial",
+    "description": "Editorial Noir is a comprehensive print identity system designed for a new-wave independent magazine focused on architecture and counter-culture. The design draws from the rich visual history of French Nouvelle Vague cinema and mid-century Swiss typography. The result is a publication that feels simultaneously rebellious and sophisticated — a magazine you display on your coffee table as a design object in its own right. The system extends from the physical print layout to a fully bespoke digital reading experience.",
+    "coverImage": "assets/img/project_editorial.png",
+    "caseStudyImage": "assets/img/project_vision.png"
+  },
+  {
+    "id": "strategic-vision",
+    "name": "Strategic Vision",
+    "category": "concept",
+    "meta": "Strategy // Framework",
+    "description": "Strategic Vision is a brand strategy and creative direction project for a global investment firm. The challenge was to distill the complexity of financial markets into a design language that communicates trust, intelligence, and forward-thinking ambition. We developed a proprietary visual framework that uses data visualization as a core design element, turning market data into beautiful, abstract compositions. The final identity is a masterclass in how strategic thinking and creative execution can be two sides of the same coin.",
+    "coverImage": "assets/img/project_strategy.png",
+    "caseStudyImage": "assets/img/project_workspace.png"
+  },
+  {
+    "id": "digital-nexus",
+    "name": "Digital Nexus",
+    "category": "identity",
+    "meta": "Digital // Platform",
+    "description": "Digital Nexus is a full-scale digital identity and platform design for a next-generation creative agency. The project demanded a design system that could flex across hundreds of content types while maintaining absolute visual consistency. We built a modular component library governed by a strict set of typographic and spatial rules, ensuring that every page, from a long-form case study to a quick social media post, feels like it belongs to the same high-performance creative family.",
+    "coverImage": "assets/img/project_branding_abstract.png",
+    "caseStudyImage": "assets/img/project_vision.png"
+  }
+]
