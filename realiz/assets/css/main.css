@@ -2405,7 +2405,7 @@ svg {
 }
 .text-brand-lime {
   --tw-text-opacity: 1;
-  color: rgb(212 245 76 / var(--tw-text-opacity, 1));
+  color: #ceff06;
 }
 .text-brand-sidebar {
   --tw-text-opacity: 1;
@@ -2904,7 +2904,7 @@ svg {
 }
 .hover\:text-brand-lime:hover {
   --tw-text-opacity: 1;
-  color: rgb(212 245 76 / var(--tw-text-opacity, 1));
+  color: #ceff06;
 }
 .hover\:text-brand-sidebar:hover {
   --tw-text-opacity: 1;
@@ -3016,7 +3016,7 @@ svg {
 }
 .group:hover .group-hover\:text-brand-lime {
   --tw-text-opacity: 1;
-  color: rgb(212 245 76 / var(--tw-text-opacity, 1));
+  color: #ceff06;
 }
 .group:hover .group-hover\:text-brand-lime\/20 {
   color: rgba(212, 245, 76, 0.2);
