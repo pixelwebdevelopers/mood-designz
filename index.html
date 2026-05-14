@@ -224,10 +224,73 @@
         /* Filter out green from background images and canvases */
         .section-selected-work-v2 .bg-img img,
         .section-about-me .s-img-bg img,
-        .section-tech-stack-v2 .s-img-bg img,
-        .section-tech-stack-v2 canvas,
-        .wg-tech-v2 canvas {
+        .section-tech-stack-v2 .s-img-bg img {
             filter: grayscale(100%) brightness(0.4) !important;
+        }
+
+        /* Tech Stack V2 Refinements (Davies Parity) */
+        .section-tech-stack-v2 .tf-grid-layout {
+            gap: 24px;
+            place-items: center;
+            display: grid;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
+
+        @media (min-width: 992px) {
+            .section-tech-stack-v2 .tf-grid-layout {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                padding: 0 40px;
+            }
+        }
+
+        .wg-tech-v2 {
+            max-width: 400px;
+            width: 100%;
+            transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s ease;
+            background: #0a0a0a; /* Darker fallback */
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .wg-tech-v2 canvas {
+            filter: none !important; 
+            opacity: 1 !important;
+            visibility: visible !important;
+            position: absolute !important;
+            inset: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .wg-tech-v2:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 0 50px rgba(195, 255, 6, 0.2), 0px 0.5px 0.5px 0px #FFFFFF52 inset !important;
+            border-color: rgba(195, 255, 6, 0.5);
+        }
+
+        .wg-tech-v2 .tech-content {
+            transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+            position: relative;
+            z-index: 2;
+            pointer-events: none; /* Let parent handle mouse for UnicornStudio */
+        }
+
+        .wg-tech-v2:hover .tech-content {
+            transform: scale(1.02);
+        }
+
+        .wg-tech-v2 .ic-img img {
+            transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .wg-tech-v2:hover .ic-img img {
+            transform: scale(1.1) rotate(5deg);
         }
 
         /* Special handling for Hero overlays */
@@ -602,32 +665,50 @@
         </section>
 
 
-        <!-- SECTION 4: Davies Version 2 Tech Stack -->
+        <!-- SECTION 4: Tech Stack (Davies Parity) -->
         <section class="section-tech-stack-v2 flat-spacing">
             <div class="container">
                 <div class="s-header d-block">
                     <h2 class="text-display-2 letter-space--3 text-center effectFade fadeUp">Tech Stack</h2>
                 </div>
                 <div class="tf-grid-layout lg-col-3">
-                    <div class="wg-tech-v2" data-us-project="lHlDvoJDIXCxxXVqTNOC?update=0.8924711990022087">
+                    <div class="wg-tech-v2" data-us-project="lHlDvoJDIXCxxXVqTNOC?update=0.8924711990022087" data-us-mouse-sensitivity="5.0" data-us-mousestrength="4.0">
                         <div class="tech-content">
                             <h5 class="tech-name letter-space--2">Figma</h5>
-                            <p class="tech-desc letter-space--1">Collaborative design tool.</p>
-                            <div class="ic-img"><img loading="lazy" width="33" height="48" src="assets/img/item/figma.svg" alt="Image Icon"></div>
+                            <p class="tech-desc letter-space--1">
+                                Collaborative design tool for <br>
+                                creating, prototyping, and refining <br>
+                                modern interfaces.
+                            </p>
+                            <div class="ic-img">
+                                <img loading="lazy" width="33" height="48" src="assets/img/item/figma.svg" alt="Image Icon">
+                            </div>
                         </div>
                     </div>
-                    <div class="wg-tech-v2" data-us-project="lHlDvoJDIXCxxXVqTNOC?update=0.8924711990022087">
+                    <div class="wg-tech-v2" data-us-project="lHlDvoJDIXCxxXVqTNOC?update=0.8924711990022087" data-us-mouse-sensitivity="5.0" data-us-mousestrength="4.0">
                         <div class="tech-content">
-                            <h5 class="tech-name letter-space--2">Next.js</h5>
-                            <p class="tech-desc letter-space--1">Modern web framework.</p>
-                            <div class="ic-img"><img loading="lazy" width="48" height="48" src="assets/img/item/framer.svg" alt="Image Icon"></div>
+                            <h5 class="tech-name letter-space--2">Framer</h5>
+                            <p class="tech-desc letter-space--1">
+                                No-code platform for <br>
+                                building high-fidelity, interactive <br>
+                                websites with ease.
+                            </p>
+                            <div class="ic-img">
+                                <img loading="lazy" width="32" height="48" src="assets/img/item/framer.svg" alt="Image Icon">
+                            </div>
                         </div>
                     </div>
-                    <div class="wg-tech-v2" data-us-project="lHlDvoJDIXCxxXVqTNOC?update=0.8924711990022087">
+                    <div class="wg-tech-v2" data-us-project="lHlDvoJDIXCxxXVqTNOC?update=0.8924711990022087" data-us-mouse-sensitivity="2.0" data-us-mousestrength="2.0">
                         <div class="tech-content">
-                            <h5 class="tech-name letter-space--2">Tailwind</h5>
-                            <p class="tech-desc letter-space--1">Utility-first CSS.</p>
-                            <div class="ic-img"><img loading="lazy" width="77" height="48" src="assets/img/item/webflow.svg" alt="Image Icon"></div>
+                            <h5 class="tech-name letter-space--2">Webflow</h5>
+                            <p class="tech-desc letter-space--1">
+                                Visual development tool for <br>
+                                designing, building, and launching <br>
+                                responsive websites.
+                            </p>
+                            <div class="ic-img">
+                                <img loading="lazy" width="77" height="48" src="assets/img/item/webflow.svg" alt="Image Icon">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -899,9 +980,47 @@
     </script>
     <script src="header.js"></script>
     <script>
-        // Initialize UnicornStudio for Tech Stack animations
-        if (typeof UnicornStudio !== 'undefined') {
-            UnicornStudio.init();
+        // Enhanced UnicornStudio Initialization for Custom Scrollers
+        const initUnicorn = () => {
+            if (typeof UnicornStudio !== 'undefined') {
+                console.log('MoodDesignz: Initializing UnicornStudio WebGL Engine...');
+                UnicornStudio.init();
+                
+                // Late initialization fallback for elements that might not be ready
+                setTimeout(() => {
+                    const canvases = document.querySelectorAll('.wg-tech-v2 canvas');
+                    if (canvases.length === 0) {
+                        console.warn('MoodDesignz: No canvases found yet, attempting re-init...');
+                        UnicornStudio.init();
+                    } else {
+                        console.log('MoodDesignz: UnicornStudio canvases successfully generated.');
+                    }
+                }, 1500);
+            } else {
+                console.error('MoodDesignz: UnicornStudio library (unicornStudio.umd.js) not detected.');
+            }
+        };
+
+        // Initialize on Load
+        window.addEventListener('load', initUnicorn);
+
+        // Interaction Fallback: If no canvas exists, try to init on hover
+        document.querySelectorAll('.wg-tech-v2').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                if (!el.querySelector('canvas') && typeof UnicornStudio !== 'undefined') {
+                    UnicornStudio.init();
+                }
+            });
+        });
+
+        // Sync with GSAP ScrollSmoother / Custom Scroller
+        const scroller = document.querySelector('#main-scroll-container');
+        if (scroller) {
+            scroller.addEventListener('scroll', () => {
+                // Curtains.js (UnicornStudio engine) usually needs window.scroll.
+                // We fake it or trigger internal updates if possible.
+                window.dispatchEvent(new Event('scroll'));
+            });
         }
     </script>
 </body>
