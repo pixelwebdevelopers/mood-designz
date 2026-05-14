@@ -297,10 +297,51 @@
         .overlay-dim {
             background-color: rgba(0, 0, 0, 0.6) !important;
         }
+
+        /* Cursor Trail */
+        .cursor-trail {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        /* Magnetic Mouse Hover (Davies Style) */
+        .main-mouse-hover {
+            position: relative;
+        }
+
+        .tf-mouse {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            z-index: 30;
+        }
+
+        .tf-mouse.hover {
+            opacity: 1;
+        }
+
+        /* Ensure the button inside tf-mouse is clickable if needed, 
+           but usually the whole container handles the click in this layout.
+           Actually, the 'a' tag should be inside tf-mouse. */
+        .tf-mouse a {
+            pointer-events: auto;
+        }
+
+        /* Hide the default static button when hovering if needed, 
+           but here we are REPLACING the static button with the magnetic one. */
     </style>
     <link rel="stylesheet" href="header.css">
 </head>
 <body class="relative h-[100dvh] w-screen bg-brand-bg text-white overflow-hidden selection:bg-brand-lime selection:text-brand-sidebar tft-page-home-4" id="page-top">
+    <canvas class="cursor-trail d-none d-xl-block" id="trail"></canvas>
 
     <div id="header-container"></div>
 
@@ -309,33 +350,39 @@
         <!-- SECTION 1: Realiz Home Page Column 4 Hero -->
         <section id="hero-section" class="h-screen w-full overflow-hidden">
             <div class="view-section flex flex-col md:flex-row h-full w-full" id="view-home-4">
-                <div class="h4-col tft-v4-col flex-1 relative border-b md:border-b-0 md:border-r border-white/5 cursor-pointer group overflow-hidden">
+                <div class="h4-col tft-v4-col flex-1 relative border-b md:border-b-0 md:border-r border-white/5 cursor-pointer group overflow-hidden main-mouse-hover">
                     <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('assets/img/s1.jpg');"></div>
                     <div class="absolute inset-0 bg-brand-bg/60 overlay-dim transition-opacity duration-500"></div>
                     <div class="absolute inset-0 flex flex-col items-center justify-center z-20">
                         <h2 class="font-display text-4xl md:text-6xl lg:text-7xl text-white text-center leading-[0.9] mb-8 drop-shadow-lg uppercase italic font-black">Digital<br/>Visions</h2>
+                    </div>
+                    <div class="tf-mouse">
                         <a class="w-16 h-16 md:w-32 md:h-32 rounded-full bg-brand-lime text-black font-display italic flex flex-col items-center justify-center transform hover:scale-105 transition duration-300 shadow-xl backdrop-blur-sm" href="portfolio.html">
                             <span class="text-xs md:text-sm font-bold">VIEW</span>
                             <span class="text-xs md:text-sm font-bold">WORK</span>
                         </a>
                     </div>
                 </div>
-                <div class="h4-col tft-v4-col flex-1 relative border-b md:border-b-0 md:border-r border-white/5 cursor-pointer group overflow-hidden">
+                <div class="h4-col tft-v4-col flex-1 relative border-b md:border-b-0 md:border-r border-white/5 cursor-pointer group overflow-hidden main-mouse-hover">
                     <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('assets/img/s2.jpg');"></div>
                     <div class="absolute inset-0 bg-brand-bg/70 overlay-dim transition-opacity duration-500"></div>
                     <div class="absolute inset-0 flex flex-col items-center justify-center z-20">
                         <h2 class="font-display text-4xl md:text-6xl lg:text-7xl text-white text-center leading-[0.9] mb-8 drop-shadow-lg uppercase italic font-black">Brand<br/>Soul</h2>
+                    </div>
+                    <div class="tf-mouse">
                         <a class="w-16 h-16 md:w-32 md:h-32 rounded-full bg-white text-black font-display italic flex flex-col items-center justify-center transform hover:scale-105 transition duration-300 shadow-[0_15px_30px_rgba(0,0,0,0.5)]" href="portfolio.html">
                             <span class="text-xs md:text-sm font-bold">VIEW</span>
                             <span class="text-xs md:text-sm font-bold">WORK</span>
                         </a>
                     </div>
                 </div>
-                <div class="h4-col tft-v4-col flex-1 relative cursor-pointer group overflow-hidden">
+                <div class="h4-col tft-v4-col flex-1 relative cursor-pointer group overflow-hidden main-mouse-hover">
                     <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('assets/img/s3.jpg');"></div>
                     <div class="absolute inset-0 bg-brand-bg/60 overlay-dim transition-opacity duration-500"></div>
                     <div class="absolute inset-0 flex flex-col items-center justify-center z-20">
                         <h2 class="font-display text-4xl md:text-6xl lg:text-7xl text-white text-center leading-[0.9] mb-8 drop-shadow-lg uppercase italic font-black">Creative<br/>Pulse</h2>
+                    </div>
+                    <div class="tf-mouse">
                         <a class="w-16 h-16 md:w-32 md:h-32 rounded-full bg-brand-lime text-black font-display italic flex flex-col items-center justify-center transform hover:scale-105 transition duration-300 shadow-xl backdrop-blur-sm" href="portfolio.html">
                             <span class="text-xs md:text-sm font-bold">VIEW</span>
                             <span class="text-xs md:text-sm font-bold">WORK</span>

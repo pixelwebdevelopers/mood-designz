@@ -123,8 +123,8 @@
                 }
                 let last = points[points.length - 1];
                 let grad = ctx.createLinearGradient(points[0].x, points[0].y, last.x, last.y);
-                grad.addColorStop(0, "black");
-                grad.addColorStop(1, "white");
+                grad.addColorStop(0, "transparent");
+                grad.addColorStop(1, "#c3ff06");
                 ctx.strokeStyle = grad;
                 ctx.lineWidth = 3;
                 ctx.lineCap = "round";
@@ -134,7 +134,7 @@
             ripples.forEach((r, i) => {
                 ctx.beginPath();
                 ctx.arc(r.x, r.y, r.radius, 0, Math.PI * 2);
-                ctx.strokeStyle = `rgba(255,255,255,${r.alpha})`;
+                ctx.strokeStyle = `rgba(195, 255, 6, ${r.alpha})`;
                 ctx.lineWidth = 2;
                 ctx.stroke();
                 r.radius += 1;
